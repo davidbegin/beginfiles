@@ -521,7 +521,7 @@ endfunction
 
 " We have to load the colorscheme first
 " and then customize the other colors
-colorscheme wal
+" colorscheme wal
 
 hi Search guibg=#0478A4 guifg=wheat
 

@@ -1,0 +1,24 @@
+# vim: filetype=sh
+alias j="cd ~/journals/MY_LIFE && ls -a | lolcat"       \
+ww="cd ~/journals/work && ls -a | lolcat"               \
+cf="cd ~/.config && ls -a"                              \
+mn="cd /mnt && ls -a"                                   \
+vv="$EDITOR ~/.config/nvim/init.vim"                    \
+sc="$EDITOR ~/.config/shortcutrc"                       \
+bw="$EDITOR /.config/bookmarks"                         \
+vm="$EDITOR ~/vimwiki/index.wiki"                       \
+
+# Twitch Specific
+tw="$EDITOR ~/.config/TWITCH_CHAT_COMMANDS"             \
+
+# Current Projects
+py="cd ~/code/python-in-the-morning && ls -a | lolcat"  \
+sb="cd ~/code/sandberg && va && python music.py --help" \
+ct="cd ~/code/chat_thief && va"                         \
+
+# These are Luke Style shortcuts for files
+# I am not accessing too often
+cfa="$EDITOR ~/.config/aliasrc"         \
+cfd="$EDITOR ~/.Xdefaults"              \
+cfb="$EDITOR ~/.config/i3blocks/config" \
+
