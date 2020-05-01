@@ -1,0 +1,62 @@
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias                               \
+	cp="cp -iv"                       \
+	mv="mv -iv"                       \
+	rm="rm -v"                        \
+	mkd="mkdir -pv"                   \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best"     \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias                                                \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto"                           \
+	diff="diff --color=auto"                           \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias                        \
+	ka="killall"               \
+	g="git"                    \
+	trem="transmission-remote" \
+	YT="youtube-viewer"        \
+	sdn="sudo shutdown -h now" \
+	p="sudo pacman"
+
+# Some other stuff
+alias                                                                    \
+  ref="shortcuts >/dev/null; source ~/.config/shortcutrc"                \
+  aq='/home/begin/code/aq/aq.perl | lolcat'                              \
+  e='exit'                                                               \
+  ii='nvim ~/.config/i3/config'                                          \
+  ja="nvim ~/journals/arch_notes.md"                                     \
+  jk='wal -i ~/.config/wall.png'                                         \
+  jl='wal --theme random_dark'                                           \
+  k='clear'                                                              \
+  lc="lolcat"                                                            \
+  ls='ls --color=auto'                                                   \
+  pomo="muccadoro"                                                       \
+  rc="source ~/.config/zsh/.zshrc"                                       \
+  starwars="telnet towel.blinkenlights.nl"                               \
+  t='beginbot'                                                           \
+  ta="tmux -u -f ~/.config/tmux/.tmux.conf attach"                       \
+  td="nvim ~/journals/DAILY/"$(date '+%F.md')""                          \
+  te="cat ~/.config/TWITCH_CHAT_COMMANDS | dmenu -l 30 | xargs beginbot" \
+  tn="tmux -u -f ~/.config/tmux/.tmux.conf new"                          \
+  tq="cat ~/.config/TUTORIAL | dmenu -l 30 | xargs beginbot"             \
+  v="nvim ."                                                             \
+  va='source venv/bin/activate'                                          \
+  ve='python -m venv venv; source venv/bin/activate'                     \
+  vi="nvim"                                                              \
+  zz="nvim ~/.config/zsh/.zshrc"
+
+
+# Midi Stuff
+alias \
+  nojam="ps -e | grep 'fluidsynth\|mplayer' | grep -v 'grep' | awk '{print $2}' | xargs --no-run-if-empty kill" \
+  jam="fluidsynth --quiet -a pulseaudio -g 9 -m alsa_seq -l -i /usr/share/soundfonts/FluidR3_GM.sf2  ~/code/sandberg/midi_files/test.mid > /dev/null 2> /dev/null & vis" \
+  fp="fluidsynth --quiet -a pulseaudio -g 1 -m alsa_seq -l -ni /usr/share/soundfonts/FluidR3_GM.sf2 "

@@ -192,6 +192,12 @@ noremap <leader>ff :FixWhitespace<cr>
 noremap <leader>tt  :Tabularize/
 
 
+" ======= Plug 'cloudhead/neovim-fuzzy' ======
+
+nnoremap <C-t> :FuzzyOpen<CR>
+nnoremap <C-p> :FuzzyGrep<CR>
+
+
 " ====== Plugins Plugins Plugins =======
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -205,7 +211,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'KabbAmine/vCoolor.vim'
   Plug 'PotatoesMaster/i3-vim-syntax'
   Plug 'bronson/vim-trailing-whitespace'
-  Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'cloudhead/neovim-fuzzy'
   Plug 'dylanaraps/wal.vim'
   Plug 'frazrepo/vim-rainbow'
   Plug 'godlygeek/tabular'
@@ -558,6 +565,7 @@ highlight Visual guibg=#07C7CF guifg=Black
 set t_Co=256                         " Enable 256 colors
 set termguicolors                    " Enable GUI colors for the terminal to get truecolor
 
+" hi! VertSplit"  .s:fmt_none   .s:fg_red .s:bg_red
 
 " ==============================
 " ====== Begin Can't Type ======

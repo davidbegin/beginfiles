@@ -1,4 +1,6 @@
 main:
 	stow --dotfiles -R --verbose=3 -t ~/.config/tmux tmux
 	stow --dotfiles -R --verbose=3 -t ~/.config/nvim nvim
+	stow --dotfiles -R --verbose=3 -t ~/.config/zsh zsh
 	stow --dotfiles -R --verbose=3 -t ~/.config shortcuts
+	stow --dotfiles -R --verbose=3 -t ~/.config aliases
