@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+tmux new-session -s chat_economy -n NOTES -d
+
+tmux new-window -t chat_economy -d -n "CHAT THIEF"
+tmux new-window -t chat_economy -d -n BOT
+tmux new-window -t chat_economy -d -n SOUND_BOTS
+tmux new-window -t chat_economy -d -n STOCK_MARKET
+tmux new-window -t chat_economy -d -n SAMPLES
+tmux new-window -t chat_economy -d -n CUBIN
+
+tmux send-keys -t chat_economy:NOTES 'py'                                   Enter
+tmux send-keys -t chat_economy:"CHAT THIEF" 'ct'                            Enter
+tmux send-keys -t chat_economy:SAMPLES 'cd ~/stream/Stream/Samples'         Enter
+tmux send-keys -t chat_economy:CUBIN 'cd ~/code/cubin_b; cat cube | lolcat' Enter
+
+# ==================================
+# === Main Bot and Commands Menu ===
+# ==================================
+
+tmux select-window -t chat_economy:BOT
+tmux send-keys -t chat_economy:BOT 'ct; python bot.py' Enter
+tmux split-window -h
+tmux send-keys -t chat_economy:BOT 'tw'                Enter
+
+
+# ======================================
+# === Stocks and Hand of the Market ====
+# ======================================
+
+tmux select-window -t chat_economy:STOCK_MARKET
+tmux send-keys -t chat_economy:STOCK_MARKET 'ct; FLASK_APP=chat_thief/economist_app.py flask run' Enter
+tmux split-window -h
+tmux send-keys -t chat_economy:STOCK_MARKET 'ct; echo "python hand_of_the_market.py"'             Enter
+
+
+# ================================
+# === Soundeffect Play/Request ===
+# ================================
+
+tmux select-window -t chat_economy:SOUND_BOTS
+tmux send-keys -t chat_economy:SOUND_BOTS 'ct; python soundeffect_request_bot.py' Enter
+tmux split-window -h
+tmux send-keys -t chat_economy:SOUND_BOTS 'ct; python soundboard_bot.py'          Enter
+
+
+# ======================================
+# === Final Selection and Attachment ===
+# ======================================
+
+tmux select-window -t chat_economy:NOTES
+tmux -u -f ~/.config/tmux/.tmux.conf attach -t chat_economy
