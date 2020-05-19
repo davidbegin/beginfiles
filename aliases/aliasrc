@@ -52,7 +52,8 @@ alias                                                                    \
   va='source venv/bin/activate'                                          \
   ve='python -m venv venv; source venv/bin/activate'                     \
   vi="nvim"                                                              \
-  zz="nvim ~/.config/zsh/.zshrc"
+  zz="nvim ~/.config/zsh/.zshrc"                                         \
+  streamtime="~/.config/workstations/chat_econ"
 
 
 # Midi Stuff

@@ -3,6 +3,7 @@ alias j="cd ~/journals/MY_LIFE && ls -a | lolcat"       \
 ww="cd ~/journals/work && ls -a | lolcat"               \
 cf="cd ~/.config && ls -a"                              \
 mn="cd /mnt && ls -a"                                   \
+ws="cd ~/.config/workstations && ls -a"                 \
 vv="$EDITOR ~/.config/nvim/init.vim"                    \
 sc="$EDITOR ~/.config/shortcutrc"                       \
 bw="$EDITOR /.config/bookmarks"                         \
@@ -10,6 +11,7 @@ vm="$EDITOR ~/vimwiki/index.wiki"                       \
 
 # Twitch Specific
 alias tw="$EDITOR ~/.config/TWITCH_CHAT_COMMANDS"
+alias sl="$EDITOR ~/code/chat_thief/chat_thief/config/stream_lords.py"
 
 # Current Projects
 alias \

@@ -90,10 +90,11 @@ nmap <CR> o<Esc>
 
 " Python Specific
 noremap <leader>bb <cr>ibreakpoint()<cr>
+noremap <leader>bl :!black %<cr><Esc>
 noremap <leader>fo <cr>i@pytest.mark.focus<cr><Esc>
-noremap ,p :w!\|!python3 %<cr>
-noremap ,t :w!\|!make t<cr>
-noremap ,f :w!\|!make f<cr>
+" noremap ,p :w!\|!python3 %<cr>
+" noremap ,t :w!\|!make t<cr>
+" noremap ,f :w!\|!make f<cr>
 noremap <leader>jq :%!python -m json.tool<cr>
 
 " === Shortcuts to custom functions ===
@@ -198,6 +199,15 @@ nnoremap <C-t> :FuzzyOpen<CR>
 nnoremap <C-p> :FuzzyGrep<CR>
 
 
+" ======= Plug 'vim-test/vim-test' ======
+
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+
 " ====== Plugins Plugins Plugins =======
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -229,6 +239,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'vimwiki/vimwiki'
+  Plug 'janko/vim-test'
 call plug#end()
 
 
@@ -398,11 +409,11 @@ function! s:LastTwitchMsg()
 endfunction
 
 function! s:ObsSceneCommands()
-  let s:chat=system('echo "codin\ncubin\nbrb\nstart" | dmenu -l 29 | xargs scene')
+  let s:chat=system('echo "codin\ncubin\nbrb\nstartin\nlecture\nbreakin\nnews" | dmenu -l 29 | xargs scene')
 endfunction
 
 function! s:ObsSourceCommands()
-  let s:chat=system('echo "idk\nwyp\nha\nclap\nahh" | dmenu -l 30 | xargs so')
+  let s:chat=system('echo "jdi\nidk\nwyp\ni_like_that_thing\ni_hate_that_thing\nrevolution\npeace" | dmenu -l 30 | xargs so')
 endfunction
 
 function! s:Emojis()
