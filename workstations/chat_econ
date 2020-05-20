@@ -29,11 +29,13 @@ tmux send-keys -t chat_economy:BOT 'tw'                Enter
 # ======================================
 
 tmux select-window -t chat_economy:STOCK_MARKET
-tmux send-keys -t chat_economy:STOCK_MARKET 'ct; FLASK_APP=chat_thief/economist_app.py flask run' Enter
+tmux send-keys -t chat_economy:STOCK_MARKET 'ct; FLASK_APP=chat_thief/economist_app.py flask run'    Enter
 tmux split-window -h
-tmux send-keys -t chat_economy:STOCK_MARKET 'ct; echo "python hand_of_the_market.py"'             Enter
+tmux send-keys -t chat_economy:STOCK_MARKET 'ct; echo "python hand_of_the_market.py"'                Enter
 tmux split-window -v
 tmux send-keys -t chat_economy:STOCK_MARKET 'ct; FLASK_APP=chat_thief/news_app.py flask run -p 1987' Enter
+tmux split-window -h
+tmux send-keys -t chat_economy:STOCK_MARKET 'python breaking_news_bot.py'                            Enter
 
 
 # ================================

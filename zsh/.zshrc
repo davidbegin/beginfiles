@@ -1,5 +1,3 @@
-# Begin's Custom Settings
-
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
@@ -15,6 +13,7 @@ autoload -U colors && colors
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+# TODO: Figure out a better home for this
 [ -f ~/.twitch ] && . ~/.twitch
 
 autoload -U compinit
