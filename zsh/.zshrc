@@ -39,3 +39,9 @@ PATH=$PATH:~/.nimble/bin
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
+
+# For Rust
+export PATH="$HOME/.cargo/bin:$PATH"

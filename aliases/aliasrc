@@ -53,7 +53,10 @@ alias                                                                    \
   ve='python -m venv venv; source venv/bin/activate'                     \
   vi="nvim"                                                              \
   zz="nvim ~/.config/zsh/.zshrc"                                         \
-  streamtime="~/.config/workstations/chat_econ"
+  streamtime="~/.config/workstations/chat_econ"                          \
+  beginworld="lynx -vikeys https://mygeoangelfirespace.city"             \
+  bl="cd ~/journals/MY_LIFE/BLOGS"
+
 
 
 # Midi Stuff

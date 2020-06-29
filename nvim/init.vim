@@ -54,6 +54,7 @@ set nofoldenable
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+" autocmd BufWritePost *.py !black %
 
 " Reload this vimrc when edited
 " This is commented out, while I am doing heavy editing of the file
@@ -80,6 +81,7 @@ noremap <leader>e :edit %:h<cr>
 noremap <leader>pp :set paste<cr>
 noremap <leader>pk :set nopaste<cr>
 noremap <leader>rc :source ~/.config/nvim/init.vim<cr>
+noremap <leader>cs :colorscheme
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -96,6 +98,9 @@ noremap <leader>fo <cr>i@pytest.mark.focus<cr><Esc>
 " noremap ,t :w!\|!make t<cr>
 " noremap ,f :w!\|!make f<cr>
 noremap <leader>jq :%!python -m json.tool<cr>
+
+" Rust Specific
+noremap ,r :!rustc %<cr>
 
 " === Shortcuts to custom functions ===
 
@@ -134,8 +139,8 @@ nmap <leader>gi :call <SID>GistAndPost(mode())<cr>
 " We want to use the hotlinking of wiki files
 " With Markdown highlighting
 " We should explore how we can use .md
-let g:vimwiki_list = [{'path': '/home/begin/vimwiki/',
-                     \ 'syntax': 'markdown', 'ext': '.wiki'}]
+" let g:vimwiki_list = [{'path': '/home/begin/vimwiki/',
+"                      \ 'syntax': 'markdown', 'ext': '.wiki'}]
 
 
 " ======= Plug 'junegunn/limelight.vim' ======
@@ -208,6 +213,26 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 
+" ======= Plug 'autozimu/LanguageClient-neovim' ======
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'python': ['/usr/bin/pyls'],
+    \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> rn :call LanguageClient#textDocument_rename()<CR>
+
+
 " ====== Plugins Plugins Plugins =======
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -233,13 +258,22 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/limelight.vim'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'vimwiki/vimwiki'
+  Plug 'mitsuhiko/vim-jinja'
+  " Plug 'vimwiki/vimwiki'
   Plug 'janko/vim-test'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'unkiwii/vim-nerdtree-sync'
+  Plug 'mattn/emmet-vim'
+  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 
@@ -302,13 +336,13 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
 if (index(['vim','help'], &filetype) >= 0)
@@ -322,7 +356,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+" nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -540,6 +574,8 @@ endfunction
 " We have to load the colorscheme first
 " and then customize the other colors
 " colorscheme wal
+" colorscheme murphy
+" colorscheme torte
 
 hi Search guibg=#0478A4 guifg=wheat
 
@@ -583,5 +619,9 @@ set termguicolors                    " Enable GUI colors for the terminal to get
 " ==============================
 
 iab teh the
+iab eth the
 iab wikipedia Wikipedia
 iab beginbux BeginBux™
+
+" ----- Term ------
+tnoremap <C-[><C-[> <C-\><C-n>
