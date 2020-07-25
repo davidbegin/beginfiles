@@ -17,6 +17,8 @@ set textwidth=80
 set ttyfast
 set wrap
 
+
+
 " Enable incremental search, so we see what we are matching as we are typing!
 set incsearch
 
@@ -41,15 +43,18 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+nnoremap <esc> :noh<return><esc>
+
 " Lets us yank in vim and then paste to other programs
 set clipboard+=unnamedplus
 
 " === Folding Settings ===
 " open folds when opening a file
-autocmd FileType * exe "normal zR"
-set nofoldenable
+" autocmd FileType * exe "normal zR"
+" set nofoldenable
 " set foldmethod=indent
 " set foldlevel=99
+set foldmethod=marker
 
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
@@ -78,10 +83,14 @@ noremap ,, <esc>:w!<cr>
 noremap ff :resize 100 <cr> <bar> :vertical resize 220<cr>
 noremap fm <C-w>=
 noremap <leader>e :edit %:h<cr>
+
 noremap <leader>pp :set paste<cr>
 noremap <leader>pk :set nopaste<cr>
+
 noremap <leader>rc :source ~/.config/nvim/init.vim<cr>
 noremap <leader>cs :colorscheme
+noremap <silent><leader>jl :!wal --theme random_dark &<cr>
+noremap <silent><leader>Y :!wal --theme random_dark &<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -94,13 +103,21 @@ nmap <CR> o<Esc>
 noremap <leader>bb <cr>ibreakpoint()<cr>
 noremap <leader>bl :!black %<cr><Esc>
 noremap <leader>fo <cr>i@pytest.mark.focus<cr><Esc>
-" noremap ,p :w!\|!python3 %<cr>
+noremap ,p :w!\|!python3 %<cr>
 " noremap ,t :w!\|!make t<cr>
 " noremap ,f :w!\|!make f<cr>
 noremap <leader>jq :%!python -m json.tool<cr>
 
 " Rust Specific
 noremap ,r :!rustc %<cr>
+
+" Go Specific
+noremap ,G :w!\|!go run --gcflags "-m=2" ./%<cr>
+" noremap ,g :w!\|!go run ./%<cr>
+noremap ,g :w!\|!go build; ./geoboard<cr>
+noremap ,f :!gofmt %<cr>
+noremap ,t :!make test<cr>
+" go run ./%
 
 " === Shortcuts to custom functions ===
 
@@ -114,8 +131,8 @@ nnoremap <leader>nj :!nojam<cr>
 nnoremap <silent> <leader>im :call AddImport()<CR>
 nnoremap <leader>m :call <SID>Emojis()<cr>
 nnoremap <leader>te :call <SID>TwitchCommands()<cr>
-nnoremap <leader>tw :call <SID>SendToTwitch()<cr>
 vnoremap <leader>tw :call <SID>SendToTwitch()<cr>
+nnoremap <leader>tw :call <SID>SendToTwitch()<cr>
 nnoremap <leader>ll :call <SID>MdLink()<cr>
 nnoremap <leader>pd :call <SID>PyDocSearch()<cr>
 nnoremap <leader>tl :call <SID>LastTwitchMsg()<cr>
@@ -264,10 +281,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'mitsuhiko/vim-jinja'
   " Plug 'vimwiki/vimwiki'
+  Plug 'rhysd/committia.vim'
   Plug 'janko/vim-test'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'unkiwii/vim-nerdtree-sync'
   Plug 'mattn/emmet-vim'
+  Plug 'francoiscabrol/ranger.vim'
   " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -335,6 +354,7 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
+
 " GoTo code navigation.
 " nmap <silent> gd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
@@ -350,6 +370,11 @@ if (index(['vim','help'], &filetype) >= 0)
 else
   call CocAction('doHover')
 endif
+endfunction
+
+nnoremap <leader>c :call <SID>toggle_extension()<CR>
+function! s:toggle_extension()
+  call CocAction('toggleExtension')
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -571,11 +596,16 @@ endfunction
 " ~~~~~~~ Colors ~~~~~~~~~
 " ~~~~~~~~~~~~~~~~~~~~~~~~
 
-" We have to load the colorscheme first
-" and then customize the other colors
-" colorscheme wal
+
 " colorscheme murphy
 " colorscheme torte
+set t_Co=256                         " Enable 256 colors
+" set termguicolors                    " Enable GUI colors for the terminal to get truecolor
+"
+" We have to load the colorscheme first
+" and then customize the other colors
+colorscheme wal
+
 
 hi Search guibg=#0478A4 guifg=wheat
 
@@ -609,11 +639,11 @@ highlight CursorColumn guibg=#9E00FF guifg=darkred
 " What Color to highlight hlsearches
 highlight Visual guibg=#07C7CF guifg=Black
 
-set t_Co=256                         " Enable 256 colors
-set termguicolors                    " Enable GUI colors for the terminal to get truecolor
+" highlight SignColumn ctermbg=0
+highlight SignColumn guibg=0
 
 " hi! VertSplit"  .s:fmt_none   .s:fg_red .s:bg_red
-
+"
 " ==============================
 " ====== Begin Can't Type ======
 " ==============================
@@ -622,6 +652,79 @@ iab teh the
 iab eth the
 iab wikipedia Wikipedia
 iab beginbux BeginBux™
+iab startup sTaRtUp
 
 " ----- Term ------
 tnoremap <C-[><C-[> <C-\><C-n>
+
+
+
+
+
+
+
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
+
+nnoremap <leader>re :call ClearRegs()<CR>
+
+function ClearRegs() abort
+  let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"*+', '\zs')
+  for r in regs
+    call setreg(r, @_)
+  endfor
+endfunction
+
+function FillNames() abort
+  let regs=split('abcdefghijklmnopqrstuvwxyz', '\zs')
+  for r in regs
+    let word=system("cat /usr/share/dict/words | grep " . "^" . toupper(shellescape(r)) .  " | shuf -n 1")
+    call setreg(r, substitute(word, '\n$', '', 'g'))
+  endfor
+endfunction
+
+function FillRegs() abort
+  let regs=split('abcdefghijklmnopqrstuvwxyz', '\zs')
+  for r in regs
+    let word=system("cat /usr/share/dict/words | grep " . "^" . shellescape(r) .  " | shuf -n 1")
+    call setreg(r, substitute(word, '\n$', '', 'g'))
+  endfor
+endfunction
+
+nnoremap <leader>te :call OpenTests()<CR>
+
+function! OpenTests()
+  let test_file=substitute(expand('%:t'), '^', "test_", "")
+  execute "rightbelow vsplit " .. test_file
+endfunction
+
+function! AltTestFile()
+  let test_file=substitute(expand('%:t'), '^', "test_", "")
+  execute ":bad " .. test_file
+  let @#=test_file
+endfunction
+
+nnoremap <leader>bp :call GoBreakpoint()<CR>
+function! GoBreakpoint()
+  let current_line=line(".")
+  let breakpoint=expand("%:t") . ":" . current_line
+  echo breakpoint
+  let @+="break " . breakpoint
+endfunction

@@ -34,6 +34,8 @@ bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 
 PS1="%B%{$fg[red]%}%{$fg[yellow]%}%n%{$fg[green]%} %{$fg[magenta]%}%~%{$fg[red]%}%{$reset_color%}$%b "
+# export PS1="➜ "
+
 
 PATH=$PATH:~/.nimble/bin
 
@@ -45,3 +47,7 @@ export PATH=$PATH:$HOME/.pulumi/bin
 
 # For Rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# For Go
+export PATH="$PATH:$HOME/go/bin"
+# export PATH=$PATH:/usr/local/go/bin

@@ -9,15 +9,20 @@ tmux new-window -t chat_economy -d -n SOUND_BOTS
 tmux new-window -t chat_economy -d -n SAMPLES
 tmux new-window -t chat_economy -d -n FLASK_APPS
 tmux new-window -t chat_economy -d -n CUBIN
+tmux new-window -t chat_economy -d -n GO_NOTES
+tmux new-window -t chat_economy -d -n GO_PLAYGROUND
 
 tmux send-keys -t chat_economy:NOTES 'py'                                   Enter
 tmux send-keys -t chat_economy:"CHAT THIEF" 'ct'                            Enter
 tmux send-keys -t chat_economy:SAMPLES 'cd ~/stream/Stream/Samples'         Enter
 tmux send-keys -t chat_economy:CUBIN 'cd ~/code/cubin_b; cat cube | lolcat' Enter
+tmux send-keys -t chat_economy:GO_NOTES 'cd ~/journals/MY_LIFE/BLOGS/GO'    Enter
+tmux send-keys -t chat_economy:GO_PLAYGROUND 'cd ~/code/go_playground'      Enter
 
 # ==================================
 # === Main Bot and Commands Menu ===
 # ==================================
+
 
 tmux select-window -t chat_economy:BOT
 tmux send-keys -t chat_economy:BOT 'ct; python bot.py' Enter

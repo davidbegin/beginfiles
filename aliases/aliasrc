@@ -1,5 +1,23 @@
+TMUX_CONFIG="~/.config/tmux/.tmux.conf"
+
+# TMUX Related Aliases
+alias                                 \
+  tn="tmux -u -f $TMUX_CONFIG new"    \
+  ta="tmux -u -f $TMUX_CONFIG attach" \
+  tt="nvim $TMUX_CONFIG"              \
+
+
+# alias neo="neofetch --ascii_distro $(cat distros.txt | shuf -n 1)"
+
+
+
+# alias env="env | grep -V OAUTH"
+
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+
+
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias                               \
@@ -28,39 +46,50 @@ alias                        \
 	p="sudo pacman"
 
 # Some other stuff
-alias                                                                    \
-  ref="shortcuts >/dev/null; source ~/.config/shortcutrc"                \
-  aq='/home/begin/code/aq/aq.perl | lolcat'                              \
-  e='exit'                                                               \
-  ii='nvim ~/.config/i3/config'                                          \
-  ja="nvim ~/journals/arch_notes.md"                                     \
-  jk='wal -i ~/.config/wall.png'                                         \
-  jl='wal --theme random_dark'                                           \
-  k='clear'                                                              \
-  lc="lolcat"                                                            \
-  ls='ls --color=auto'                                                   \
-  pomo="muccadoro"                                                       \
-  rc="source ~/.config/zsh/.zshrc"                                       \
-  starwars="telnet towel.blinkenlights.nl"                               \
-  t='beginbot'                                                           \
-  ta="tmux -u -f ~/.config/tmux/.tmux.conf attach"                       \
-  td="nvim ~/journals/DAILY/"$(date '+%F.md')""                          \
-  te="cat ~/.config/TWITCH_CHAT_COMMANDS | dmenu -l 30 | xargs beginbot" \
-  tn="tmux -u -f ~/.config/tmux/.tmux.conf new"                          \
-  tq="cat ~/.config/TUTORIAL | dmenu -l 30 | xargs beginbot"             \
-  v="nvim ."                                                             \
-  va='source venv/bin/activate'                                          \
-  ve='python -m venv venv; source venv/bin/activate'                     \
-  vi="nvim"                                                              \
-  zz="nvim ~/.config/zsh/.zshrc"                                         \
-  streamtime="~/.config/workstations/chat_econ"                          \
-  beginworld="lynx -vikeys https://mygeoangelfirespace.city"             \
-  bl="cd ~/journals/MY_LIFE/BLOGS"
-
-
+alias                                                                       \
+  ref="shortcuts >/dev/null; source ~/.config/shortcutrc"                   \
+  aq='/home/begin/code/aq/aq.perl | lolcat'                                 \
+  asciiquarium='/home/begin/code/aq/aq.perl | lolcat'                       \
+  e='exit'                                                                  \
+  ii='nvim ~/.config/i3/config'                                             \
+  ja="nvim ~/journals/arch_notes.md"                                        \
+  jk='wal -i ~/.config/wall.png'                                            \
+  jl='wal --theme random_dark'                                              \
+  k='clear'                                                                 \
+  lc="lolcat"                                                               \
+  ls='ls --color=auto'                                                      \
+  pomo="muccadoro"                                                          \
+  rc="source ~/.config/zsh/.zshrc"                                          \
+  starwars="telnet towel.blinkenlights.nl"                                  \
+  t='beginbot'                                                              \
+  td="nvim ~/journals/DAILY/"$(date '+%F.md')""                             \
+  te="cat ~/.config/TWITCH_CHAT_COMMANDS | dmenu -l 30 | xargs beginbot"    \
+  tq="cat ~/.config/TUTORIAL | dmenu -l 30 | xargs beginbot"                \
+  v="nvim ."                                                                \
+  va='source venv/bin/activate'                                             \
+  ve='python -m venv venv; source venv/bin/activate'                        \
+  vi="nvim"                                                                 \
+  zz="nvim ~/.config/zsh/.zshrc"                                            \
+  streamtime="~/.config/dotfiles/workstations/chat_econ"                    \
+  life="/home/begin/.config/dotfiles/workstations/life"                     \
+  beginworld="lynx -vikeys https://mygeoangelfirespace.city"                \
+  beginbotbot="lynx -vikeys https://mygeoangelfirespace.city/beginbot.html" \
+  bl="cd ~/journals/MY_LIFE/BLOGS"                                          \
+  blog="cd ~/journals/MY_LIFE/BLOGS/VimRegisters"                    \
+  vj="vi /home/begin/journals/MY_LIFE/VI/Current_Goals.md"                  \
+  ac="vi /home/begin/.config/aliasrc"                                       \
+  cl="vi /home/begin/code/chat_thief/logs/chat.log"                         \
+  um="vi /home/begin/code/chat_thief/logs/user_msgs.log"                    \
+  rt="vi ~/journals/MY_LIFE/RAW_TODOs.md"                                   \
+  to="vi ~/journals/MY_LIFE/TODO.md"                                        \
+  gj="vi ~/journals/MY_LIFE/BLOGS/GO_Journal.md"                            \
+  clip="xclip -sel clip"
 
 # Midi Stuff
 alias \
   nojam="ps -e | grep 'fluidsynth\|mplayer' | grep -v 'grep' | awk '{print $2}' | xargs --no-run-if-empty kill" \
   jam="fluidsynth --quiet -a pulseaudio -g 9 -m alsa_seq -l -i /usr/share/soundfonts/FluidR3_GM.sf2  ~/code/sandberg/midi_files/test.mid > /dev/null 2> /dev/null & vis" \
   fp="fluidsynth --quiet -a pulseaudio -g 1 -m alsa_seq -l -ni /usr/share/soundfonts/FluidR3_GM.sf2 "
+
+alias outline="nvim ~/journals/MY_LIFE/YOUTUBE/Tmux_and_Begin.md"
+alias fun="~/.config/dotfiles/workstations/fun"

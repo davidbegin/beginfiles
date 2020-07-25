@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# TODO: Look at that shebang
+
+tmux new-session -s Life -n "Today" -d
+
+tmux new-window -t Life -d -n "TODOs"
+tmux new-window -t Life -d -n "Raw TODOs"
+tmux new-window -t Life -d -n "Vim Journal"
+
+tmux send-keys -t Life:"Today" 'td' Enter
+tmux send-keys -t Life:"TODOs" 'to' Enter
+tmux send-keys -t Life:"Raw TODOs" 'rt' Enter
+tmux send-keys -t Life:"Vim Journal" 'vj' Enter
+
+tmux select-window -t Life:"Today"
+tmux -u -f ~/.config/tmux/.tmux.conf attach -t Life

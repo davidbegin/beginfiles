@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# -n = Name
+# -s = Session
+
+# -t = Target Session
+
+# Most commands accept the optional -t (and sometimes -s) ar-
+#      gument with one of target-client, target-session, target-window, or target-pane.  These specify the client, ses-
+#      sion, window or pane which a command should affect.
+
+
+# -d = Detach
+
+# If -d is given, the session does not make the new window the current window.  target-window represents the
+# window to be created; if the target already exists an error is shown, unless the -k flag is used, in which
+# case it is destroyed.  shell-command is the command to execute.  If shell-command is not specified, the
+# value of the default-command option is used.  -c specifies the working directory in which the new window is
+# created.
+
+
+
+# MATRIX_APP="cmatrix"
+# COLOR_FLAG="c"
+MATRIX_APP="tmatrix"
+COLOR_FLAG="C"
+
+tmux new-session -s Fun -n Asciiquarium -d
+
+tmux new-window -t Fun -d -n Weather
+tmux new-window -t Fun -d -n Matrix
+
+tmux send-keys -t Fun:Asciiquarium 'asciiquarium' Enter
+tmux send-keys -t Fun:Weather 'curl wttr.in'      Enter
+tmux send-keys -t Fun:Matrix $MATRIX_APP            Enter
+
+# Select the Matrix Window and Start Splitting
+tmux select-window -t Fun:Matrix
+tmux split-window -h
+tmux send-keys -t Fun:Matrix "$MATRIX_APP -$COLOR_FLAG red"    Enter
+tmux split-window -v
+tmux send-keys -t Fun:Matrix "$MATRIX_APP -$COLOR_FLAG blue"   Enter
+tmux split-window -h
+tmux send-keys -t Fun:Matrix "$MATRIX_APP -$COLOR_FLAG yellow" Enter
+tmux select-layout tiled
+
+tmux select-window -t Fun:Asciiquarium
+tmux -u attach -t Fun
