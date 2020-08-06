@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+tmux new-session -s Blog -n Today -d
+
+tmux new-window -t Blog -d -n Writing
+tmux new-window -t Blog -d -n Video
+tmux new-window -t Blog -d -n Art
+
+tmux send-keys -t Blog:Today 'td' Enter
+
+tmux send-keys -t Blog:Writing 'blog' Enter
+tmux send-keys -t Blog:Video 'cd ~/Videos/VimMarks' Enter
+tmux send-keys -t Blog:Art 'cd ~/stream/Art/gimp/VimMarks' Enter
+
+tmux select-window -t Blog:"Today"
+tmux -u -f ~/.config/tmux/.tmux.conf attach -t Blog

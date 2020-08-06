@@ -33,14 +33,19 @@ bindkey -v '^?' backward-delete-char
 
 export KEYTIMEOUT=1
 
-PS1="%B%{$fg[red]%}%{$fg[yellow]%}%n%{$fg[green]%} %{$fg[magenta]%}%~%{$fg[red]%}%{$reset_color%}$%b "
-# export PS1="➜ "
+# PS1="%B%{$fg[red]%}%{$fg[yellow]%}%n%{$fg[green]%} %{$fg[magenta]%}%~%{$fg[red]%}%{$reset_color%}$%b "
+export PS1="➜ "
+# export PS1="™ "
+#export PS1="ⓑ "
+# export PS1="ⓑ ™ "
+# export PS1="ⓑ™ "
+# export PS1="⒝ ™ "
+# export PS1="⒝ Ęįģ ƞ"
+# export PS1="$fg[cyan]⒝ $fg[red]Ę$fg[yellow]ģ$fg[green]į$fg[magenta]ƞ$reset_color%}%b "
+# export PS1="$fg[cyan]⒝ $fg[red]ë$fg[yellow]ģ$fg[green]į$fg[magenta]ƞ$reset_color%}%b "
 
-
-PATH=$PATH:~/.nimble/bin
-
-# Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# For Nim
+export PATH=$PATH:~/.nimble/bin
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
@@ -51,3 +56,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # For Go
 export PATH="$PATH:$HOME/go/bin"
 # export PATH=$PATH:/usr/local/go/bin
+#
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

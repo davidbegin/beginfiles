@@ -87,7 +87,6 @@ noremap <leader>e :edit %:h<cr>
 noremap <leader>pp :set paste<cr>
 noremap <leader>pk :set nopaste<cr>
 
-noremap <leader>rc :source ~/.config/nvim/init.vim<cr>
 noremap <leader>cs :colorscheme
 noremap <silent><leader>jl :!wal --theme random_dark &<cr>
 noremap <silent><leader>Y :!wal --theme random_dark &<cr>
@@ -112,11 +111,13 @@ noremap <leader>jq :%!python -m json.tool<cr>
 noremap ,r :!rustc %<cr>
 
 " Go Specific
-noremap ,G :w!\|!go run --gcflags "-m=2" ./%<cr>
-" noremap ,g :w!\|!go run ./%<cr>
-noremap ,g :w!\|!go build; ./geoboard<cr>
-noremap ,f :!gofmt %<cr>
-noremap ,t :!make test<cr>
+" noremap ,G :w!\|!go run --gcflags "-m=2" ./%<cr>
+" noremap <localleader>g :w!\|!go run ./%<cr>
+" noremap ,g :w!\|!go build; ./main<cr>
+noremap ,g :!go run ./%<cr>
+" GoBeginWorldHTML
+" noremap ,f :!gofmt %<cr>
+" noremap ,t :!make test<cr>
 " go run ./%
 
 " === Shortcuts to custom functions ===
@@ -241,7 +242,11 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
     \ 'python': ['/usr/bin/pyls'],
     \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
+    \ 'go': ['gopls']
     \ }
+
+" Run gofmt on save
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
@@ -263,12 +268,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'KabbAmine/vCoolor.vim'
   Plug 'PotatoesMaster/i3-vim-syntax'
   Plug 'bronson/vim-trailing-whitespace'
-  " Plug 'ctrlpvim/ctrlp.vim'
   Plug 'cloudhead/neovim-fuzzy'
   Plug 'dylanaraps/wal.vim'
   Plug 'frazrepo/vim-rainbow'
   Plug 'godlygeek/tabular'
-  Plug 'hashivim/vim-terraform'
   Plug 'jreybert/vimagit'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/goyo.vim'
@@ -279,15 +282,21 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
+
   Plug 'mitsuhiko/vim-jinja'
+  Plug 'hashivim/vim-terraform'
+
+  Plug 'kshenoy/vim-signature'
   " Plug 'vimwiki/vimwiki'
+  " Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'jacquesbh/vim-showmarks'
+  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'rhysd/committia.vim'
   Plug 'janko/vim-test'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'unkiwii/vim-nerdtree-sync'
   Plug 'mattn/emmet-vim'
   Plug 'francoiscabrol/ranger.vim'
-  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -681,7 +690,7 @@ function! ToggleHiddenAll()
     endif
 endfunction
 
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
+" nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 nnoremap <leader>re :call ClearRegs()<CR>
 
@@ -728,3 +737,56 @@ function! GoBreakpoint()
   echo breakpoint
   let @+="break " . breakpoint
 endfunction
+
+" :set scl=no   " force the signcolumn to disappear
+" :set scl=yes  " force the signcolumn to appear
+" :set scl=auto " return the signcolumn to the default behaviour
+
+nnoremap <leader>mm :set scl=no<CR>
+nnoremap <leader>nn :set scl=auto<CR>
+
+nnoremap <leader>tm :SignatureToggle<CR>
+
+nnoremap <leader>mg :marks ABCDEFGHIJKLMNOPQRSTUVWYXZ<CR>
+nnoremap <leader>mA :marks ABCDEFGHIJKLMNOPQRSTUVWYXZ<CR>
+nnoremap <leader>ma :marks abcdefghijklmnopqrstuvwyxz<CR>
+nnoremap <leader>m0 :marks 0123456789<CR>
+nnoremap <leader>ms :marks \"\[\]\^\.\<\>\'\`<CR>
+
+nnoremap <leader>no :set rnu!<CR>
+
+noremap <leader>rc :source ~/.config/nvim/init.vim<cr>
+" imap <c-u> <esc>gUiwA
+" noremap <c-u> gUiw
+" The final ma onlu works because it's vim-signature
+"
+" nmap <c-u> magUiw`a:delm a<CR>
+" nmap <c-u> m"gUiw`"
+nmap <c-u> m`gUiw``
+
+nnoremap <leader>md :call DeleteAllMarks()<CR>
+function! DeleteAllMarks()
+  execute ":delmarks!"
+  execute ":delmarks 0123456789"
+  " I want to save my marks now
+  " execute ":delmarks ABCDEFGHIJKLMNOPQRSTUVWYXZ"
+  execute ":wsh!"
+endfunction
+
+let maplocalleader=","
+" autocmd FileType *.py nnoremap <LocalLeader>r !python %<CR>
+" autocmd FileType *.go nnoremap <LocalLeader>r !go run ./%<CR>
+"
+
+:nnoremap <leader>ev :vs $MYVIMRC<CR>
+
+:iabbrev @@    https://davidbegin.com
+:iabbrev ccopy Copyright 2020 David Begin, all rights reserved.
+
+:iabbrev ssig -- <cr>David Begin<cr>https://davidbegin.com
+
+:nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+:nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+:vnoremap <localleader>" <esc>m`'<i"<esc>A"<esc>``
+
+:inoremap jk <esc>

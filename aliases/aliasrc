@@ -6,6 +6,11 @@ alias                                 \
   ta="tmux -u -f $TMUX_CONFIG attach" \
   tt="nvim $TMUX_CONFIG"              \
 
+alias shada="nvim ~/.local/share/nvim/shada/main.shada"
+alias content="~/.config/dotfiles/workstations/content"
+
+alias psql="psql -U postgres"
+
 
 # alias neo="neofetch --ascii_distro $(cat distros.txt | shuf -n 1)"
 
@@ -15,7 +20,6 @@ alias                                 \
 
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
-
 
 
 
@@ -75,7 +79,7 @@ alias                                                                       \
   beginworld="lynx -vikeys https://mygeoangelfirespace.city"                \
   beginbotbot="lynx -vikeys https://mygeoangelfirespace.city/beginbot.html" \
   bl="cd ~/journals/MY_LIFE/BLOGS"                                          \
-  blog="cd ~/journals/MY_LIFE/BLOGS/VimRegisters"                    \
+  blog="cd ~/journals/MY_LIFE/BLOGS/Marks"                                  \
   vj="vi /home/begin/journals/MY_LIFE/VI/Current_Goals.md"                  \
   ac="vi /home/begin/.config/aliasrc"                                       \
   cl="vi /home/begin/code/chat_thief/logs/chat.log"                         \
