@@ -6,8 +6,9 @@ mn="cd /mnt && ls -a"                                   \
 ws="cd ~/.config/workstations && ls -a"                 \
 vv="$EDITOR ~/.config/nvim/init.vim"                    \
 sc="$EDITOR ~/.config/shortcutrc"                       \
-bw="$EDITOR /.config/bookmarks"                         \
-vm="$EDITOR ~/vimwiki/index.wiki"                       \
+bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"      \
+vm="$EDITOR ~/vimwiki/index.wiki"
+
 
 # Twitch Specific
 alias tw="$EDITOR ~/.config/TWITCH_CHAT_COMMANDS"

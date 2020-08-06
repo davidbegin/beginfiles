@@ -1,23 +1,20 @@
 #!/usr/bin/env bash
 
 tmux new-session -s chat_economy -n NOTES -d
-
-tmux new-window -t chat_economy -d -n "CHAT THIEF"
+tmux new-window -t chat_economy -d -n GO_NOTES
+tmux new-window -t chat_economy -d -n GO_HTML
 tmux new-window -t chat_economy -d -n BOT
 tmux new-window -t chat_economy -d -n BOTS
 tmux new-window -t chat_economy -d -n SOUND_BOTS
 tmux new-window -t chat_economy -d -n SAMPLES
 tmux new-window -t chat_economy -d -n FLASK_APPS
 tmux new-window -t chat_economy -d -n CUBIN
-tmux new-window -t chat_economy -d -n GO_NOTES
-tmux new-window -t chat_economy -d -n GO_PLAYGROUND
 
-tmux send-keys -t chat_economy:NOTES 'py'                                   Enter
-tmux send-keys -t chat_economy:"CHAT THIEF" 'ct'                            Enter
+tmux send-keys -t chat_economy:NOTES 'bw'                                   Enter
 tmux send-keys -t chat_economy:SAMPLES 'cd ~/stream/Stream/Samples'         Enter
 tmux send-keys -t chat_economy:CUBIN 'cd ~/code/cubin_b; cat cube | lolcat' Enter
 tmux send-keys -t chat_economy:GO_NOTES 'cd ~/journals/MY_LIFE/BLOGS/GO'    Enter
-tmux send-keys -t chat_economy:GO_PLAYGROUND 'cd ~/code/go_playground'      Enter
+tmux send-keys -t chat_economy:GO_HTML 'cd ~/code/GoBeginWorldHTML/'      Enter
 
 # ==================================
 # === Main Bot and Commands Menu ===
