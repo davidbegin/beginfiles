@@ -34,7 +34,7 @@ bindkey -v '^?' backward-delete-char
 export KEYTIMEOUT=1
 
 # PS1="%B%{$fg[red]%}%{$fg[yellow]%}%n%{$fg[green]%} %{$fg[magenta]%}%~%{$fg[red]%}%{$reset_color%}$%b "
-export PS1="➜ "
+# export PS1="➜ "
 # export PS1="™ "
 #export PS1="ⓑ "
 # export PS1="ⓑ ™ "
@@ -42,7 +42,7 @@ export PS1="➜ "
 # export PS1="⒝ ™ "
 # export PS1="⒝ Ęįģ ƞ"
 # export PS1="$fg[cyan]⒝ $fg[red]Ę$fg[yellow]ģ$fg[green]į$fg[magenta]ƞ$reset_color%}%b "
-# export PS1="$fg[cyan]⒝ $fg[red]ë$fg[yellow]ģ$fg[green]į$fg[magenta]ƞ$reset_color%}%b "
+export PS1="$fg[cyan]⒝ $fg[red]ë$fg[yellow]ģ$fg[green]į$fg[magenta]ƞ$reset_color%}%b "
 
 # For Nim
 export PATH=$PATH:~/.nimble/bin

@@ -2,6 +2,8 @@
 " ~~~~~~~ General Settings ~~~~~~~~~
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+" set filetype on
+
 set hlsearch
 set linebreak
 set nocursorcolumn
@@ -96,29 +98,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
-
-
-" Python Specific
-noremap <leader>bb <cr>ibreakpoint()<cr>
-noremap <leader>bl :!black %<cr><Esc>
-noremap <leader>fo <cr>i@pytest.mark.focus<cr><Esc>
-noremap ,p :w!\|!python3 %<cr>
-" noremap ,t :w!\|!make t<cr>
-" noremap ,f :w!\|!make f<cr>
-noremap <leader>jq :%!python -m json.tool<cr>
-
-" Rust Specific
-noremap ,r :!rustc %<cr>
-
-" Go Specific
-" noremap ,G :w!\|!go run --gcflags "-m=2" ./%<cr>
-" noremap <localleader>g :w!\|!go run ./%<cr>
-" noremap ,g :w!\|!go build; ./main<cr>
-noremap ,g :!go run ./%<cr>
-" GoBeginWorldHTML
-" noremap ,f :!gofmt %<cr>
-" noremap ,t :!make test<cr>
-" go run ./%
 
 " === Shortcuts to custom functions ===
 
@@ -246,7 +225,7 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 " Run gofmt on save
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
