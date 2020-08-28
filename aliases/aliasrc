@@ -4,12 +4,23 @@ TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 alias                                 \
   tn="tmux -u -f $TMUX_CONFIG new"    \
   ta="tmux -u -f $TMUX_CONFIG attach" \
-  tt="nvim $TMUX_CONFIG"              \
+  tt="nvim $TMUX_CONFIG"
+
+alias aa="nvim ~/.aws/credentials"
 
 alias shada="nvim ~/.local/share/nvim/shada/main.shada"
 alias content="~/.config/dotfiles/workstations/content"
+alias bwork="~/.config/dotfiles/workstations/betty"
+alias bettyp="~/.config/dotfiles/workstations/bettyp"
+alias bettys="~/.config/dotfiles/workstations/bettys"
+alias bettyd="~/.config/dotfiles/workstations/bettyd"
+alias bettyhealth="~/.config/dotfiles/workstations/bettyhealth"
+alias bettykp="~/.config/dotfiles/workstations/bettykp"
 
 alias psql="psql -U postgres"
+
+alias nv="/usr/local/bin/nvim"
+
 
 
 # alias neo="neofetch --ascii_distro $(cat distros.txt | shuf -n 1)"
