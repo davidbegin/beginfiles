@@ -9,6 +9,8 @@ sc="$EDITOR ~/.config/shortcutrc"                       \
 bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"      \
 vm="$EDITOR ~/vimwiki/index.wiki"
 
+alias lg="lazygit"
+
 
 # Twitch Specific
 alias tw="$EDITOR ~/.config/TWITCH_CHAT_COMMANDS"

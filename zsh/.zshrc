@@ -45,8 +45,12 @@ export KEYTIMEOUT=1
 # export PS1="$fg[cyan]⒝ $fg[red]ë$fg[yellow]ģ$fg[green]į$fg[magenta]ƞ$reset_color%}%b "
 
 # export PS1="ϕϕϕ Ѩ "
-export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
+# export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
+# export PS1="\e[36mb\e[33me\e[31mg\e[32mi\e[37mn\e[0m"
+# export PS1="➜  "
+# export PS1="ϕϕϕ "
 # export PS1="$fg[cyan]ⓑ$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
+export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
 
 # For Nim
 export PATH=$PATH:~/.nimble/bin

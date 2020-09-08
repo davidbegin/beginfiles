@@ -7,6 +7,7 @@ alias                                 \
   tt="nvim $TMUX_CONFIG"
 
 alias aa="nvim ~/.aws/credentials"
+alias vc="cd ~/journals/MY_LIFE/VIM_CONF"
 
 alias shada="nvim ~/.local/share/nvim/shada/main.shada"
 alias content="~/.config/dotfiles/workstations/content"
@@ -108,3 +109,12 @@ alias \
 
 alias outline="nvim ~/journals/MY_LIFE/YOUTUBE/Tmux_and_Begin.md"
 alias fun="~/.config/dotfiles/workstations/fun"
+
+# -g, --gain
+#        Set the master gain [0 < gain < 10, default = 0.2]
+#
+alias fpp="fluidsynth -g 0.7 -a pulseaudio -i /usr/share/soundfonts/FluidR3_GM.sf2 -s -o 'shell.port=9988'"
+
+# alias fpp="fluidsynth -g 0.3 -a pulseaudio -i /usr/share/soundfonts/FluidR3_GM.sf2 -s -o 'shell.port=9988'"
+alias kfpp="lsof -wni tcp:9988 | awk '{print $2}' | grep -v PID | xargs kill"
+

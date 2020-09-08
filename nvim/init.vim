@@ -1,9 +1,8 @@
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"
 " ~~~~~~~ General Settings ~~~~~~~~~
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" set filetype on
 
+set filetype on
 set hlsearch
 set linebreak
 set nocursorcolumn
@@ -18,7 +17,6 @@ set tabstop=2
 set textwidth=80
 set ttyfast
 set wrap
-
 
 " Enable incremental search, so we see what we are matching as we are typing!
 set incsearch
@@ -57,15 +55,26 @@ set clipboard+=unnamedplus
 " set foldlevel=99
 set foldmethod=marker
 
-
 " Run xrdb whenever Xdefaults or Xresources are updated.
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
-" autocmd BufWritePost *.py !black %
 
 " Reload this vimrc when edited
 " This is commented out, while I am doing heavy editing of the file
 " because I can't stop saving, triggering resourcing
 " autocmd BufWritePost ~/.config/dotfiles/nvim/init.vim source %
+
+" " in general, performance problems only come from the fact you don't redefine the autocmd but add a new one.
+" just make sure not to run autocmd over and over again when sourcing vimrc and you will not even notice it.
+if !exists('g:vimrc_loaded')
+let g:vimrc_loaded = 1
+autocmd BufWritePost ~/.config/dotfiles/nvim/init.vim source %
+endif
+
+" if you use terminal in vim.. wich i've never seen you do..
+" this will exit to normal mode by hitting escape twice when in terminal mode.
+if (exists(":terminal"))
+tnoremap <Esc><Esc> <C-\><C-N>
+endif
 
 " ===============================================================
 " ================= THE LAND OF SHORTCUTS =======================
@@ -89,8 +98,8 @@ noremap <leader>pp :set paste<cr>
 noremap <leader>pk :set nopaste<cr>
 
 noremap <leader>cs :colorscheme
-noremap <silent><leader>jl :!wal --theme random_dark &<cr>
-noremap <silent><leader>Y :!wal --theme random_dark &<cr>
+noremap <silent><leader>jl :!wal --theme random_dark &<cr>:call Intro()<CR>
+" noremap <silent><leader>Y :!wal --theme random_dark &<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -134,20 +143,6 @@ nmap <leader>gi :call <SID>GistAndPost(mode())<cr>
 "   let @+=UserSearch(s:viewer)
 " endfunction
 
-
-nnoremap <silent> <leader>sp :call <SID>UnleashTheSpam()<cr>
-function! s:UnleashTheSpam()
-  lua require('music2').activate()
-  " let Activation = luaeval('require("spy").activate_the_spy')
-  " call Activation()
-endfunction
-
-nnoremap <silent> <leader>ns :call <SID>CageTheSpy()<cr>
-function! s:CageTheSpy()
-  lua require('nospy').deactivate()
-  " let Deactivation = luaeval('require("spy").deactivate_the_spy')
-  " call Deactivation()
-endfunction
 
 
 "" _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -195,14 +190,6 @@ noremap <leader>gg :Goyo<cr>
 let g:rainbow_active = 1
 
 
-" ====== Plug 'ripxorip/aerojump.nvim' ======
-
-" nmap <Leader>as <Plug>(AerojumpSpace)
-" nmap <Leader>ab <Plug>(AerojumpBolt)
-" nmap <Leader>aa <Plug>(AerojumpFromCursorBolt)
-" nmap <Leader>ad <Plug>(AerojumpDefault) " Boring mode
-
-
 " ======= Plug 'KabbAmine/vCoolor.vim' =======
 
 nnoremap <leader>C :VCoolor<CR>
@@ -217,13 +204,6 @@ noremap <leader>ff :FixWhitespace<cr>
 
 noremap <leader>tt  :Tabularize/
 
-
-" ======= Plug 'cloudhead/neovim-fuzzy' ======
-
-nnoremap <C-t> :FuzzyOpen<CR>
-nnoremap <C-p> :FuzzyGrep<CR>
-
-
 " ======= Plug 'vim-test/vim-test' ======
 
 nmap <silent> t<C-n> :TestNearest<CR>
@@ -231,31 +211,6 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-
-
-" ======= Plug 'autozimu/LanguageClient-neovim' ======
-
-" Required for operations modifying multiple buffers like rename.
-" set hidden
-
-" let g:LanguageClient_serverCommands = {
-"     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-"     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-"     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-"     \ 'python': ['/usr/bin/pyls'],
-"     \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-"     \ 'go': ['gopls']
-"     \ }
-
-" Run gofmt on save
-" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" " Or map each action separately
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-" nnoremap <silent> rn :call LanguageClient#textDocument_rename()<CR>
-
 
 " ====== Plugins Plugins Plugins =======
 
@@ -270,7 +225,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'KabbAmine/vCoolor.vim'
   Plug 'PotatoesMaster/i3-vim-syntax'
   Plug 'bronson/vim-trailing-whitespace'
-  Plug 'cloudhead/neovim-fuzzy'
+
   Plug 'dylanaraps/wal.vim'
   Plug 'frazrepo/vim-rainbow'
   Plug 'godlygeek/tabular'
@@ -280,25 +235,23 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/limelight.vim'
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
-  " Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
   Plug 'jiangmiao/auto-pairs'
 
+
+  " teej_dv: it could though -- you could use omnifunc
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'neovim/nvim-lsp'
   Plug 'nvim-lua/completion-nvim'
   Plug 'steelsojka/completion-buffers'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'nvim-treesitter/completion-treesitter'
   Plug 'nvim-lua/plenary.nvim'
-
-
-
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/telescope.nvim'
 
 
   Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -306,39 +259,24 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mitsuhiko/vim-jinja'
   Plug 'hashivim/vim-terraform'
   Plug 'juliosueiras/terraform-lsp'
-
   Plug 'kshenoy/vim-signature'
+  Plug 'rhysd/committia.vim'
+  Plug 'janko/vim-test'
+  Plug 'unkiwii/vim-nerdtree-sync'
+  Plug 'francoiscabrol/ranger.vim'
+
+  " Plug 'hashicorp/terraform-ls'
   " Plug 'vimwiki/vimwiki'
   " Plug 'ctrlpvim/ctrlp.vim'
   " Plug 'jacquesbh/vim-showmarks'
   " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-  Plug 'rhysd/committia.vim'
-  Plug 'janko/vim-test'
-  Plug 'unkiwii/vim-nerdtree-sync'
-  Plug 'mattn/emmet-vim'
-  Plug 'francoiscabrol/ranger.vim'
+  " Plug 'mattn/emmet-vim'
   " Plug 'autozimu/LanguageClient-neovim', {
   "   \ 'branch': 'next',
   "   \ 'do': 'bash install.sh',
   "   \ }
 call plug#end()
 
-" TRASH ====================
-
-" lua <<EOF
-" local neorocks = require('plenary.neorocks')
-" neorocks.install('luasocket')
-" EOF
-
-"
-" lua <<EOF
-" local mod = require('twitchchat')
-" mod.user_search()
-" EOF
-"
-" END TRASH ====================
-
-nnoremap ,t :!make test<CR>
 " =======================
 " ====== FUNCTIONS ======
 " =======================
@@ -484,7 +422,6 @@ endfunction
 " ~~~~~~~ Colors ~~~~~~~~~
 " ~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 " colorscheme murphy
 " colorscheme torte
 set t_Co=256                         " Enable 256 colors
@@ -514,8 +451,22 @@ hi Search guibg=#0478A4 guifg=wheat
 " For easier Choosing
 ":VCoolIns r
 " highlight Pmenu ctermbg=33 ctermfg=white
-highlight Pmenu ctermbg=26  ctermfg=white
-highlight PmenuSel ctermbg=219
+"
+" Nice Blue
+" highlight Pmenu ctermbg=26  ctermfg=white
+"
+" Nice Green
+" highlight Pmenu ctermbg=35  ctermfg=white
+
+" Gray and White
+highlight Pmenu ctermbg=0  ctermfg=white
+" Surf Green
+" highlight Pmenu ctermbg=36  ctermfg=white
+
+" Teal Green
+" highlight Pmenu ctermbg=37  ctermfg=white
+
+" highlight PmenuSel ctermbg=219
 
 " This is not working with Tmux
 highlight Cursor guibg=#626262
@@ -556,6 +507,7 @@ iab beginworld BeginWorld™
 iab startup sTaRtUp
 
 " ----- Term ------
+" What?
 tnoremap <C-[><C-[> <C-\><C-n>
 
 let s:hidden_all = 0
@@ -576,7 +528,6 @@ function! ToggleHiddenAll()
 endfunction
 
 " nnoremap <S-h> :call ToggleHiddenAll()<CR>
-
 nnoremap <leader>re :call ClearRegs()<CR>
 
 function! ClearRegs() abort
@@ -690,55 +641,12 @@ nvim_lsp.sumneko_lua.setup{}
 nvim_lsp.gopls.setup{
   root_dir = nvim_lsp.util.root_pattern('.git');
 }
--- nvim_lsp.terraformls.setup{}
+nvim_lsp.terraformls.setup{}
 EOF
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup{}
 EOF
-
-" lua <<EOF
-" require'nvim-treesitter.configs'.setup {
-"     highlight = {
-"       enable = true,                    -- false will disable the whole extension
-"       disable = { "php", "java"},        -- list of language that will be disabled
-"       custom_captures = {               -- mapping of user defined captures to highlight groups
-"       },
-"     },
-"     incremental_selection = {
-"       enable = true,
-"       disable = { "cpp" },
-"       keymaps = {                       -- mappings for incremental selection (visual mappings)
-"         init_selection = "gnn",         -- maps in normal mode to init the node/scope selection
-"         node_incremental = "grn",       -- increment to the upper named parent
-"         scope_incremental = "grc",      -- increment to the upper scope (as defined in locals.scm)
-"         node_decremental = "grm",       -- decrement to the previous node
-"       }
-"     },
-"     refactor = {
-"       highlight_definitions = {
-"         enable = true
-"       },
-"       highlight_current_scope = {
-"         enable = false
-"       },
-"       smart_rename = {
-"         enable = true,
-"         keymaps = {
-"           smart_rename = "grr"          -- mapping to rename reference under cursor
-"         }
-"       },
-"       navigation = {
-"         enable = true,
-"         keymaps = {
-"           goto_definition = "gnd",      -- mapping to go to definition of symbol under cursor
-"           list_definitions = "gnD"      -- mapping to list all definitions in current file
-"         }
-"       }
-"     },
-"     ensure_installed = "all" -- one of "all", "language", or a list of languages
-" }
-" EOF
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -770,17 +678,76 @@ let g:completion_chain_complete_list = {
     \   ]
 \}
 
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> <c-]>      <cmd> lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K          <cmd> lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD         <cmd> lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD        <cmd> lua vim.lsp.buf.type_definition()<CR>
+" nnoremap <silent> gr         <cmd> lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0         <cmd> lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW         <cmd> lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> <Leader>rn <cmd> lua vim.lsp.buf.rename()<CR>
 
-" ======= Plug 'cloudhead/neovim-fuzzy' ======
+" nnoremap <Leader>p :lua require'telescope.builtin'.git_files{}<CR>
+"
+inoremap jj <Esc>
 
-nnoremap <C-t> :FuzzyOpen<CR>
-nnoremap <C-p> :FuzzyGrep<CR>
+" Begin's Current Habit Goals
+
+nnoremap <C-p> :lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <C-g> :lua require('telescope.builtin').live_grep{}<CR>
+nnoremap <silent> gr         <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
+nnoremap <silent> <C-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> gd         <cmd> lua vim.lsp.buf.declaration()<CR>
+setlocal omnifunc=v:lua.vim.lsp.omnifunc
+
+" VIM CONF WACKINESS ====================
+
+nnoremap <silent> <leader>sp :call <SID>UnleashTheSpam()<cr>
+function! s:UnleashTheSpam()
+  lua require("spy").activate()
+endfunction
+
+nnoremap <silent> <leader>ns :call <SID>CageTheSpy()<cr>
+function! s:CageTheSpy()
+  lua require("spy").deactivate()
+endfunction
+
+
+let s:loud_home = 0
+function! LoudHJKL()
+    if s:loud_home  == 0
+        let s:loud_home = 1
+        nnoremap h h:echo H()<CR>
+        nnoremap j j:echo J()<CR>
+        nnoremap k k:echo K()<CR>
+        nnoremap l l:echo L()<CR>
+        nnoremap c c:echo C()<CR>
+        nnoremap d d:echo D()<CR>
+    else
+        let s:loud_home = 0
+        unmap h
+        unmap j
+        unmap k
+        unmap l
+        unmap c
+        unmap d
+    endif
+endfunction
+
+nnoremap <c-Q> :call LoudHJKL()<CR>
+
+" nnoremap <c-C> :echo Cmaj()<CR>
+" nnoremap <c-F> :echo Fmaj()<CR>
+" nnoremap <c-A> :echo Amin()<CR>
+" nnoremap <c-S> :echo Stop()<CR>
+" nnoremap <c-Q> :echo Intro()<CR>
+" nnoremap <c-N> :echo ChangeInsertInstrument(input("inst: "))<CR>
+" nnoremap <c-M> :echo ChangeCompleteInstrument(input("inst: "))<CR>
+
+nnoremap <leader>y :echo EnableCursorMode()<CR>
+nnoremap <leader>u :echo DisableCursorMode()<CR>
+nnoremap <leader>i :echo RandomInstrument(input("inst: "))<CR>
+
+nnoremap <c-H> :echo EnableInsertMode()<CR>
+nnoremap <c-J> :echo DisableInsertMode()<CR>
