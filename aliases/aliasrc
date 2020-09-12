@@ -1,4 +1,5 @@
 TMUX_CONFIG="~/.config/tmux/.tmux.conf"
+SOUNDFONT="/usr/share/soundfonts/FluidR3_GM.sf2"
 
 # TMUX Related Aliases
 alias                                 \
@@ -6,36 +7,26 @@ alias                                 \
   ta="tmux -u -f $TMUX_CONFIG attach" \
   tt="nvim $TMUX_CONFIG"
 
-alias ft="nvim ~/.config/nvim/ftplugin"
+# NVIM Related
+alias ft="nvim ~/.config/nvim/ftplugin" \
+  vc="cd ~/.config/nvim/config; nvim ." \
+  shada="nvim ~/.local/share/nvim/shada/main.shada" \
+  content="~/.config/dotfiles/workstations/content"
+
+
+# Work Stuff
+alias bwork="~/.config/dotfiles/workstations/betty"       \
+  bettyp="~/.config/dotfiles/workstations/bettyp"           \
+  bettys="~/.config/dotfiles/workstations/bettys"           \
+  bettyd="~/.config/dotfiles/workstations/bettyd"           \
+  bettyhealth="~/.config/dotfiles/workstations/bettyhealth" \
+  bettykp="~/.config/dotfiles/workstations/bettykp"         \
+  fun="~/.config/dotfiles/workstations/fun"                 \
 
 alias aa="nvim ~/.aws/credentials"
-alias vc="cd ~/.config/nvim/config; nvim ."
-
-alias shada="nvim ~/.local/share/nvim/shada/main.shada"
-alias content="~/.config/dotfiles/workstations/content"
-alias bwork="~/.config/dotfiles/workstations/betty"
-alias bettyp="~/.config/dotfiles/workstations/bettyp"
-alias bettys="~/.config/dotfiles/workstations/bettys"
-alias bettyd="~/.config/dotfiles/workstations/bettyd"
-alias bettyhealth="~/.config/dotfiles/workstations/bettyhealth"
-alias bettykp="~/.config/dotfiles/workstations/bettykp"
-
-alias psql="psql -U postgres"
-
-alias nv="/usr/local/bin/nvim"
-
-
-
-# alias neo="neofetch --ascii_distro $(cat distros.txt | shuf -n 1)"
-
-
-
-# alias env="env | grep -V OAUTH"
 
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
-
-
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias                               \
@@ -54,6 +45,7 @@ alias                                                \
 	diff="diff --color=auto"                           \
 	ccat="highlight --out-format=ansi"
 
+
 # These common commands are just too long! Abbreviate them.
 alias                        \
 	ka="killall"               \
@@ -62,6 +54,7 @@ alias                        \
 	YT="youtube-viewer"        \
 	sdn="sudo shutdown -h now" \
 	p="sudo pacman"
+
 
 # Some other stuff
 alias                                                                       \
@@ -101,22 +94,45 @@ alias                                                                       \
   rt="vi ~/journals/MY_LIFE/RAW_TODOs.md"                                   \
   to="vi ~/journals/MY_LIFE/TODO.md"                                        \
   gj="vi ~/journals/MY_LIFE/BLOGS/GO_Journal.md"                            \
-  clip="xclip -sel clip"
+  clip="xclip -sel clip"                                                    \
+  lg="lazygit"                                                              \
+  ld="lazydocker"
+  psql="psql -U postgres"                                                   \
+  xr="$EDITOR ~/.Xresources"                                                \
+  nv="/usr/local/bin/nvim"
+
+
+# vim: filetype=sh
+alias j="cd ~/journals/MY_LIFE && ls -a | lolcat"          \
+ww="cd ~/journals/work && ls -a | lolcat"                  \
+cf="cd ~/.config && ls -a"                                 \
+mn="cd /mnt && ls -a"                                      \
+ws="cd ~/.config/workstations && ls -a"                    \
+vv="$EDITOR ~/.config/nvim/init.vim"                       \
+sc="$EDITOR ~/.config/shortcutrc"                          \
+bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"        \
+bs="cd ~/code/beginsounds; echo 'Welcome to BeginSounds™'" \
+lu="cd ~/.config/nvim/lua; echo 'Welcome to LuaTown™'"     \
+vm="$EDITOR ~/vimwiki/index.wiki"
+
+
+# Twitch Specific
+alias                                         \
+  tw="$EDITOR ~/.config/TWITCH_CHAT_COMMANDS" \
+  sl="$EDITOR ~/code/chat_thief/chat_thief/config/stream_lords.py"
+
+
+# Current Projects
+alias \
+  py="cd ~/code/python-in-the-morning && ls -a | lolcat"  \
+  sb="cd ~/code/sandberg && va && python music.py --help" \
+  ct="cd ~/code/chat_thief && va"                         \
+
 
 # Midi Stuff
-alias \
-  nojam="ps -e | grep 'fluidsynth\|mplayer' | grep -v 'grep' | awk '{print $2}' | xargs --no-run-if-empty kill" \
-  jam="fluidsynth --quiet -a pulseaudio -g 9 -m alsa_seq -l -i /usr/share/soundfonts/FluidR3_GM.sf2  ~/code/sandberg/midi_files/test.mid > /dev/null 2> /dev/null & vis" \
-  fp="fluidsynth --quiet -a pulseaudio -g 1 -m alsa_seq -l -ni /usr/share/soundfonts/FluidR3_GM.sf2 "
-
-alias outline="nvim ~/journals/MY_LIFE/YOUTUBE/Tmux_and_Begin.md"
-alias fun="~/.config/dotfiles/workstations/fun"
-
-# -g, --gain
-#        Set the master gain [0 < gain < 10, default = 0.2]
-#
-alias fpp="fluidsynth -g 0.7 -a pulseaudio -i /usr/share/soundfonts/FluidR3_GM.sf2 -s -o 'shell.port=9988'"
-
-# alias fpp="fluidsynth -g 0.3 -a pulseaudio -i /usr/share/soundfonts/FluidR3_GM.sf2 -s -o 'shell.port=9988'"
-alias kfpp="lsof -wni tcp:9988 | awk '{print $2}' | grep -v PID | xargs kill"
-
+alias                                                                                                                                          \
+  nojam="ps -e | grep 'fluidsynth\|mplayer' | grep -v 'grep' | awk '{print $2}' | xargs --no-run-if-empty kill"                                \
+  jam="fluidsynth --quiet -a pulseaudio -g 9 -m alsa_seq -l -i $SOUNDFONT  ~/code/sandberg/midi_files/test.mid > /dev/null 2> /dev/null & vis" \
+  fp="fluidsynth --quiet -a pulseaudio -g 1 -m alsa_seq -l -ni $SOUNDFONT "                                                                    \
+  fpp="fluidsynth -g 0.7 -a pulseaudio -i $SOUNDFONT -s -o 'shell.port=9988'"                                                                  \
+  kfpp="lsof -wni tcp:9988 | awk '{print $2}' | grep -v PID | xargs kill"
