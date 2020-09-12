@@ -9,7 +9,7 @@ alias                                 \
 alias ft="nvim ~/.config/nvim/ftplugin"
 
 alias aa="nvim ~/.aws/credentials"
-alias vc="cd ~/journals/MY_LIFE/VIM_CONF"
+alias vc="cd ~/.config/nvim/config; nvim ."
 
 alias shada="nvim ~/.local/share/nvim/shada/main.shada"
 alias content="~/.config/dotfiles/workstations/content"

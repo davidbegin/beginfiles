@@ -54,37 +54,10 @@ call plug#begin('~/.config/nvim/plugged')
   " Terraform
   Plug 'hashivim/vim-terraform'
   Plug 'hashicorp/terraform-ls'
-  " Plug 'juliosueiras/terraform-lsp'
 
-  " Colorschemes
-  Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-  Plug 'fcpg/vim-orbital'
-
-  " ==================
-  " Plugin Graveyard =
-  " ==================
-
-  " Plug 'rhysd/committia.vim'
-  " Plug 'mitsuhiko/vim-jinja'
-  " Plug 'jiangmiao/auto-pairs'
-  " Plug 'jreybert/vimagit'
-  " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  " Plug 'Xuyuanp/nerdtree-git-plugin'
-  " Plug 'scrooloose/nerdtree'
-  " Plug 'unkiwii/vim-nerdtree-sync'
-  " Plug 'vimwiki/vimwiki'
-  " Plug 'ctrlpvim/ctrlp.vim'
-  " Plug 'jacquesbh/vim-showmarks'
-  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-  " Plug 'mattn/emmet-vim'
-  " Plug 'autozimu/LanguageClient-neovim', {
-  "   \ 'branch': 'next',
-  "   \ 'do': 'bash install.sh',
-  "   \ }
 call plug#end()
 
 source $HOME/.config/nvim/config/completion.vim
-source $HOME/.config/nvim/config/graveyard.vim
 source $HOME/.config/nvim/config/marks.vim
 source $HOME/.config/nvim/config/misc.vim
 source $HOME/.config/nvim/config/plugins.vim

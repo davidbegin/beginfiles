@@ -21,9 +21,9 @@ nnoremap <silent>g0         <cmd> lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent>gD         <cmd> lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent>gW         <cmd> lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent>gd         <cmd> lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent>gr <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 
 " Telescope
+nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 nnoremap <silent><C-g> <cmd>lua require('telescope.builtin').live_grep{}<CR>
 nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
 nnoremap <silent><leader>cf <cmd>lua require('begin.tele').cfwd()<CR>

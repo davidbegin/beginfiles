@@ -101,3 +101,28 @@
 " nnoremap <leader>te :call OpenTests()<CR>
 " noremap <silent><leader>Y :!wal --theme random_dark &<cr>
 
+call plug#begin('~/.config/nvim/plugged')
+
+  " ==================
+  " Plugin Graveyard =
+  " ==================
+
+  " Plug 'juliosueiras/terraform-lsp'
+  " Plug 'rhysd/committia.vim'
+  " Plug 'mitsuhiko/vim-jinja'
+  " Plug 'jiangmiao/auto-pairs'
+  " Plug 'jreybert/vimagit'
+  " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  " Plug 'Xuyuanp/nerdtree-git-plugin'
+  " Plug 'scrooloose/nerdtree'
+  " Plug 'unkiwii/vim-nerdtree-sync'
+  " Plug 'vimwiki/vimwiki'
+  " Plug 'ctrlpvim/ctrlp.vim'
+  " Plug 'jacquesbh/vim-showmarks'
+  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+  " Plug 'mattn/emmet-vim'
+  " Plug 'autozimu/LanguageClient-neovim', {
+  "   \ 'branch': 'next',
+  "   \ 'do': 'bash install.sh',
+  "   \ }
+call plug#end()

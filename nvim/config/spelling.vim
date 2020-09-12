@@ -14,4 +14,3 @@ iab startup sTaRtUp
 iabbrev @@    https://davidbegin.com
 iabbrev ccopy Copyright 2020 David Begin, all rights reserved.
 iabbrev ssig -- <cr>David Begin<cr>https://davidbegin.com
-

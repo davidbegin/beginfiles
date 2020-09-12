@@ -73,7 +73,6 @@ if (exists(":terminal"))
 tnoremap <Esc><Esc> <C-\><C-N>
 endif
 
-
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
 

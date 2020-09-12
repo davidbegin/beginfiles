@@ -1,5 +1,3 @@
-
-
 function! PasteIt()
   set paste
   execute "normal! \"*p"
