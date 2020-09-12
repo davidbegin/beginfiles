@@ -6,6 +6,8 @@ alias                                 \
   ta="tmux -u -f $TMUX_CONFIG attach" \
   tt="nvim $TMUX_CONFIG"
 
+alias ft="nvim ~/.config/nvim/ftplugin"
+
 alias aa="nvim ~/.aws/credentials"
 alias vc="cd ~/journals/MY_LIFE/VIM_CONF"
 
@@ -81,9 +83,9 @@ alias                                                                       \
   td="nvim ~/journals/DAILY/"$(date '+%F.md')""                             \
   te="cat ~/.config/TWITCH_CHAT_COMMANDS | dmenu -l 30 | xargs beginbot"    \
   tq="cat ~/.config/TUTORIAL | dmenu -l 30 | xargs beginbot"                \
-  v="nvim ."                                                                \
   va='source venv/bin/activate'                                             \
   ve='python -m venv venv; source venv/bin/activate'                        \
+  v="nvim ."                                                                \
   vi="nvim"                                                                 \
   zz="nvim ~/.config/zsh/.zshrc"                                            \
   streamtime="~/.config/dotfiles/workstations/chat_econ"                    \

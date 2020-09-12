@@ -1,67 +1,50 @@
 #!/usr/bin/env bash
 
 tmux new-session -s chat_economy -n NOTES -d
-tmux new-window -t chat_economy -d -n GO_NOTES
-tmux new-window -t chat_economy -d -n GO_HTML
-tmux new-window -t chat_economy -d -n BOT
-tmux new-window -t chat_economy -d -n BOTS
-tmux new-window -t chat_economy -d -n SOUND_BOTS
-tmux new-window -t chat_economy -d -n SAMPLES
-tmux new-window -t chat_economy -d -n FLASK_APPS
-tmux new-window -t chat_economy -d -n CUBIN
+tmux new-window -t chat_economy -d -n VIM_JOURNAL
+tmux new-window -t chat_economy -d -n BEGINSOUNDS
+tmux new-window -t chat_economy -d -n BEGINSOUNDS2
+tmux new-window -t chat_economy -d -n CT1
+tmux new-window -t chat_economy -d -n CT2
 
-tmux send-keys -t chat_economy:NOTES 'bw'                                   Enter
-tmux send-keys -t chat_economy:SAMPLES 'cd ~/stream/Stream/Samples'         Enter
-tmux send-keys -t chat_economy:CUBIN 'cd ~/code/cubin_b; cat cube | lolcat' Enter
-tmux send-keys -t chat_economy:GO_NOTES 'cd ~/journals/MY_LIFE/BLOGS/GO'    Enter
-tmux send-keys -t chat_economy:GO_HTML 'cd ~/code/GoBeginWorldHTML/'      Enter
-
-# ==================================
-# === Main Bot and Commands Menu ===
-# ==================================
-
-
-tmux select-window -t chat_economy:BOT
-tmux send-keys -t chat_economy:BOT 'ct; python bot.py' Enter
-tmux split-window -h
-tmux send-keys -t chat_economy:BOT 'tw'                Enter
-
+tmux send-keys -t chat_economy:NOTES 'bw'        Enter
+tmux send-keys -t chat_economy:BEGINSOUNDS 'bs'  Enter
+tmux send-keys -t chat_economy:BEGINSOUNDS2 'bs' Enter
 
 # ===================
-# === FLASK APPS ====
+# === Vim Journal ===
 # ===================
 
-tmux select-window -t chat_economy:FLASK_APPS
-tmux send-keys -t chat_economy:FLASK_APPS 'ct; FLASK_APP=chat_thief/apps/economist_app.py flask run'            Enter
-tmux split-window -h
-tmux send-keys -t chat_economy:FLASK_APPS 'ct; FLASK_APP=chat_thief/apps/notification_app.py flask run -p 1917' Enter
-tmux split-window -v
-tmux send-keys -t chat_economy:FLASK_APPS 'ct; FLASK_APP=chat_thief/apps/news_app.py flask run -p 1987'         Enter
-tmux select-layout tiled
+tmux select-window -t chat_economy:VIM_JOURNAL
+tmux send-keys -t chat_economy:VIM_JOURNAL 'vj' Enter
 
 # =============
-# === BOTS ====
+# === CT1 ====
 # =============
 
-tmux select-window -t chat_economy:BOTS
-tmux send-keys -t chat_economy:BOTS 'ct; python -m chat_thief.bots.forbes_bot'                Enter
-tmux split-window -h
-tmux send-keys -t chat_economy:BOTS 'ct; python -m chat_thief.bots.new_news_bot'              Enter
+tmux select-window -t chat_economy:CT1
+tmux send-keys -t chat_economy:CT1 'ct; python -m chat_thief.bots.soundboard_bot' Enter
 tmux split-window -v
-tmux send-keys -t chat_economy:BOTS 'ct; python -m chat_thief.mygeoangelfirespace.syncer'     Enter
-tmux split-window -h
-tmux send-keys -t chat_economy:BOTS 'ct; echo "python -m chat_thief.bots.hand_of_the_market"' Enter
+tmux send-keys -t chat_economy:CT1 'ct; make new_day; python bot.py' Enter
 tmux select-layout tiled
 
-# ================================
-# === Soundeffect Play/Request ===
-# ================================
+# =====================
+# === Chat Thief 2 ====
+# =====================
 
-tmux select-window -t chat_economy:SOUND_BOTS
-tmux send-keys -t chat_economy:SOUND_BOTS 'ct; python -m chat_thief.bots.soundeffect_request_bot' Enter
+tmux select-window -t chat_economy:CT2
+tmux send-keys -t chat_economy:CT2 'ct; FLASK_APP=chat_thief/apps/notification_app.py flask run -p 1917' Enter
+tmux split-window -v
+tmux send-keys -t chat_economy:CT2 'ct; FLASK_APP=chat_thief/apps/news_app.py flask run -p 1987'         Enter
 tmux split-window -h
-tmux send-keys -t chat_economy:SOUND_BOTS 'ct; python -m chat_thief.bots.soundboard_bot'          Enter
-
+tmux send-keys -t chat_economy:CT2 'ct; python -m chat_thief.bots.soundeffect_request_bot' Enter
+tmux split-window -v
+tmux send-keys -t chat_economy:CT2 'ct; python -m chat_thief.bots.new_news_bot'              Enter
+tmux split-window -h
+tmux send-keys -t chat_economy:CT2 'ct; python -m chat_thief.bots.hand_of_the_market'
+tmux split-window -v
+tmux send-keys -t chat_economy:CT2 'ct; AWS_PROFILE=begin python -m chat_thief.mygeoangelfirespace.syncer'     Enter
+tmux select-layout tiled
 
 # ======================================
 # === Final Selection and Attachment ===

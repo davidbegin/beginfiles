@@ -1,15 +1,18 @@
 # vim: filetype=sh
-alias j="cd ~/journals/MY_LIFE && ls -a | lolcat"       \
-ww="cd ~/journals/work && ls -a | lolcat"               \
-cf="cd ~/.config && ls -a"                              \
-mn="cd /mnt && ls -a"                                   \
-ws="cd ~/.config/workstations && ls -a"                 \
-vv="$EDITOR ~/.config/nvim/init.vim"                    \
-sc="$EDITOR ~/.config/shortcutrc"                       \
-bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"      \
+alias j="cd ~/journals/MY_LIFE && ls -a | lolcat"          \
+ww="cd ~/journals/work && ls -a | lolcat"                  \
+cf="cd ~/.config && ls -a"                                 \
+mn="cd /mnt && ls -a"                                      \
+ws="cd ~/.config/workstations && ls -a"                    \
+vv="$EDITOR ~/.config/nvim/init.vim"                       \
+sc="$EDITOR ~/.config/shortcutrc"                          \
+bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"        \
+bs="cd ~/code/beginsounds; echo 'Welcome to BeginSounds™'" \
+lu="cd ~/.config/nvim/lua; echo 'Welcome to LuaTown™'" \
 vm="$EDITOR ~/vimwiki/index.wiki"
 
 alias lg="lazygit"
+alias ld="lazydocker"
 
 
 # Twitch Specific
