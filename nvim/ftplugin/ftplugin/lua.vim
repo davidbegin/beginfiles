@@ -1,0 +1,1 @@
+noremap ,r :lua %<cr>

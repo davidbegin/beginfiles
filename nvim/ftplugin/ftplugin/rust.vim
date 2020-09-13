@@ -1,0 +1,2 @@
+noremap ,r :!rustc %<cr>
+
