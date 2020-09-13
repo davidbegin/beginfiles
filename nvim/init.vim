@@ -69,16 +69,18 @@ call plug#end()
 
 let mapleader = "\<Space>"
 
-"ccolorscheme spacecamp
-
-" colorscheme challenger_deep
-" let g:lightline = { 'colorscheme': 'challenger_deep'}
 set termguicolors
 
 colorscheme gotham
 let g:lightline = { 'colorscheme': 'gotham' }
 
-" hi Normal guibg=NONE ctermbg=NONE
+hi SpellBad gui=undercurl
 
 hi clear SpellBad
-hi SpellBad gui=undercurl
+
+" colorscheme spacecamp
+
+" colorscheme challenger_deep
+" let g:lightline = { 'colorscheme': 'challenger_deep'}
+
+" hi Normal guibg=NONE ctermbg=NONE
