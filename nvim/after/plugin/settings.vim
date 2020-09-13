@@ -53,3 +53,29 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+
+" Run xrdb whenever Xdefaults or Xresources are updated.
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+
+" Reload this vimrc when edited
+" This is commented out, while I am doing heavy editing of the file
+" because I can't stop saving, triggering resourcing
+" autocmd BufWritePost ~/.config/dotfiles/nvim/init.vim source %
+
+" " in general, performance problems only come from the fact you don't redefine the autocmd but add a new one.
+" just make sure not to run autocmd over and over again when sourcing vimrc and you will not even notice it.
+" if !exists('g:vimrc_loaded')
+" let g:vimrc_loaded = 1
+" autocmd BufWritePost ~/.config/dotfiles/nvim/init.vim source %
+" endif
+
+" if you use terminal in vim.. Which I've never seen you do.
+" this will exit to normal mode by hitting escape twice when in terminal mode.
+if (exists(":terminal"))
+tnoremap <Esc><Esc> <C-\><C-N>
+endif
+
+
