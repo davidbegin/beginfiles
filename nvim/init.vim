@@ -67,7 +67,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 call plug#end()
 
-" colorscheme spacecamp
+let mapleader = "\<Space>"
+
+"ccolorscheme spacecamp
 
 " colorscheme challenger_deep
 " let g:lightline = { 'colorscheme': 'challenger_deep'}
