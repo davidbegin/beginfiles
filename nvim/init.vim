@@ -88,13 +88,7 @@ let mapleader = "\<Space>"
 colorscheme gotham
 let g:lightline = { 'colorscheme': 'gotham' }
 
-hi SpellBad gui=undercurl
-
-hi clear SpellBad
-" highlight SignColumn guibg=Red ctermbg=Red
-
-highlight Normal guibg=NONE ctermbg=NONE
-highlight SignColumn guibg=NONE
+color begin
 
 " ==================================
 " ======= General Settings =========
@@ -102,54 +96,6 @@ highlight SignColumn guibg=NONE
 
 let mapleader = "\<Space>"
 
-set noswapfile
-
-set hlsearch
-set linebreak
-set nocursorcolumn
-set nocursorline
-set nolist
-set nonumber
-set noshowmode
-
-set spell spelllang=en_us
-set textwidth=80
-set ttyfast
-set wrap
-
-" Are these proper defaults?
-set shiftwidth=2
-set softtabstop=0 expandtab
-set tabstop=2
-
-" Enable incremental search, so we see what we are matching as we are typing!
-set incsearch
-
-" Include matching uppercase words with lowercase search term
-set ignorecase
-
-" Include only uppercase words with uppercase search term
-set smartcase
-
-" Hide the last status
-set laststatus=0
-
-" Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-" Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-nnoremap <esc> :noh<return><esc>
-
-" Lets us yank in vim and then paste to other programs
-set clipboard+=unnamedplus
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
@@ -172,26 +118,11 @@ if (exists(":terminal"))
 tnoremap <Esc><Esc> <C-\><C-N>
 endif
 
+" Should these go in after/plugin/completion.vim
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
-
-" This is the default apparently
-" But I have seen Emojis cut in half, when not set
-set emoji
-
-let g:python3_host_prog = '/usr/bin/python3'
-set foldmethod=marker
-
-" These settings are from the following Repo:
-" https://github.com/nvim-lua/completion-nvim
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
 let g:completion_enable_auto_popup = 1
+
 inoremap <silent><expr> <c-p> completion#trigger_completion()
 
 function! s:check_back_space() abort
@@ -204,9 +135,6 @@ inoremap <silent><expr> <TAB>
   \ <SID>check_back_space() ? "\<TAB>" :
   \ completion#trigger_completion()
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
 
 setlocal omnifunc=v:lua.vim.lsp.omnifunc
 

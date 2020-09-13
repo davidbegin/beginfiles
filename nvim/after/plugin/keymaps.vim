@@ -96,3 +96,17 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " What Should I have the secondary escape as?
 " https://github.com/neovim/neovim/issues/7648
 tnoremap <C-[><C-[> <C-\><C-n>
+
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+nnoremap <esc> :noh<return><esc>

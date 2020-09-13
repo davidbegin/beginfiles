@@ -1,5 +1,13 @@
 " hi Search guibg=#0478A4 guifg=wheat
 
+hi SpellBad gui=undercurl
+hi clear SpellBad
+
+" highlight SignColumn guibg=Red ctermbg=Red
+highlight Normal guibg=NONE ctermbg=NONE
+
+highlight SignColumn guibg=NONE
+
 " =====================
 " = PMENU PMENU PMENU =
 " =====================
