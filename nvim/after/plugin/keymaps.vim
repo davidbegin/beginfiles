@@ -110,3 +110,11 @@ imap <left> <nop>
 imap <right> <nop>
 
 nnoremap <esc> :noh<return><esc>
+
+nnoremap <leader>re :call ClearRegs()<CR>
+
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>

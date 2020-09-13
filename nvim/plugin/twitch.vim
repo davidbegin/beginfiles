@@ -1,4 +1,3 @@
-
 function! PostChatByUser()
   let s:viewer = input('Search: ')
   let s:chat=system('beginchat -a | grep -i ' . s:viewer . ' | tail -5 ')

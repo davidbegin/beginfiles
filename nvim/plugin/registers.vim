@@ -1,5 +1,3 @@
-nnoremap <leader>re :call ClearRegs()<CR>
-
 function! ClearRegs() abort
   let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"*+', '\zs')
   for r in regs
@@ -32,4 +30,3 @@ endfunction
 "   execute ":bad " .. test_file
 "   let @#=test_file
 " endfunction
-
