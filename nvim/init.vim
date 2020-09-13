@@ -49,7 +49,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'steelsojka/completion-buffers'
   Plug 'voldikss/vim-floaterm'
 
-
   " Plug 'nvim-treesitter/completion-treesitter'
   " Plug 'nvim-treesitter/nvim-treesitter'
 
