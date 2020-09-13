@@ -1,6 +1,8 @@
-" ======================================
-" ====== Plugins Plugins Plugins =======
-" ======================================
+" BBBBB   EEEEEEE   GGGG  IIIII NN   NN BBBBB    OOOOO  TTTTTTT
+" BB   B  EE       GG  GG  III  NNN  NN BB   B  OO   OO   TTT
+" BBBBBB  EEEEE   GG       III  NN N NN BBBBBB  OO   OO   TTT
+" BB   BB EE      GG   GG  III  NN  NNN BB   BB OO   OO   TTT
+" BBBBBB  EEEEEEE  GGGGGG IIIII NN   NN BBBBBB   OOOO0    TTT
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   echo "Downloading junegunn/vim-plug to manage plugins..."
