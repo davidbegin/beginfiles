@@ -2,13 +2,14 @@
 # Current Vim Goals #
 #####################
 
+## Improving Use of Help
+
 - https://vim.fandom.com/wiki/Learn_to_use_help
 
 - CTRL-] -> ref in help
   Press Ctrl-] to follow the link (jump to the quickref topic).
   After browsing the quickref topic, press Ctrl-T to go back to the previous topic.
 - CTRL-O and CTRL-I -> Hop forward and back
-- - is opening in the current directory?
 
 ## New Shortcuts
 
@@ -31,6 +32,8 @@
 ## Warm Up
 
 - Read a Helpfile
+
+- Setup Morning Notes
 
 - lazygit
   - lg
@@ -77,6 +80,10 @@ teej_dv: just any random letter that isn't your normal one haha
 ## Tweaking
 
 - vim-go settings
+  - Using Snippets
+  https://github.com/fatih/vim-go/blob/master/gosnippets/UltiSnips/go.snippets
+  - fn - Println
+  - go - go func()
 
 
 ## Working On

@@ -13,6 +13,10 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+  " Go
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'SirVer/ultisnips'
+
   " Misc
   Plug 'KabbAmine/vCoolor.vim'
   Plug 'bronson/vim-trailing-whitespace'
@@ -46,6 +50,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'steelsojka/completion-buffers'
   Plug 'voldikss/vim-floaterm'
 
+
   " Plug 'nvim-treesitter/completion-treesitter'
   " Plug 'nvim-treesitter/nvim-treesitter'
 
@@ -59,9 +64,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
   Plug 'jaredgorski/spacecamp'
   Plug 'whatyouhide/vim-gotham'
-
-  " Go
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Terraform
   Plug 'hashivim/vim-terraform'
@@ -155,10 +157,10 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
 " " in general, performance problems only come from the fact you don't redefine the autocmd but add a new one.
 " just make sure not to run autocmd over and over again when sourcing vimrc and you will not even notice it.
-if !exists('g:vimrc_loaded')
-let g:vimrc_loaded = 1
-autocmd BufWritePost ~/.config/dotfiles/nvim/init.vim source %
-endif
+" if !exists('g:vimrc_loaded')
+" let g:vimrc_loaded = 1
+" autocmd BufWritePost ~/.config/dotfiles/nvim/init.vim source %
+" endif
 
 " if you use terminal in vim.. Which I've never seen you do.
 " this will exit to normal mode by hitting escape twice when in terminal mode.
@@ -174,5 +176,8 @@ let g:floaterm_height = 0.9
 set emoji
 
 let g:python3_host_prog = '/usr/bin/python3'
+
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsListSnippets="<C-Tab>"
 
 set foldmethod=marker

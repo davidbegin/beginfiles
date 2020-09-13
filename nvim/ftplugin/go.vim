@@ -29,7 +29,6 @@ let g:go_auto_type_info = 1
 " This only works not for vim-go
 " inoremap <buffer> . .<C-x><C-o>
 
-
 set autowrite
 
 " Not using these really
@@ -37,8 +36,6 @@ set autowrite
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
-
-
 
 " I either want it off, or the trigger higher
 let g:completion_trigger_keyword_length = 3 " default = 1
@@ -48,15 +45,15 @@ let g:completion_enable_auto_popup = 0
 let g:diagnostic_insert_delay = 0
 let g:diagnostic_auto_popup_while_jump = 0
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" function! s:check_back_space() abort
+"     let col = col('.') - 1
+"     return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
 
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ completion#trigger_completion()
+" inoremap <silent><expr> <TAB>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ <SID>check_back_space() ? "\<TAB>" :
+"   \ completion#trigger_completion()
 
 let g:completion_enable_auto_signature = 0
 
