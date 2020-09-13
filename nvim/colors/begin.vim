@@ -6,7 +6,7 @@ hi SpellBad gui=undercurl
 highlight SpellRare guibg=#FF009F
 
 " highlight SignColumn guibg=Red ctermbg=Red
-" highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal guibg=NONE ctermbg=NONE
 
 highlight SignColumn guibg=NONE
 

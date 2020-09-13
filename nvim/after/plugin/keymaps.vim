@@ -68,7 +68,7 @@ noremap ff :resize 100 <cr> <bar> :vertical resize 220<cr>
 noremap fm <C-w>
 
 " Misc
-nnoremap <silent><leader>bp :call GoBreakpoint()<CR>
+" nnoremap <silent><leader>bp :call GoBreakpoint()<CR>
 nnoremap <silent><leader>ev :vs $MYVIMRC<CR>
 noremap <silent><leader>jq :%!python -m json.tool<cr>
 noremap <silent><leader>rc :source ~/.config/nvim/init.vim<cr>
@@ -118,3 +118,7 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+nnoremap <leader>j :NextDiagnostic<CR>
+nnoremap <leader>k :PrevDiagnostic<CR>
+nnoremap <leader>h :NextDiagnosticCycle<CR>

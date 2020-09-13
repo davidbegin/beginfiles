@@ -26,3 +26,5 @@ require'nvim-treesitter.configs'.setup{}
 -- since it updated with such lighning speed
 package.loaded['begin.tele'] = nil
 require('begin.tele').setup()
+
+require'plugin.completion'

@@ -111,8 +111,8 @@ inoremap <silent><expr> <TAB>
 let g:completion_enable_snippet = 'UltiSnips'
 let g:UltiSnipsExpandTrigger = "<S-Tab>"
 
-let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'buffers', 'snippet']},
-    \{'mode': '<c-p>'},
-    \{'mode': '<c-n>'}
-\]
+" let g:completion_chain_complete_list = [
+"     \{'complete_items': ['lsp', 'buffers', 'snippet']},
+"     \{'mode': '<c-p>'},
+"     \{'mode': '<c-n>'}
+" \]
