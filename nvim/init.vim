@@ -77,9 +77,6 @@ call plug#end()
 " set t_Co=256                     " Enable 256 colors
 set termguicolors                  " Enable GUI colors for the terminal to get truecolor
 
-" luafile $HOME/.config/nvim/lua/init.lua
-lua require('init')
-
 " We have to load the colorscheme first
 " and then customize the other colors
 " colorscheme wal
@@ -89,6 +86,9 @@ colorscheme gotham
 let g:lightline = { 'colorscheme': 'gotham' }
 
 color begin
+
+" luafile $HOME/.config/nvim/lua/init.lua
+lua require('init')
 
 " =====================================
 " ======= Completion Settings =========
@@ -110,9 +110,3 @@ inoremap <silent><expr> <TAB>
 
 let g:completion_enable_snippet = 'UltiSnips'
 let g:UltiSnipsExpandTrigger = "<S-Tab>"
-
-" let g:completion_chain_complete_list = [
-"     \{'complete_items': ['lsp', 'buffers', 'snippet']},
-"     \{'mode': '<c-p>'},
-"     \{'mode': '<c-n>'}
-" \]
