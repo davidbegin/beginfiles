@@ -87,7 +87,7 @@ alias                                                                       \
   beginbotbot="lynx -vikeys https://mygeoangelfirespace.city/beginbot.html" \
   bl="cd ~/journals/MY_LIFE/BLOGS"                                          \
   blog="cd ~/journals/MY_LIFE/BLOGS/Marks"                                  \
-  vj="vi /home/begin/.config/dotfiles/VIM_JOURNAL.md"                       \
+  vj="vi /home/begin/.config/dotfiles/nvim/README.md"                       \
   ac="vi /home/begin/.config/aliasrc"                                       \
   cl="vi /home/begin/code/chat_thief/logs/chat.log"                         \
   um="vi /home/begin/code/chat_thief/logs/user_msgs.log"                    \
