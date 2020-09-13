@@ -13,10 +13,6 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-  " Go
-  Plug 'SirVer/ultisnips'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
   " Misc
   Plug 'KabbAmine/vCoolor.vim'
   Plug 'bronson/vim-trailing-whitespace'
@@ -69,8 +65,11 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hashivim/vim-terraform'
   Plug 'hashicorp/terraform-ls'
 
-call plug#end()
+  " Go
+  Plug 'SirVer/ultisnips'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+call plug#end()
 
 " ================================
 " ======= Color Settings =========
@@ -176,8 +175,5 @@ let g:floaterm_height = 0.9
 set emoji
 
 let g:python3_host_prog = '/usr/bin/python3'
-
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsListSnippets="<C-Tab>"
 
 set foldmethod=marker

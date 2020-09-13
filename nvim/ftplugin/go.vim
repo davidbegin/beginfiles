@@ -71,3 +71,5 @@ let g:go_auto_type_info = 0
 set updatetime=100
 " set updatetime=800
 let g:go_auto_sameids = 0
+
+let g:UltiSnipsExpandTrigger="<tab>"
