@@ -71,6 +71,7 @@ call plug#end()
 
 " colorscheme challenger_deep
 " let g:lightline = { 'colorscheme': 'challenger_deep'}
+set termguicolors
 
 colorscheme gotham
 let g:lightline = { 'colorscheme': 'gotham' }
@@ -79,17 +80,3 @@ let g:lightline = { 'colorscheme': 'gotham' }
 
 hi clear SpellBad
 hi SpellBad gui=undercurl
-
-source $HOME/.config/nvim/config/settings.vim
-source $HOME/.config/nvim/config/lua.vim
-source $HOME/.config/nvim/config/marks.vim
-source $HOME/.config/nvim/config/misc.vim
-source $HOME/.config/nvim/config/plugins.vim
-source $HOME/.config/nvim/config/registers.vim
-source $HOME/.config/nvim/config/spelling.vim
-source $HOME/.config/nvim/config/twitch.vim
-source $HOME/.config/nvim/config/vim_conf.vim
-source $HOME/.config/nvim/config/youtube_markdown.vim
-source $HOME/.config/nvim/config/colors.vim
-source $HOME/.config/nvim/config/completion.vim
-" source $HOME/.config/nvim/config/keymaps.vim
