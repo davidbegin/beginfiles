@@ -1,10 +1,12 @@
 " hi Search guibg=#0478A4 guifg=wheat
 
-hi SpellBad gui=undercurl
 hi clear SpellBad
+hi SpellBad gui=undercurl
+" hi SpellBad guibg=Red
+highlight SpellRare guibg=#FF009F
 
 " highlight SignColumn guibg=Red ctermbg=Red
-highlight Normal guibg=NONE ctermbg=NONE
+" highlight Normal guibg=NONE ctermbg=NONE
 
 highlight SignColumn guibg=NONE
 
