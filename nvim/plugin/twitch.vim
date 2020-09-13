@@ -1,40 +1,40 @@
 
-function! s:PostChatByUser()
+function! PostChatByUser()
   let s:viewer = input('Search: ')
   let s:chat=system('beginchat -a | grep -i ' . s:viewer . ' | tail -5 ')
   let @+ = s:chat
 endfunction
 
-function! s:LastTwitchMsg()
+function! LastTwitchMsg()
   let s:chat=system('beginchat -c 2')
   let @+ = s:chat
   execute "normal! p"
 endfunction
 
-function! s:ObsSceneCommands()
+function! ObsSceneCommands()
   let s:chat=system('echo "codin\ncubin\nbrb\nstartin\nlecture\nbreakin\nnews" | dmenu -l 29 | xargs scene')
 endfunction
 
-function! s:ObsSourceCommands()
+function! ObsSourceCommands()
   let s:chat=system('echo "jdi\nidk\nwyp\ni_like_that_thing\ni_hate_that_thing\nrevolution\npeace" | dmenu -l 30 | xargs so')
 endfunction
 
-function! s:TwitchCommands()
+function! TwitchCommands()
   let s:chat=system('cat ~/.config/TWITCH_CHAT_COMMANDS | dmenu -l 30 | xargs beginbot')
 endfunction
 
-function! s:DecryptTheChat()
+function! DecryptTheChat()
   let s:chat=system('beginchat -c 1')
   let @+ = s:chat
   execute "normal! p"
 endfunction
 
-function! s:PostChat()
+function! PostChat()
   let s:chat=system('beginchat')
   let @+ = s:chat
 endfunction
 
-function! s:SendToTwitch()
+function! SendToTwitch()
   let s:msg=getline('.')
   " Escape "'s or we won't be able to send lines with "
   let s:msg=substitute(s:msg, '"', '\\\"', '')
@@ -47,7 +47,7 @@ function! s:SendToTwitch()
   endif
 endfunction
 
-function! s:GistAndPost(type)
+function! GistAndPost(type)
   if a:type ==# 'V'
     let l:lines = getline("'<", "'>")
   else

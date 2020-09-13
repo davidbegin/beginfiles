@@ -74,7 +74,11 @@ highlight Cursor guibg=#626262
 " highlight SignColumn guibg=121212 ctermbg=121212
 
 " Gotham
-highlight SignColumn guibg=0c1014 ctermbg=0c1014
+" highlight SignColumn guibg=0c1014 ctermbg=0c1014
+" highlight SignColumn guibg=Red ctermbg=Red
+" its not loading the after, on reload
+
+
 " highlight SignColumn guibg=Red ctermbg=Red
 
 " highlight SignColumn ctermbg=0

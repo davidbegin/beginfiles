@@ -17,6 +17,9 @@ nnoremap <silent><leader>rn <cmd> lua vim.lsp.buf.rename()<CR>
 
 " This was messing up searching in search files
 " nnoremap <silent><c-]>      <cmd> lua vim.lsp.buf.definition()<CR>
+"
+"   nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+
 
 nnoremap <silent><c-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent>K          <cmd> lua vim.lsp.buf.hover()<CR>
@@ -47,8 +50,8 @@ noremap <silent><leader>jl :!wal --theme random_dark &<cr>
 noremap <silent><leader>tt  :Tabularize/
 
 " Custom Functions
-nnoremap <silent><leader>ll :call <SID>MdLink()<cr>
-vnoremap <silent><leader>gi :call <SID>GistAndPost(mode())<cr>
+nnoremap <silent><leader>ll :call MdLink()<cr>
+vnoremap <silent><leader>gi :call GistAndPost(mode())<cr>
 
 " Built in Vim Mappings
 nnoremap <silent><leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -77,11 +80,11 @@ noremap <leader>pk :set nopaste<cr>
 noremap <leader>pp :call PasteIt()<CR>
 
 " Twitch
-nnoremap <leader>te :call <SID>TwitchCommands()<cr>
-nnoremap <leader>tl :call <SID>LastTwitchMsg()<cr>
-nnoremap <leader>tr :call <SID>PostChat()<cr>
-nnoremap <leader>ts :call <SID>PostChatByUser()<cr>
-nnoremap <leader>tw :call <SID>SendToTwitch()<cr>
+nnoremap <leader>te :call TwitchCommands()<cr>
+nnoremap <leader>tl :call LastTwitchMsg()<cr>
+nnoremap <leader>tr :call PostChat()<cr>
+nnoremap <leader>ts :call PostChatByUser()<cr>
+nnoremap <leader>tw :call SendToTwitch()<cr>
 
 " nojam cuts off all fluidsynth processes
 nnoremap <leader>nj :!nojam<cr>

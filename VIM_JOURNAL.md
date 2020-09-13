@@ -91,6 +91,9 @@ teej_dv: just any random letter that isn't your normal one haha
 - use cw more
 - Use the :help more
 - text-objects
+- Make the current cursor at the Top
+  - zt
+
 
 ## Annoyed with
 
