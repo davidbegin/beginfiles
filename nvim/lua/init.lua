@@ -1,8 +1,8 @@
 local nvim_lsp = require'nvim_lsp'
 
-local on_attach_vim = function()
-  require'completion'.on_attach()
-  require'diagnostic'.on_attach()
+local on_attach_vim = function(client)
+  require'completion'.on_attach(client)
+  require'diagnostic'.on_attach(client)
 end
 
 nvim_lsp.pyls.setup{on_attach=on_attach_vim}
@@ -10,10 +10,13 @@ nvim_lsp.pyls.setup{on_attach=on_attach_vim}
 nvim_lsp.sumneko_lua.setup{}
 
 nvim_lsp.gopls.setup{
-  root_dir = nvim_lsp.util.root_pattern('.git');
+  on_attach=on_attach_vim,
+  root_dir=nvim_lsp.util.root_pattern('.git');
 }
 
-nvim_lsp.terraformls.setup{}
+nvim_lsp.terraformls.setup{
+  on_attach=on_attach_vim
+}
 
 require'colorizer'.setup()
 

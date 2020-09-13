@@ -90,8 +90,8 @@ nnoremap <leader>tw :call SendToTwitch()<cr>
 nnoremap <leader>nj :!nojam<cr>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " What Should I have the secondary escape as?
 " https://github.com/neovim/neovim/issues/7648

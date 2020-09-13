@@ -12,6 +12,9 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+  " Go
+  Plug 'SirVer/ultisnips'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Misc
   Plug 'KabbAmine/vCoolor.vim'
@@ -65,10 +68,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hashivim/vim-terraform'
   Plug 'hashicorp/terraform-ls'
 
-  " Go
-  Plug 'SirVer/ultisnips'
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 call plug#end()
 
 " ================================
@@ -78,6 +77,7 @@ call plug#end()
 " set t_Co=256                     " Enable 256 colors
 set termguicolors                  " Enable GUI colors for the terminal to get truecolor
 
+" luafile $HOME/.config/nvim/lua/init.lua
 lua require('init')
 
 " We have to load the colorscheme first
@@ -95,7 +95,6 @@ color begin
 " ==================================
 
 let mapleader = "\<Space>"
-
 
 " Run xrdb whenever Xdefaults or Xresources are updated.
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
@@ -121,24 +120,24 @@ endif
 " Should these go in after/plugin/completion.vim
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
-let g:completion_enable_auto_popup = 1
+
+let g:completion_enable_auto_popup = 0
 
 inoremap <silent><expr> <c-p> completion#trigger_completion()
 
-function! s:check_back_space() abort
+function! CheckBackSpace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
+  \ CheckBackSpace() ? "\<TAB>" :
   \ completion#trigger_completion()
 
-
-setlocal omnifunc=v:lua.vim.lsp.omnifunc
-
+" setlocal omnifunc=v:lua.vim.lsp.omnifunc
 let g:completion_enable_snippet = 'UltiSnips'
+let g:UltiSnipsExpandTrigger = "<S-Tab>"
 
 let g:completion_chain_complete_list = [
     \{'complete_items': ['lsp', 'buffers', 'snippet']},
