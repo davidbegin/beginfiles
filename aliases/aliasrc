@@ -8,8 +8,8 @@ alias                                 \
   tt="nvim $TMUX_CONFIG"
 
 # NVIM Related
-alias ft="nvim ~/.config/nvim/ftplugin" \
-  vc="cd ~/.config/nvim/config; nvim ." \
+alias ft="nvim ~/.config/nvim/ftplugin"             \
+  vc="cd ~/.config/nvim; nvim ."                    \
   shada="nvim ~/.local/share/nvim/shada/main.shada" \
   content="~/.config/dotfiles/workstations/content"
 

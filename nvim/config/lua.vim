@@ -17,7 +17,9 @@ nvim_lsp.gopls.setup{
 
 nvim_lsp.terraformls.setup{}
 
-require'nvim-treesitter.configs'.setup{}
+require'colorizer'.setup()
+
+-- require'nvim-treesitter.configs'.setup{}
 
 -- We need to tell lua to always reload begin.tele
 -- since it updated with such lighning speed

@@ -72,6 +72,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export LUA_PATH="/home/begin/code/playground/lua/share/lua/5.1/?.lua"
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
+export NVIMP="~/.config/nvim"
 
 # This should be moved somewhere else
 export DISCO_PROD="disco-server-staging"

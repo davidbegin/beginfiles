@@ -1,13 +1,4 @@
-set t_Co=256                         " Enable 256 colors
-" set termguicolors                  " Enable GUI colors for the terminal to get truecolor
-
-" We have to load the colorscheme first
-" and then customize the other colors
-colorscheme wal
-
-" colorscheme challenger_deep
-
-hi Search guibg=#0478A4 guifg=wheat
+" hi Search guibg=#0478A4 guifg=wheat
 
 " =====================
 " = PMENU PMENU PMENU =
@@ -77,9 +68,15 @@ highlight Cursor guibg=#626262
 " ==============
 
 " What Color to highlight hlsearches
-highlight Visual guibg=#07C7CF guifg=Black
+" highlight Visual guibg=#07C7CF guifg=Black
+
+" This is for the spacetheme
+" highlight SignColumn guibg=121212 ctermbg=121212
+
+" Gotham
+highlight SignColumn guibg=0c1014 ctermbg=0c1014
 
 " highlight SignColumn ctermbg=0
-highlight SignColumn guibg=0
+" highlight SignColumn guibg=0
 
 " hi! VertSplit"  .s:fmt_none   .s:fg_red .s:bg_red

@@ -101,6 +101,9 @@
 " nnoremap <leader>te :call OpenTests()<CR>
 " noremap <silent><leader>Y :!wal --theme random_dark &<cr>
 
+" lua require'nvim_lsp'.gopls.setup{on_attach=require'completion'.on_attach}
+" autocmd BufEnter * lua require'completion'.on_attach()
+
 call plug#begin('~/.config/nvim/plugged')
 
   " ==================

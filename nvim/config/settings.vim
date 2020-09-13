@@ -1,3 +1,14 @@
+" ================================
+" ======= Color Settings =========
+" ================================
+
+" set t_Co=256                     " Enable 256 colors
+set termguicolors                  " Enable GUI colors for the terminal to get truecolor
+
+" We have to load the colorscheme first
+" and then customize the other colors
+" colorscheme wal
+
 " ==================================
 " ======= General Settings =========
 " ==================================
@@ -19,6 +30,7 @@ set textwidth=80
 set ttyfast
 set wrap
 
+" Are these proper defaults?
 set shiftwidth=2
 set softtabstop=0 expandtab
 set tabstop=2
@@ -76,8 +88,10 @@ endif
 let g:floaterm_width = 0.9
 let g:floaterm_height = 0.9
 
-" set emoji
+" This is the default apparently
+" But I have seen Emojis cut in half, when not set
+set emoji
 
-setlocal omnifunc=v:lua.vim.lsp.omnifunc
 let g:python3_host_prog = '/usr/bin/python3'
+
 set foldmethod=marker

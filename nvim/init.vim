@@ -29,6 +29,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'mattn/gist-vim'
   Plug 'mattn/webapi-vim'
 
+  " Navigating Directories
+  Plug 'justinmk/vim-dirvish'
+
   " Hail Tpope
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
@@ -38,15 +41,22 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'neovim/nvim-lsp'
   Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-lua/diagnostic-nvim'
-  Plug 'nvim-treesitter/completion-treesitter'
-  Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'steelsojka/completion-buffers'
   Plug 'voldikss/vim-floaterm'
+
+  " Plug 'nvim-treesitter/completion-treesitter'
+  " Plug 'nvim-treesitter/nvim-treesitter'
 
   " Tele Pack
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/telescope.nvim'
+
+  " Colors and Whatnot
+  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+  Plug 'jaredgorski/spacecamp'
+  Plug 'whatyouhide/vim-gotham'
 
   " Go
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -57,21 +67,29 @@ call plug#begin('~/.config/nvim/plugged')
 
 call plug#end()
 
-source $HOME/.config/nvim/config/completion.vim
+" colorscheme spacecamp
+
+" colorscheme challenger_deep
+" let g:lightline = { 'colorscheme': 'challenger_deep'}
+
+colorscheme gotham
+let g:lightline = { 'colorscheme': 'gotham' }
+
+" hi Normal guibg=NONE ctermbg=NONE
+
+hi clear SpellBad
+hi SpellBad gui=undercurl
+
+source $HOME/.config/nvim/config/settings.vim
+source $HOME/.config/nvim/config/lua.vim
 source $HOME/.config/nvim/config/marks.vim
 source $HOME/.config/nvim/config/misc.vim
 source $HOME/.config/nvim/config/plugins.vim
 source $HOME/.config/nvim/config/registers.vim
-source $HOME/.config/nvim/config/settings.vim
 source $HOME/.config/nvim/config/spelling.vim
 source $HOME/.config/nvim/config/twitch.vim
 source $HOME/.config/nvim/config/vim_conf.vim
 source $HOME/.config/nvim/config/youtube_markdown.vim
-source $HOME/.config/nvim/config/lua.vim
-
-" Not needed right now, but don't worry we are indeed
-" still using telescope
-" source $HOME/.config/nvim/config/telescope.vim
-
-source $HOME/.config/nvim/config/keymaps.vim
 source $HOME/.config/nvim/config/colors.vim
+source $HOME/.config/nvim/config/completion.vim
+" source $HOME/.config/nvim/config/keymaps.vim
