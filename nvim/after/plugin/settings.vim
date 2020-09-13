@@ -78,4 +78,8 @@ if (exists(":terminal"))
 tnoremap <Esc><Esc> <C-\><C-N>
 endif
 
+" I don't think matters
+" As I have no swap files!!!
+set updatetime=100
+" set updatetime=800
 

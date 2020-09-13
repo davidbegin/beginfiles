@@ -108,7 +108,6 @@ inoremap <silent><expr> <TAB>
   \ CheckBackSpace() ? "\<TAB>" :
   \ completion#trigger_completion()
 
-" setlocal omnifunc=v:lua.vim.lsp.omnifunc
 let g:completion_enable_snippet = 'UltiSnips'
 let g:UltiSnipsExpandTrigger = "<S-Tab>"
 

@@ -13,7 +13,7 @@ noremap <leader>bl :!black %<cr><Esc>
 noremap <leader>fo <cr>i@pytest.mark.focus<cr><Esc>
 noremap ,p :w!\|!python3 %<cr>
 " noremap ,f :w!\|!make f<cr>
-"
+
 set shiftwidth=4
 set tabstop=4
 set softtabstop
