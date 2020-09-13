@@ -26,6 +26,8 @@ set signcolumn=yes
 
 setlocal omnifunc=v:lua.vim.lsp.omnifunc
 
+let g:completion_enable_snippet = 'UltiSnips'
+
 let g:completion_chain_complete_list = [
     \{'complete_items': ['lsp', 'buffers', 'snippet']},
     \{'mode': '<c-p>'},

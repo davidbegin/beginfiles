@@ -1,5 +1,3 @@
-lua <<EOF
-
 local nvim_lsp = require'nvim_lsp'
 
 local on_attach_vim = function()
@@ -25,5 +23,3 @@ require'colorizer'.setup()
 -- since it updated with such lighning speed
 package.loaded['begin.tele'] = nil
 require('begin.tele').setup()
-
-EOF

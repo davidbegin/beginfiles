@@ -78,6 +78,8 @@ call plug#end()
 " set t_Co=256                     " Enable 256 colors
 set termguicolors                  " Enable GUI colors for the terminal to get truecolor
 
+lua require('init')
+
 " We have to load the colorscheme first
 " and then customize the other colors
 " colorscheme wal
