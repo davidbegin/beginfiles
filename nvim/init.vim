@@ -14,8 +14,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
   " Go
-  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'SirVer/ultisnips'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Misc
   Plug 'KabbAmine/vCoolor.vim'
