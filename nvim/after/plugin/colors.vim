@@ -75,6 +75,7 @@ highlight Cursor guibg=#626262
 
 " Gotham
 highlight SignColumn guibg=0c1014 ctermbg=0c1014
+" highlight SignColumn guibg=Red ctermbg=Red
 
 " highlight SignColumn ctermbg=0
 " highlight SignColumn guibg=0
