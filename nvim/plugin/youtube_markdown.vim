@@ -1,17 +1,17 @@
-function! s:MdTitle(sign)
+function! MdTitle(sign)
   let cnt=strwidth(getline('.'))
   execute "normal! o" repeat(a:sign,cnt)
   execute "normal! 0xj"
 endfunction
 
 " Get title of youtube link
-function! s:YoutubeTitle(ytUrl)
+function! YoutubeTitle(ytUrl)
   " what is . and the a: ????
   let l:ytTitle=system('youtube-dl -e "' . a:ytUrl . '"')
   return l:ytTitle
 endfunction
 
-function! s:CurlTitle(url)
+function! CurlTitle(url)
   let s:rawTitle=system('curl -s ' . a:url . ' | grep "<title>"')
   if len(s:rawTitle)>0
       let s:title=substitute(substitute(s:rawTitle, '<title>', '', ''), '</title>', '', '')
@@ -21,7 +21,7 @@ function! s:CurlTitle(url)
   return s:title
 endfunction
 
-function s:MdCreateLink(title, url, posStart, posEnd)
+function MdCreateLink(title, url, posStart, posEnd)
   let l:curPos=getcurpos()[1:]
   " set cursor to end of url to add ")"
   call cursor(l:curPos[0], a:posEnd)
@@ -32,7 +32,7 @@ function s:MdCreateLink(title, url, posStart, posEnd)
 endfunction
 
 " Create Markdown link getting title from url
-function! s:MdLink()
+function! MdLink()
   " Should reach cannonicial regex for URLs
   let s:regexForUrl='[a-z]*:\/\/[^ >,;)]*'
 

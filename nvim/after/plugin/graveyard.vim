@@ -104,7 +104,6 @@
 " lua require'nvim_lsp'.gopls.setup{on_attach=require'completion'.on_attach}
 " autocmd BufEnter * lua require'completion'.on_attach()
 
-call plug#begin('~/.config/nvim/plugged')
 
   " ==================
   " Plugin Graveyard =
@@ -128,4 +127,3 @@ call plug#begin('~/.config/nvim/plugged')
   "   \ 'branch': 'next',
   "   \ 'do': 'bash install.sh',
   "   \ }
-call plug#end()

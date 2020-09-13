@@ -12,11 +12,3 @@ nnoremap <leader>ms :marks \"\[\]\^\.\<\>\'\`<CR>
 " nmap <c-u> magUiw`a:delm a<CR>
 " nmap <c-u> m"gUiw`"
 nmap <c-u> m`gUiw``
-
-function! DeleteAllMarks()
-  execute ":delmarks!"
-  execute ":delmarks 0123456789"
-  " I want to save my marks now
-  " execute ":delmarks ABCDEFGHIJKLMNOPQRSTUVWYXZ"
-  execute ":wsh!"
-endfunction
