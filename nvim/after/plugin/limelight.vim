@@ -13,5 +13,3 @@ let g:limelight_conceal_guifg = '#777777'
 " Highlighting priority (default: 10)
 "   Set it to -1 not to overrule hlsearch
 let g:limelight_priority = -1
-
-

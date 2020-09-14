@@ -52,6 +52,7 @@ nnoremap <silent><leader>fz <cmd>lua require('telescope.builtin').current_buffer
 nnoremap <silent><leader>pl <cmd>lua require('telescope.builtin').planets{show_pluto=true}<CR>
 nnoremap <silent><leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
 nnoremap <silent><leader>ss <cmd>lua require('begin.tele').spellcheck()<CR>
+nnoremap <silent><leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
 
 " Lazy Git with Floatterm
 nnoremap <silent><leader>lg :FloatermNew lazygit<CR>
@@ -92,7 +93,7 @@ noremap <silent><leader>s 1z=e
 " Navigate out to current directory
 " More likely to use -, instead of this
 " TODO: figure out if -, is from dervish
-noremap <silent><leader>e :edit %:h<cr>
+" noremap <silent><leader>e :edit %:h<cr>
 
 " Toggle a cursor for focusing on the cursor
 " Twitch chat hates it
