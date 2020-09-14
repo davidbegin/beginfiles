@@ -46,13 +46,27 @@ nnoremap <silent>gd         <cmd> lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 nnoremap <silent><C-g> <cmd>lua require('telescope.builtin').live_grep{}<CR>
 nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
-nnoremap <silent><leader>cf <cmd>lua require('begin.tele').cfwd()<CR>
+
+" We learned writing this, but no sure if it's useful
+" nnoremap <silent><leader>cf <cmd>lua require('begin.tele').cfwd()<CR>
+
+" Seems useful, but not using yet
 nnoremap <silent><leader>ch <cmd>lua require('telescope.builtin').command_history{}<CR>
+
+" This works sporadically
 nnoremap <silent><leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find{}<CR>
-nnoremap <silent><leader>pl <cmd>lua require('telescope.builtin').planets{show_pluto=true}<CR>
+
+" Not really using this yet, but might in the future
 nnoremap <silent><leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
-nnoremap <silent><leader>ss <cmd>lua require('begin.tele').spellcheck()<CR>
+
+" Useful in searching in our vim config as it gets more split up
 nnoremap <silent><leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
+
+" For the astronaut in all of us
+nnoremap <silent><leader>pl <cmd>lua require('telescope.builtin').planets{show_pluto=true}<CR>
+
+" This doesn't work yet
+" nnoremap <silent><leader>ss <cmd>lua require('begin.tele').spellcheck()<CR>
 
 " Lazy Git with Floatterm
 nnoremap <silent><leader>lg :FloatermNew lazygit<CR>

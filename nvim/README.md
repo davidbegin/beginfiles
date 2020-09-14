@@ -48,8 +48,13 @@ Number Pad on 2nd Layer
 
 - use cw more
 
+
+### Tele
+
 - CTRL-g -> telescoping Greping
 - CTRL-p -> File searching
+- CTRL-v -> open in split (s is also an option....but who horizontal splits?)
+- <leader>vv -> vim dotfiles searching
 
 ## Researching
 
@@ -94,6 +99,8 @@ Number Pad on 2nd Layer
   -> getting an LSP error
   -> Might be in relation to autopairs
 - Making Markdown Links
+- fm is not working
+- Goyo is breaking thangs on exit
 
 
 ## Help Talk
