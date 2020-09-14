@@ -5,6 +5,7 @@
 "  Y888  ,d  Y888 888P  888  ,d  Y888 888P  888 b,   b Y8D
 "   "88,d88   "88 88"   888,d88   "88 88"   888 88b, 8edP
 
+
 " I like my spelling mistakes to be highlighted more subtle
 " with a underline.....called undercurl for some reason here
 highlight clear SpellBad

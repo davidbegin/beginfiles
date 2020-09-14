@@ -1,3 +1,8 @@
+" I've done it and have seen the light
+" To be honest, I have enjoyed my life
+" more since adding this mapping
+let mapleader = "\<Space>"
+
 " Easier Escaping
 inoremap jj <Esc>
 inoremap kj <Esc>

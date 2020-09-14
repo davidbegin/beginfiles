@@ -6,6 +6,7 @@
 " BBBBBB  EEEEEEE  GGGGGG IIIII NN   NN BBBBBB   OOOO0    TTT
 
 
+" This is just something I decided I liked aesthically better
 source $HOME/.config/nvim/plug_init.vim
 
 set termguicolors                  " Enable GUI colors for the terminal to get truecolor
@@ -14,19 +15,15 @@ set termguicolors                  " Enable GUI colors for the terminal to get t
 " This must be loaded after we set termguicolors
 lua require('init')
 
+" I cannot move this to the color file
+colorscheme gotham
+let g:lightline = { 'colorscheme': 'gotham' }
+
 " colorscheme wal
 " We have to load the colorscheme first
 " and then customize the other colors
 
-colorscheme gotham
-let g:lightline = { 'colorscheme': 'gotham' }
-
 color begin
-
-" Not sure why I need this here
-" I moved it before and it stopped
-" working, could have been other Night Begin problems tho
-let mapleader = "\<Space>"
 
 " =====================================
 " ======= Completion Settings =========
