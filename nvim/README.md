@@ -13,6 +13,15 @@ To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
 This will be constantly moving and evolving.
 
+## Dotfile Navigating
+
+- V -> init.vim
+- D -> diagnostic.vim
+- C -> colors.vim
+- O -> completion.vim
+- L -> Lua
+- G -> Vim-Go
+
 ## New Shortcuts
 
 - <leader>vv -> search in nvim dotfiles

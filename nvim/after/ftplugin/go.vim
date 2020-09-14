@@ -1,3 +1,11 @@
+
+" Y8b Y88888P ,e,                   e88'Y88
+"  Y8b Y888P   "  888 888 8e       d888  'Y   e88 88e
+"   Y8b Y8P   888 888 888 88b 888 C8888 eeee d888 888b
+"    Y8b Y    888 888 888 888      Y888 888P Y888 888P
+"     Y8P     888 888 888 888       "88 88"   "88 88"
+
+
 compiler go
 
 set autowrite
@@ -27,4 +35,3 @@ let g:go_auto_sameids = 0
 
 " Run goimports along gofmt on each save
 let g:go_fmt_command = "goimports"
-
