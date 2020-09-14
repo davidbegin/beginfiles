@@ -13,7 +13,7 @@ To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
 This will be constantly moving and evolving.
 
-## Dotfile Navigating
+## Dotfile Navigating (This is with personal Global Marks)
 
 - V -> init.vim
 - D -> diagnostic.vim
@@ -21,6 +21,7 @@ This will be constantly moving and evolving.
 - O -> completion.vim
 - L -> Lua
 - G -> Vim-Go
+- P -> Plugins
 
 ## New Shortcuts
 
@@ -30,7 +31,7 @@ This will be constantly moving and evolving.
 
 ## Keyboard Changes
 
-- moved my leader to <Space>
+- moved leader to <Space>
 
 ## Keyboard Practice
 
@@ -52,6 +53,9 @@ Number Pad on 2nd Layer
     - t
     - e
     - s
+
+- vim-surround
+  - Need to use this more effectively
 
 ## Warm Up
 

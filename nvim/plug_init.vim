@@ -22,6 +22,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'SirVer/ultisnips'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+  " Startup Profiling
+  Plug 'dstein64/vim-startuptime'
+
   " Misc
   Plug 'KabbAmine/vCoolor.vim'
   Plug 'bronson/vim-trailing-whitespace'
