@@ -1,3 +1,22 @@
+
+-- LLLLLLLLLLL            UUUUUUUU     UUUUUUUU           AAA
+-- L:::::::::L            U::::::U     U::::::U          A:::A
+-- L:::::::::L            U::::::U     U::::::U         A:::::A
+-- LL:::::::LL            UU:::::U     U:::::UU        A:::::::A
+--   L:::::L               U:::::U     U:::::U        A:::::::::A
+--   L:::::L               U:::::D     D:::::U       A:::::A:::::A
+--   L:::::L               U:::::D     D:::::U      A:::::A A:::::A
+--   L:::::L               U:::::D     D:::::U     A:::::A   A:::::A
+--   L:::::L               U:::::D     D:::::U    A:::::A     A:::::A
+--   L:::::L               U:::::D     D:::::U   A:::::AAAAAAAAA:::::A
+--   L:::::L               U:::::D     D:::::U  A:::::::::::::::::::::A
+--   L:::::L         LLLLLLU::::::U   U::::::U A:::::AAAAAAAAAAAAA:::::A
+-- LL:::::::LLLLLLLLL:::::LU:::::::UUU:::::::UA:::::A             A:::::A
+-- L::::::::::::::::::::::L UU:::::::::::::UUA:::::A               A:::::A
+-- L::::::::::::::::::::::L   UU:::::::::UU A:::::A                 A:::::A
+-- LLLLLLLLLLLLLLLLLLLLLLLL     UUUUUUUUU  AAAAAAA                   AAAAAAA
+
+
 local nvim_lsp = require'nvim_lsp'
 
 local on_attach_vim = function(client)

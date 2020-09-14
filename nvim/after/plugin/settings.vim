@@ -1,15 +1,55 @@
+
+" :'######::'########:'########:'########:'####:'##::: ##::'######::::'######::
+" '##... ##: ##.....::... ##..::... ##..::. ##:: ###:: ##:'##... ##::'##... ##:
+"  ##:::..:: ##:::::::::: ##::::::: ##::::: ##:: ####: ##: ##:::..::: ##:::..::
+" . ######:: ######:::::: ##::::::: ##::::: ##:: ## ## ##: ##::'####:. ######::
+" :..... ##: ##...::::::: ##::::::: ##::::: ##:: ##. ####: ##::: ##:::..... ##:
+" '##::: ##: ##:::::::::: ##::::::: ##::::: ##:: ##:. ###: ##::: ##::'##::: ##:
+" . ######:: ########:::: ##::::::: ##::::'####: ##::. ##:. ######:::. ######::
+" :......:::........:::::..::::::::..:::::....::..::::..:::......:::::......:::
+
+
+" I have been annoyed by swapfiles for years
+" and never thought to turn them off
+" instead choosing to bad mouth them
+" and treat them with increasing amounts of disrespect
+" now I am choosing to turn them off, and am not sure
+" of the consequences I will face
 set noswapfile
 
+" I like to see my searches highlighted
 set hlsearch
+
+" If on, Vim will wrap long lines at a character in 'breakat' rather
+" than at the last character that fits on the screen.  Unlike
+" 'wrapmargin' and 'textwidth', this does not insert <EOL>s in the file,
+" it only affects the way the file is displayed, not its contents.
+" If 'breakindent' is set, line is visually indented. Then, the value
+" of 'showbreak' is used to put in front of wrapped lines. This option
+" is not used when the 'wrap' option is off.
+" Note that <Tab> characters after an <EOL> are mostly not displayed
+" with the right amount of white space.
 set linebreak
+
+" By default we hide the cursor column and line
+" because Twitch chat hates it
+" ...but we can make them appear at a moments notice
 set nocursorcolumn
 set nocursorline
+
+" Not sure if I can about this
 set nolist
+
+" I am a minimalist
 set nonumber
 set noshowmode
 
+" I cannot spell any words
 set spell spelllang=en_us
+
+" WHO CHOSE 80!?!?
 set textwidth=80
+
 set ttyfast
 set wrap
 
@@ -82,4 +122,3 @@ endif
 " As I have no swap files!!!
 set updatetime=100
 " set updatetime=800
-

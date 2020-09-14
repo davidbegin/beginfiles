@@ -15,8 +15,8 @@ highlight SpellBad gui=undercurl
 " ....and maybe one day we will discover one other than vim
 highlight SpellRare guibg=#FF009F
 
-" Enable to make the background transparent
-" highlight Normal guibg=NONE ctermbg=NONE
+" enable to make the background transparent
+" highlight normal guibg=none ctermbg=none
 highlight Normal guibg=Black ctermbg=Black
 
 " Enable to make SignColumn transparent
