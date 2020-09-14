@@ -1,8 +1,9 @@
-" nnoremap <silent> gr         <cmd> lua vim.lsp.buf.references()<CR>
-
 " Easier Escaping
 inoremap jj <Esc>
 inoremap kj <Esc>
+
+" To remove highlighting for hlsearchs easier
+nnoremap <esc> :noh<return><esc>
 
 " Move Split Panes with more Vimlike Motions
 nnoremap <C-H> <C-W><C-H>
@@ -10,17 +11,25 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+" This was messing up using C-] to jump to refs in :help
+" nnoremap <silent><c-]>      <cmd> lua vim.lsp.buf.definition()<CR>
+
 " LSP
 nnoremap <silent>1gD        <cmd> lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent><C-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent><leader>rn <cmd> lua vim.lsp.buf.rename()<CR>
-
-" This was messing up searching in search files
-" nnoremap <silent><c-]>      <cmd> lua vim.lsp.buf.definition()<CR>
-"
-"   nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-
-
 nnoremap <silent><c-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent>K          <cmd> lua vim.lsp.buf.hover()<CR>
 nnoremap <silent>g0         <cmd> lua vim.lsp.buf.document_symbol()<CR>
@@ -39,86 +48,127 @@ nnoremap <silent><leader>pl <cmd>lua require('telescope.builtin').planets{show_p
 nnoremap <silent><leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
 nnoremap <silent><leader>ss <cmd>lua require('begin.tele').spellcheck()<CR>
 
-" Misc Plugins
-nnoremap <silent><leader>C :VCoolor<CR>
+" Lazy Git with Floatterm
 nnoremap <silent><leader>lg :FloatermNew lazygit<CR>
+
+" Ranger with Floatterm
 nnoremap <silent><leader>rr :FloatermNew --height=0.9 --width=0.9 ranger<CR>
+
+" Color Picker
+nnoremap <silent><leader>C :VCoolor<CR>
+
+" Vim-Signature Toggle for showing Marks
 nnoremap <silent><leader>tm :SignatureToggle<CR>
+
+" vim-trailing-whitespace
 noremap <silent><leader>ff :FixWhitespace<cr>
+
+" To Focus on the Current Section of the Code
 noremap <silent><leader>gg :Goyo<cr>
+
+" Quick flipping of colorschemes to a Random one
 noremap <silent><leader>jl :!wal --theme random_dark &<cr>
+
+" Use Tabularize to line up things
 noremap <silent><leader>tt  :Tabularize/
 
-" Custom Functions
+" Convert a Youtube Link to a Markdown link,
+" pulling the title with youtube-dl
 nnoremap <silent><leader>ll :call MdLink()<cr>
+
+" Create a Gist of the Selected section,
+" and post it to Twitch Chat
 vnoremap <silent><leader>gi :call GistAndPost(mode())<cr>
+
+" Use Vim spellcheck and chose the first presented option
+" for the word under the cursor
+noremap <silent><leader>s 1z=e
+
+" Navigate out to current directory
+" More likely to use -, instead of this
+" TODO: figure out if -, is from dervish
+noremap <silent><leader>e :edit %:h<cr>
+
+" Toggle a cursor for focusing on the cursor
+" Twitch chat hates it
+nnoremap <silent><leader>H :set cursorline! cursorcolumn!<CR>
+nnoremap <silent><leader>h :set cursorline!<CR>
 
 " Built in Vim Mappings
 nnoremap <silent><leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <silent><leader>H :set cursorline! cursorcolumn!<CR>
-nnoremap <silent><leader>h :set cursorline!<CR>
-nnoremap <silent><leader>nn :set scl=auto<CR>
+
+" Toggling Line Numbers on
 nnoremap <silent><leader>no :set rnu!<CR>
+nnoremap <silent><leader>ni :set nu!<CR>
+
+" Faster saving
+" ...although maybe this should change
 noremap ,, <esc>:w!<cr>
-noremap <silent><leader>cs :colorscheme 
-noremap <silent><leader>e :edit %:h<cr>
-noremap <silent><leader>E :edit ../.<cr>
-noremap <silent><leader>s 1z=e
+
+" Focus and redistribute split windows
 noremap ff :resize 100 <cr> <bar> :vertical resize 220<cr>
 noremap fm <C-w>
 
-" Misc
-" nnoremap <silent><leader>bp :call GoBreakpoint()<CR>
+" Faster Vimrc opening
 nnoremap <silent><leader>ev :vs $MYVIMRC<CR>
+
+" Quick reformatting of json
 noremap <silent><leader>jq :%!python -m json.tool<cr>
+
+" Quick reloading .vimrc
 noremap <silent><leader>rc :source ~/.config/nvim/init.vim<cr>
-vnoremap <localleader>" <esc>m`'<i"<esc>A"<esc>``
+
+" Surround a word in quotes
+" I think I should instead use vim-surround more
+vnoremap <leader>" <esc>m`'<i"<esc>A"<esc>``
 
 " Maybe consolidate into one
 noremap <leader>pk :set nopaste<cr>
 " noremap <leader>pp :set paste<cr>
 noremap <leader>pp :call PasteIt()<CR>
 
-" Twitch
+" I added this to make using C-] to go to reference in help docs
+" What Should I have the secondary escape as?
+" https://github.com/neovim/neovim/issues/7648
+tnoremap <C-[><C-[> <C-\><C-n>
+
+" https://github.com/nvim-lua/diagnostic-nvim
+nnoremap <leader>j :NextDiagnostic<CR>
+nnoremap <leader>k :PrevDiagnostic<CR>
+nnoremap <leader>h :NextDiagnosticCycle<CR>
+nnoremap <leader>i :OpenDiagnostic<CR>
+
+" Custom Twitch Commands
 nnoremap <leader>te :call TwitchCommands()<cr>
 nnoremap <leader>tl :call LastTwitchMsg()<cr>
 nnoremap <leader>tr :call PostChat()<cr>
 nnoremap <leader>ts :call PostChatByUser()<cr>
 nnoremap <leader>tw :call SendToTwitch()<cr>
 
+" Clearing Registers
+" Was mostly used for recording a video
+" about registers
+nnoremap <leader>re :call ClearRegs()<CR>
+
 " nojam cuts off all fluidsynth processes
 nnoremap <leader>nj :!nojam<cr>
 
+" Not sure if I really need settings for toggling the sign column
+" nnoremap <silent><leader>scy :set scl=yes<CR>
+" nnoremap <silent><leader>scn :set scl=no<CR>
+
+" We might to only include this on certain file types
+" vim-test
+" nmap <silent> t<C-n> :TestNearest<CR>
+" nmap <silent> t<C-f> :TestFile<CR>
+" nmap <silent> t<C-s> :TestSuite<CR>
+" nmap <silent> t<C-l> :TestLast<CR>
+" nmap <silent> t<C-g> :TestVisit<CR>
+
+" This was having issues with vim-go
+" and seems to work without this enabled here
+" https://github.com/nvim-lua/completion-nvim
 " Use <Tab> and <S-Tab> to navigate through popup menu
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" What Should I have the secondary escape as?
-" https://github.com/neovim/neovim/issues/7648
-tnoremap <C-[><C-[> <C-\><C-n>
-
-" Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-" Disable Arrow keys in Insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-nnoremap <esc> :noh<return><esc>
-
-nnoremap <leader>re :call ClearRegs()<CR>
-
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-
-nnoremap <leader>j :NextDiagnostic<CR>
-nnoremap <leader>k :PrevDiagnostic<CR>
-nnoremap <leader>h :NextDiagnosticCycle<CR>
