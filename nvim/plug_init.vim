@@ -18,6 +18,7 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+
   " Go
   Plug 'SirVer/ultisnips'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

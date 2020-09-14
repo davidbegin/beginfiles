@@ -45,17 +45,6 @@ imap <right> <nop>
 " This was messing up using C-] to jump to refs in :help
 " nnoremap <silent><c-]>      <cmd> lua vim.lsp.buf.definition()<CR>
 
-" LSP
-nnoremap <silent>1gD        <cmd> lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent><C-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent><leader>rn <cmd> lua vim.lsp.buf.rename()<CR>
-nnoremap <silent><c-k>      <cmd> lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent>K          <cmd> lua vim.lsp.buf.hover()<CR>
-nnoremap <silent>g0         <cmd> lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent>gD         <cmd> lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent>gW         <cmd> lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent>gd         <cmd> lua vim.lsp.buf.declaration()<CR>
-
 " Telescope
 nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 nnoremap <silent><C-g> <cmd>lua require'telescope.builtin'.live_grep{}<CR>

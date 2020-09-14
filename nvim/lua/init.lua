@@ -17,6 +17,10 @@
 -- LLLLLLLLLLLLLLLLLLLLLLLL     UUUUUUUUU  AAAAAAA                   AAAAAAA
 
 
+local mapper = function(mode, key, result)
+  vim.api.nvim_buf_set_keymap(0, mode, key, result, {noremap = true, silent = true})
+end
+
 local nvim_lsp = require'nvim_lsp'
 
 local on_attach_vim = function(client)
@@ -24,9 +28,25 @@ local on_attach_vim = function(client)
   require'diagnostic'.on_attach(client)
 end
 
-nvim_lsp.pyls.setup{on_attach=on_attach_vim}
+local on_attach_vim_plus_keymaps = function(client)
+  on_attach_vim(client)
+  mapper('n', '1gD', '       <cmd> lua vim.lsp.buf.type_definition()<CR>')
+  mapper('n', '<C-k>', '     <cmd> lua vim.lsp.buf.signature_help()<CR>')
+  mapper('n', '<leader>rn',' <cmd> lua vim.lsp.buf.rename()<CR>')
+  mapper('n', '<c-k>', '     <cmd> lua vim.lsp.buf.signature_help()<CR>')
+  mapper('n', 'K', '         <cmd> lua vim.lsp.buf.hover()<CR>')
+  mapper('n', 'g0','         <cmd> lua vim.lsp.buf.document_symbol()<CR>')
+  mapper('n', 'gD','         <cmd> lua vim.lsp.buf.implementation()<CR>')
+  mapper('n', 'gW','         <cmd> lua vim.lsp.buf.workspace_symbol()<CR>')
+  mapper('n', 'gd','         <cmd> lua vim.lsp.buf.definition()<CR>')
+  mapper('n', '<c-]>',       '<cmd> lua vim.lsp.buf.declaration()<CR>')
+end
 
-nvim_lsp.sumneko_lua.setup{}
+nvim_lsp.pyls.setup{on_attach=on_attach_vim_plus_keymaps}
+
+nvim_lsp.sumneko_lua.setup{
+  on_attach=on_attach_vim_plus_keymaps,
+}
 
 nvim_lsp.gopls.setup{
   on_attach=on_attach_vim,
@@ -34,7 +54,7 @@ nvim_lsp.gopls.setup{
 }
 
 nvim_lsp.terraformls.setup{
-  on_attach=on_attach_vim
+  on_attach=on_attach_vim_plus_keymaps
 }
 
 require'colorizer'.setup()

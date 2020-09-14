@@ -20,7 +20,7 @@ let g:diagnostic_auto_popup_while_jump = 0
 
 let g:diagnostic_virtual_text_prefix = ' '
 
-let g:diagnostic_trimmed_virtual_text = '20'
+let g:diagnostic_trimmed_virtual_text = '40'
 
 let g:space_before_virtual_text = 5
 
