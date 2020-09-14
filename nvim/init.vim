@@ -44,5 +44,6 @@ inoremap <silent><expr> <TAB>
   \ CheckBackSpace() ? "\<TAB>" :
   \ completion#trigger_completion()
 
-let g:completion_enable_snippet = 'UltiSnips'
+" This is very important to be loaded here
+" or Tab will not work, for completion
 let g:UltiSnipsExpandTrigger = "<S-Tab>"

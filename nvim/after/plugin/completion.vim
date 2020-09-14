@@ -9,3 +9,5 @@ let g:completion_enable_auto_signature = 1
 let g:completion_enable_auto_hover = 0
 
 let g:completion_matching_ignore_case = 0
+
+let g:completion_enable_snippet = 'UltiSnips'
