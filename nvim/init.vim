@@ -77,10 +77,9 @@ call plug#end()
 " set t_Co=256                     " Enable 256 colors
 set termguicolors                  " Enable GUI colors for the terminal to get truecolor
 
+" colorscheme wal
 " We have to load the colorscheme first
 " and then customize the other colors
-" colorscheme wal
-let mapleader = "\<Space>"
 
 colorscheme gotham
 
@@ -90,6 +89,11 @@ color begin
 
 " luafile $HOME/.config/nvim/lua/init.lua
 lua require('init')
+
+" Not sure why I need this here
+" I moved it before and it stopped
+" working, could have been other Night Begin problems tho
+let mapleader = "\<Space>"
 
 " =====================================
 " ======= Completion Settings =========

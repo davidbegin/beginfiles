@@ -1,14 +1,32 @@
-" hi Search guibg=#0478A4 guifg=wheat
 
-hi clear SpellBad
-hi SpellBad gui=undercurl
-" hi SpellBad guibg=Red
+"   e88'Y88   e88 88e   888       e88 88e   888 88e   dP"8
+"  d888  'Y  d888 888b  888      d888 888b  888 888D C8b Y
+" C8888     C8888 8888D 888     C8888 8888D 888 88"   Y8b
+"  Y888  ,d  Y888 888P  888  ,d  Y888 888P  888 b,   b Y8D
+"   "88,d88   "88 88"   888,d88   "88 88"   888 88b, 8edP
+
+" I like my spelling mistakes to be highlighted more subtle
+" with a underline.....called undercurl for some reason here
+highlight clear SpellBad
+highlight SpellBad gui=undercurl
+
+" We Need to Highlight Rare words
+" ....and maybe one day we will discover one other than vim
 highlight SpellRare guibg=#FF009F
 
-" highlight SignColumn guibg=Red ctermbg=Red
-highlight Normal guibg=NONE ctermbg=NONE
+" Enable to make the background transparent
+" highlight Normal guibg=NONE ctermbg=NONE
 
+" Enable to make SignColumn transparent
 highlight SignColumn guibg=NONE
+
+" Nice Blue Pmenu
+" highlight Pmenu ctermbg=26  ctermfg=white
+
+" Red Sign Column Why????
+" highlight SignColumn guibg=Red ctermbg=Red
+
+" hi Search guibg=#0478A4 guifg=wheat
 
 " =====================
 " = PMENU PMENU PMENU =
@@ -32,9 +50,6 @@ highlight SignColumn guibg=NONE
 " For easier Choosing
 ":VCoolIns r
 " highlight Pmenu ctermbg=33 ctermfg=white
-"
-" Nice Blue
-highlight Pmenu ctermbg=26  ctermfg=white
 
 " Nice Green
 " highlight Pmenu ctermbg=35  ctermfg=white
@@ -54,8 +69,9 @@ highlight Pmenu ctermbg=26  ctermfg=white
 " = Cursor =
 " ==========
 
+" Not sure if we want this
 " This is not working with Tmux
-highlight Cursor guibg=#626262
+" highlight Cursor guibg=#626262
 
 " Easter Pack
 " highlight CursorLine guibg=#09F953 guifg=black
@@ -64,14 +80,20 @@ highlight Cursor guibg=#626262
 " Goth Pack
 " highlight CursorLine ctermbg=darkred ctermfg=white
 " highlight CursorColumn ctermbg=black ctermfg=darkred
+" highlight CursorLine guibg=darkred guifg=white
+" highlight CursorColumn guibg=black guifg=darkred
 
 " Joker Theme
 " highlight CursorLine ctermbg=#21FF13 ctermfg=black
 " highlight CursorColumn ctermbg=#9E00FF ctermfg=darkred
+highlight CursorLine guibg=#21FF13 guifg=black
+highlight CursorColumn guibg=#9E00FF guifg=darkred
 
 " 70's Xmas
 " highlight CursorLine ctermbg=#660007 ctermfg=black
 " highlight CursorColumn ctermbg=#083700 ctermfg=darkred
+" highlight CursorLine guibg=#660007 guifg=black
+" highlight CursorColumn guibg=#083700 guifg=darkred
 
 " ==============
 " = Hightlight =
@@ -87,7 +109,6 @@ highlight Cursor guibg=#626262
 " highlight SignColumn guibg=0c1014 ctermbg=0c1014
 " highlight SignColumn guibg=Red ctermbg=Red
 " its not loading the after, on reload
-
 
 " highlight SignColumn guibg=Red ctermbg=Red
 

@@ -8,5 +8,9 @@ vim.g.completion_chain_complete_list = {
       {complete_items = {"buffer"}},
       {mode = "file"},
     },
+    vim = {
+      {complete_items = {"buffer"}},
+      {mode = "file"},
+    },
   },
 }
