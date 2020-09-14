@@ -83,6 +83,7 @@ set termguicolors                  " Enable GUI colors for the terminal to get t
 let mapleader = "\<Space>"
 
 colorscheme gotham
+
 let g:lightline = { 'colorscheme': 'gotham' }
 
 color begin
@@ -100,8 +101,6 @@ function! CheckBackSpace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
-
-let g:completion_enable_auto_popup = 0
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
