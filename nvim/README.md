@@ -10,6 +10,10 @@ This will be constantly moving and evolving.
 
 ## New Shortcuts
 
+- <leader>vv -> search in nvim dotfiles
+- <leader>rr -> ranger in floatterm
+- <leader>lg -> lazygit in floatterm
+
 ## Keyboard Changes
 
 - moved my leader to <Space>
@@ -38,16 +42,12 @@ Number Pad on 2nd Layer
 ## Warm Up
 
 - Read a Helpfile
-
 - Setup Morning Notes
-
 - lazygit
   - lg
-
 - Use H, M, L more
-
 - use cw more
-
+- CTRL-O and CTRL-I -> Hop forward and back
 
 ### Tele
 
@@ -119,55 +119,16 @@ Number Pad on 2nd Layer
 
 ## Ideas
 
-- I want to be able to just search the top level dierectories and files???
-  when things aren't in Git
+## Improving Use of Help
 
-- Have something that lets me search within a a Header size.
-  - either from the top H2,
-    or within an H2, the subheadings
+My Help was broke, but now seems to work.
+I need to make sure I am using help to its fullest.
 
----
+- https://vim.fandom.com/wiki/Learn_to_use_help
+- CTRL-] -> ref in help
+  Press Ctrl-] to follow the link (jump to the quickref topic).
+  After browsing the quickref topic, press Ctrl-T to go back to the previous topic.
 
-## Text Motions
-
-```
-aw			"a word", select [count] words (see |word|).
-iw			"inner word", select [count] words (see |word|).
-aW			"a WORD", select [count] WORDs (see |WORD|).
-iW			"inner WORD", select [count] WORDs (see |WORD|).
-as			"a sentence", select [count] sentences (see
-is			"inner sentence", select [count] sentences (see
-ap			"a paragraph", select [count] paragraphs (see
-ip			"inner paragraph", select [count] paragraphs (see
-a]						*v_a]* *v_a[* *a]* *a[*
-a[			"a [] block", select [count] '[' ']' blocks.  This
-i]						*v_i]* *v_i[* *i]* *i[*
-i[			"inner [] block", select [count] '[' ']' blocks.  This
-a)							*v_a)* *a)* *a(*
-a(							*vab* *v_ab* *v_a(* *ab*
-ab			"a block", select [count] blocks, from "[count] [(" to
-i)							*v_i)* *i)* *i(*
-i(							*vib* *v_ib* *v_i(* *ib*
-ib			"inner block", select [count] blocks, from "[count] [("
-a>						*v_a>* *v_a<* *a>* *a<*
-a<			"a <> block", select [count] <> blocks, from the
-i>						*v_i>* *v_i<* *i>* *i<*
-i<			"inner <> block", select [count] <> blocks, from
-at			"a tag block", select [count] tag blocks, from the
-it			"inner tag block", select [count] tag blocks, from the
-a}							*v_a}* *a}* *a{*
-a{							*v_aB* *v_a{* *aB*
-aB			"a Block", select [count] Blocks, from "[count] [{" to
-i}							*v_i}* *i}* *i{*
-i{							*v_iB* *v_i{* *iB*
-iB			"inner Block", select [count] Blocks, from "[count] [{"
-a"							*v_aquote* *aquote*
-a'							*v_a'* *a'*
-a`							*v_a`* *a`*
-i"							*v_iquote* *iquote*
-i'							*v_i'* *i'*
-i`							*v_i`* *i`*
-```
 
 ## Scraps
 
@@ -183,14 +144,3 @@ Works like a charm!
 ```
 :r ls config/
 ```
-
-## Improving Use of Help
-
-My Help was broke, but now seems to work.
-I need to make sure I am using help to its fullest.
-
-- https://vim.fandom.com/wiki/Learn_to_use_help
-- CTRL-] -> ref in help
-  Press Ctrl-] to follow the link (jump to the quickref topic).
-  After browsing the quickref topic, press Ctrl-T to go back to the previous topic.
-- CTRL-O and CTRL-I -> Hop forward and back

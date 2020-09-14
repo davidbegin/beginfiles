@@ -17,6 +17,7 @@ highlight SpellRare guibg=#FF009F
 
 " Enable to make the background transparent
 " highlight Normal guibg=NONE ctermbg=NONE
+highlight Normal guibg=Black ctermbg=Black
 
 " Enable to make SignColumn transparent
 highlight SignColumn guibg=NONE

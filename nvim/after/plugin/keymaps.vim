@@ -8,7 +8,10 @@ inoremap jj <Esc>
 inoremap kj <Esc>
 
 " To remove highlighting for hlsearchs easier
-nnoremap <esc> :noh<return><esc>
+" I think this might slow down other
+" escaping, and :noh ain't that big of deal
+" for now, maybe we rethink a new key mapping
+" nnoremap <esc> :noh<return><esc>
 
 " Move Split Panes with more Vimlike Motions
 nnoremap <C-H> <C-W><C-H>
@@ -44,7 +47,7 @@ nnoremap <silent>gd         <cmd> lua vim.lsp.buf.declaration()<CR>
 
 " Telescope
 nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
-nnoremap <silent><C-g> <cmd>lua require('telescope.builtin').live_grep{}<CR>
+nnoremap <silent><C-g> <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " We learned writing this, but no sure if it's useful
@@ -191,4 +194,3 @@ nnoremap <leader>nj :!nojam<cr>
 " Use <Tab> and <S-Tab> to navigate through popup menu
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
