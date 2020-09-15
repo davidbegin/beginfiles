@@ -87,3 +87,6 @@ export CHAT_NODE_STAGE="chat-server-go-candidate"
 # We don't currently have a Dev Master Chat Service
 export CHAT_MASTER_DEV="chat-server-dev"
 export CHAT_NODE_DEV="chat-server-dev"
+
+# Make Docker Go Vroom
+export DOCKER_BUILDKIT=1

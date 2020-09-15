@@ -13,15 +13,17 @@ alias ft="nvim ~/.config/nvim/ftplugin"             \
   shada="nvim ~/.local/share/nvim/shada/main.shada" \
   content="~/.config/dotfiles/workstations/content"
 
-
 # Work Stuff
-alias bwork="~/.config/dotfiles/workstations/betty"       \
-  bettyp="~/.config/dotfiles/workstations/bettyp"           \
-  bettys="~/.config/dotfiles/workstations/bettys"           \
-  bettyd="~/.config/dotfiles/workstations/bettyd"           \
-  bettyhealth="~/.config/dotfiles/workstations/bettyhealth" \
-  bettykp="~/.config/dotfiles/workstations/bettykp"         \
-  fun="~/.config/dotfiles/workstations/fun"                 \
+alias                                            \
+  bwork="~/betty/workstations/betty"             \
+  bettyp="~/betty/workstations/bettyp"           \
+  bettys="~/betty/workstations/bettys"           \
+  bettyd="~/betty/workstations/bettyd"           \
+  bettyhealth="~/betty/workstations/bettyhealth" \
+  bettykp="~/betty/workstations/bettykp"         \
+
+
+alias fun="~/.config/dotfiles/workstations/fun"
 
 alias aa="nvim ~/.aws/credentials"
 

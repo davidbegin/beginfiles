@@ -29,6 +29,10 @@ This will be constantly moving and evolving.
 - <leader>rr -> ranger in floatterm
 - <leader>lg -> lazygit in floatterm
 
+## Tmux Changes
+- Moved Tmux Prefix to CTRL-b
+  - right under the fingers on the home row
+
 ## Keyboard Changes
 
 - moved leader to <Space>
