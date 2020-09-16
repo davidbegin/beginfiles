@@ -40,16 +40,17 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
 " This was messing up using C-] to jump to refs in :help
 " nnoremap <silent><c-]>      <cmd> lua vim.lsp.buf.definition()<CR>
 
 " :help ins-completion
 " Easier Insert mode completion mappings
 " These don't seem to be working
-inoremap ^] ^X^]
-inoremap ^F ^X^F
-inoremap ^D ^X^D
-inoremap ^L ^X^L
+" inoremap ^] ^X^]
+" inoremap ^F ^X^F
+" inoremap ^D ^X^D
+" inoremap ^L ^X^L
 
 
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
@@ -60,14 +61,17 @@ nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+" nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
 
 
 " Telescope
 nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
-nnoremap <silent><C-g> <cmd>lua require'telescope.builtin'.live_grep{}<CR>
-nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
+" nnoremap <silent><C-g> <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+" nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <silent><leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
+nnoremap <silent><leader>tp <cmd>lua require'telescope.builtin'.git_files{}<CR>
 
 " We learned writing this, but no sure if it's useful
 " nnoremap <silent><leader>cf <cmd>lua require('begin.tele').cfwd()<CR>

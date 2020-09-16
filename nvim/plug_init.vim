@@ -19,8 +19,10 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-  " Go
+  " Snippets
   Plug 'SirVer/ultisnips'
+
+  " Go
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   " Startup Profiling
@@ -78,8 +80,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Terraform
   Plug 'hashivim/vim-terraform'
   Plug 'hashicorp/terraform-ls'
-  " Plug 'juliosueiras/terraform-lsp'
-
+  Plug 'juliosueiras/terraform-lsp'
 
   Plug 'johannesthyssen/vim-signit'
 
