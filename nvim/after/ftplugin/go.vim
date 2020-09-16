@@ -36,3 +36,4 @@ let g:go_auto_sameids = 0
 
 " Run goimports along gofmt on each save
 let g:go_fmt_command = "goimports"
+nnoremap H <cmd> lua vim.lsp.buf.hover()<CR>

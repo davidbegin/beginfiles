@@ -44,4 +44,4 @@ inoremap <silent><expr> <TAB>
 " or Tab will not work, for completion
 let g:UltiSnipsExpandTrigger = "<S-Tab>"
 
-" autocmd BufEnter * lua require'completion'.on_attach()
+autocmd BufEnter * lua require'completion'.on_attach()

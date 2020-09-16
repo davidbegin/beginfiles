@@ -80,8 +80,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Terraform
   Plug 'hashivim/vim-terraform'
   Plug 'hashicorp/terraform-ls'
-  Plug 'juliosueiras/terraform-lsp'
+  " Plug 'juliosueiras/terraform-lsp'
 
+  " For Generating My Begin Tag
   Plug 'johannesthyssen/vim-signit'
 
 call plug#end()
