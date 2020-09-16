@@ -11,7 +11,7 @@ Y88b      / 888      e    e                888   ,88~-_   888   | 888~-_   888b 
 
 To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
-This will be constantly moving and evolving.
+'C
 
 ## Dotfile Navigating (This is with personal Global Marks)
 
@@ -123,6 +123,9 @@ Number Pad on 2nd Layer
 - Making Markdown Links
 - fm is not working
 - Goyo is breaking thangs on exit
+- Auto complete for vim things 
+- Terraform LSP
+  - https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/z_langserver.vim
 
 
 ## Help Talk

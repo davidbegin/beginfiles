@@ -74,8 +74,13 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jaredgorski/spacecamp'
   Plug 'whatyouhide/vim-gotham'
 
+
   " Terraform
   Plug 'hashivim/vim-terraform'
   Plug 'hashicorp/terraform-ls'
+  " Plug 'juliosueiras/terraform-lsp'
+
+
+  Plug 'johannesthyssen/vim-signit'
 
 call plug#end()

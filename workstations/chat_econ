@@ -26,6 +26,8 @@ tmux select-window -t chat_economy:CT1
 tmux send-keys -t chat_economy:CT1 'ct; python -m chat_thief.bots.soundboard_bot' Enter
 tmux split-window -v
 tmux send-keys -t chat_economy:CT1 'ct; make new_day; python bot.py' Enter
+tmux split-window -h
+tmux send-keys -t chat_economy:CT1 'ct; FLASK_APP=chat_thief/apps/audio_authorizer.py flask run -p 1989' Enter
 tmux select-layout tiled
 
 # =====================

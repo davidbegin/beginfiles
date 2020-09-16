@@ -4,6 +4,10 @@ vim.g.completion_chain_complete_list = {
       {complete_items = {"lsp", "snippet", "ts"}},
       {mode = "file"},
     },
+    python = {
+      {complete_items = {"lsp", "buffer", "ts"}},
+      {mode = "file"},
+    },
     markdown = {
       {complete_items = {"buffer"}},
       {mode = "file"},

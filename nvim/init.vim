@@ -5,7 +5,6 @@
 " BB   BB EE      GG   GG  III  NN  NNN BB   BB OO   OO   TTT
 " BBBBBB  EEEEEEE  GGGGGG IIIII NN   NN BBBBBB   OOOO0    TTT
 
-
 " This is just something I decided I liked aesthically better
 source $HOME/.config/nvim/plug_init.vim
 
@@ -44,3 +43,5 @@ inoremap <silent><expr> <TAB>
 " This is very important to be loaded here
 " or Tab will not work, for completion
 let g:UltiSnipsExpandTrigger = "<S-Tab>"
+
+" autocmd BufEnter * lua require'completion'.on_attach()
