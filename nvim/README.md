@@ -13,6 +13,38 @@ To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
 'C
 
+## New Habits
+
+- vim-dervish
+  - off nerdtree
+  - netrw is too slow, its driving me crazy
+  - now dervish:
+    - -
+    - v
+    - t
+    - e
+    - s
+
+- use more built-in autocompletion
+  - :help ins-completion
+
+L -> Whole line
+k
+N/P
+F
+V
+
+```
+1. Whole lines						|i_CTRL-X_CTRL-L|
+2. keywords in the current file				|i_CTRL-X_CTRL-N|
+7. file names						|i_CTRL-X_CTRL-F|
+13. keywords in 'complete'				|i_CTRL-N| |i_CTRL-P|
+9. Vim command-line					|i_CTRL-X_CTRL-V|
+
+3. keywords in 'dictionary'				|i_CTRL-X_CTRL-K|
+4. keywords in 'thesaurus', thesaurus-style		|i_CTRL-X_CTRL-T|
+```
+
 ## Dotfile Navigating (This is with personal Global Marks)
 
 - V -> init.vim
@@ -47,16 +79,6 @@ $  -> End       -> 2nd-Layer s
 Number Pad on 2nd Layer
 
 ## Plugins
-
-- vim-dervish
-  - off nerdtree
-  - netrw is too slow, its driving me crazy
-  - now dervish:
-    - -
-    - v
-    - t
-    - e
-    - s
 
 - vim-surround
   - Need to use this more effectively
