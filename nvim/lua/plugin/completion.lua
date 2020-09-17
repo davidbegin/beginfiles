@@ -1,6 +1,6 @@
 vim.g.completion_chain_complete_list = {
     default = {
-      {complete_items = {"lsp", "buffers", "snippet"}},
+      {complete_items = {"lsp", "buffers", "snippet", "ts"}},
       {mode = "file"},
       {mode = '<c-p>'},
       {mode = '<c-n>'}

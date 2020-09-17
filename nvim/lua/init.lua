@@ -75,4 +75,5 @@ package.loaded['begin.tele'] = nil
 require('begin.tele').setup()
 
 -- Why do I need this?
-require('completion')
+require('plugin.completion')
+require('plugin.full_line_teej')

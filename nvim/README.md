@@ -13,6 +13,19 @@ To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
 'C
 
+## Go Vim
+
+- Go to Diagnostic CTRL-N not working
+- outcomplete in comments not workinG
+- townzz: I use vimuxRunLastCommand, vimuxPromptCommand so I quickly run commands
+          like go build, go run main.go, etc... in a separate window for quick testing.
+
+## Best Vim Commands of All Time
+  - CTRL-y and CTRL-e in insert mode, below or above respectively
+
+  - Ctrl-K -> spelling!!!!
+
+
 ## New Habits
 
 - vim-dervish
@@ -27,6 +40,10 @@ Listing what I am researching, annoyed with, working on, feeling unsure about et
 
 - use more built-in autocompletion
   - :help ins-completion
+
+  - CTRL-x CTRL-f | keep repeating to navigate in nested files
+  - How do we get the this to work for :e
+
 
 L -> Whole line
 k
@@ -149,6 +166,8 @@ Number Pad on 2nd Layer
 - Terraform LSP
   - https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/z_langserver.vim
 
+beesforknees: I want a c-x, c-l but for keywords in the line
+beesforknees: not just the start :O
 
 ## Help Talk
 
@@ -162,6 +181,10 @@ Number Pad on 2nd Layer
 :help text-object
 :help :\bar
 :help omnifunc
+:help grep
+:helpgrep ins-completion
+  - then :copen
+:help copen
 
 
 ## Ideas

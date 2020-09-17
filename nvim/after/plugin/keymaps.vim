@@ -65,6 +65,8 @@ nnoremap gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
 
+" We will continue to check this out
+nnoremap <leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ width=1}))<cr>
 
 " Telescope
 nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
