@@ -11,19 +11,53 @@ Y88b      / 888      e    e                888   ,88~-_   888   | 888~-_   888b 
 
 To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
-'C
 
-## Go Vim
+## Warm Up
 
-- Go to Diagnostic CTRL-N not working
-- outcomplete in comments not workinG
-- townzz: I use vimuxRunLastCommand, vimuxPromptCommand so I quickly run commands
-          like go build, go run main.go, etc... in a separate window for quick testing.
+- Read a Helpfile
+- Setup Morning Notes
+- lazygit
+  - lg
+- Use H, M, L more
+- use cw more
+- CTRL-O and CTRL-I -> Hop forward and back
 
-## Best Vim Commands of All Time
+## Help ins-completion
+
+Spelling: Ctrl-X CTRL-S
+
+  - Philosophy
+  - Physical
+  - Indigenous
+  - Confucianism
+  - Zoroastrianism
+
+Files:  CTRL-x CTRL-f | keep repeating to navigate in nested files
+  - How do we get the this to work for :e
+
+L -> Whole line
+
+keywords in 'dictionary'				            |i_CTRL-X_CTRL-K|
+keywords in 'thesaurus', thesaurus-style		|i_CTRL-X_CTRL-T|
+keywords in the current file				        |i_CTRL-X_CTRL-N|
+keywords in 'complete'				              |i_CTRL-N| |i_CTRL-P|
+Vim command-line					                  |i_CTRL-X_CTRL-V|
+
+
+## Jokes
+
   - CTRL-y and CTRL-e in insert mode, below or above respectively
 
-  - Ctrl-K -> spelling!!!!
+
+## Go-Vim
+
+- Go to Diagnostic CTRL-N not working
+- autcomplete in comments not working
+
+- Figure out how to use Vimux
+  - https://github.com/benmills/vimux
+  - townzz: I use vimuxRunLastCommand, vimuxPromptCommand so I quickly run commands
+            like go build, go run main.go, etc... in a separate window for quick testing.
 
 
 ## New Habits
@@ -37,30 +71,6 @@ Listing what I am researching, annoyed with, working on, feeling unsure about et
     - t
     - e
     - s
-
-- use more built-in autocompletion
-  - :help ins-completion
-
-  - CTRL-x CTRL-f | keep repeating to navigate in nested files
-  - How do we get the this to work for :e
-
-
-L -> Whole line
-k
-N/P
-F
-V
-
-```
-1. Whole lines						|i_CTRL-X_CTRL-L|
-2. keywords in the current file				|i_CTRL-X_CTRL-N|
-7. file names						|i_CTRL-X_CTRL-F|
-13. keywords in 'complete'				|i_CTRL-N| |i_CTRL-P|
-9. Vim command-line					|i_CTRL-X_CTRL-V|
-
-3. keywords in 'dictionary'				|i_CTRL-X_CTRL-K|
-4. keywords in 'thesaurus', thesaurus-style		|i_CTRL-X_CTRL-T|
-```
 
 ## Dotfile Navigating (This is with personal Global Marks)
 
@@ -79,6 +89,7 @@ V
 - <leader>lg -> lazygit in floatterm
 
 ## Tmux Changes
+
 - Moved Tmux Prefix to CTRL-b
   - right under the fingers on the home row
 
@@ -100,21 +111,19 @@ Number Pad on 2nd Layer
 - vim-surround
   - Need to use this more effectively
 
-## Warm Up
+- Vim Signature
+  - Toggling Marks
+    - alphabetically moving between marks
+      - Left-hand -> 2nd layer ]
+      - Right Hand ' with the pinky
 
-- Read a Helpfile
-- Setup Morning Notes
-- lazygit
-  - lg
-- Use H, M, L more
-- use cw more
-- CTRL-O and CTRL-I -> Hop forward and back
+- Telescope:
+  - CTRL-v -> open in split (s is also an option....but who horizontal splits?)
 
-### Tele
+### Keymaps
 
-- CTRL-g -> telescoping Greping
-- CTRL-p -> File searching
-- CTRL-v -> open in split (s is also an option....but who horizontal splits?)
+- <leader>tg -> telescoping Greping
+- <leader>tp -> File searching
 - <leader>vv -> vim dotfiles searching
 
 ## Researching
@@ -139,11 +148,8 @@ Number Pad on 2nd Layer
 ## Tweaking
 
 - vim-go settings
-  - Using Snippets
-  https://github.com/fatih/vim-go/blob/master/gosnippets/UltiSnips/go.snippets
-  - fn - Println
-  - go - go func()
-
+- completion settings everywhere
+- keymappings everywhere
 
 ## Working On
 
@@ -161,13 +167,12 @@ Number Pad on 2nd Layer
   -> Might be in relation to autopairs
 - Making Markdown Links
 - fm is not working
+  - fm not working
 - Goyo is breaking thangs on exit
 - Auto complete for vim things 
 - Terraform LSP
   - https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/z_langserver.vim
-
-beesforknees: I want a c-x, c-l but for keywords in the line
-beesforknees: not just the start :O
+- indentation
 
 ## Help Talk
 
@@ -198,7 +203,6 @@ I need to make sure I am using help to its fullest.
 - CTRL-] -> ref in help
   Press Ctrl-] to follow the link (jump to the quickref topic).
   After browsing the quickref topic, press Ctrl-T to go back to the previous topic.
-
 
 ## Scraps
 

@@ -8,6 +8,8 @@
 " ###    ### ##########    ###   ###       ### ###     ### ###         ########
 
 
+map <leader>gb :call VimuxRunCommand("clear; go build .")<CR>
+
 " I've done it and have seen the light
 " To be honest, I have enjoyed my life
 " more since adding this mapping
@@ -154,8 +156,8 @@ nnoremap <silent><leader>ni :set nu!<CR>
 noremap ,, <esc>:w!<cr>
 
 " Focus and redistribute split windows
-noremap ff :resize 100 <cr> <bar> :vertical resize 220<cr>
-noremap fm <C-w>
+noremap ff :resize 100 <CR> <BAR> :vertical resize 220<CR>
+noremap fm <C-w>=
 
 " Faster Vimrc opening
 nnoremap <silent><leader>ev :vs $MYVIMRC<CR>
@@ -168,7 +170,7 @@ noremap <silent><leader>rc :source ~/.config/nvim/init.vim<cr>
 
 " Surround a word in quotes
 " I think I should instead use vim-surround more
-vnoremap <leader>" <esc>m`'<i"<esc>A"<esc>``
+vnoremap <leader>" <esc>m`'<i"<esc>A"<esc>``<CR>
 
 " Maybe consolidate into one
 noremap <leader>pk :set nopaste<cr>

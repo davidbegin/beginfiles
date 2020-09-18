@@ -16,8 +16,10 @@ highlight SpellBad gui=undercurl
 highlight SpellRare guibg=#FF009F
 
 " enable to make the background transparent
-highlight normal guibg=none ctermbg=none
-" highlight Normal guibg=Black ctermbg=Black
+" highlight normal guibg=none ctermbg=none
+highlight Normal guibg=Black ctermbg=Black
+" highlight Normal guibg=#121212
+" highlight Normal guibg=#1e1c31
 
 " Enable to make SignColumn transparent
 highlight SignColumn guibg=NONE

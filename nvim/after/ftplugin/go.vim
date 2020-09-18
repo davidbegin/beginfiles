@@ -14,7 +14,9 @@ set autowrite
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
-nnoremap <buffer> <space> :silent make <bar> redraw!<CR>
+
+" Not sure about this
+nnoremap <buffer> <leader>rd :silent make <bar> redraw!<CR>
 nnoremap <leader>rn :GoRename<CR>
 noremap ,g :GoRun ./%<cr>
 noremap ,b :GoBuild<cr>
