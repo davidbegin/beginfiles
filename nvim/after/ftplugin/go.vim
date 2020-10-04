@@ -10,13 +10,13 @@ compiler go
 
 set autowrite
 
-" https://github.com/fatih/vim-go/wiki/Tutorial
-map <C-n> :cnext<CR>
+" https://github.com/fatih/vim-go/wiki/Tutorial map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+nnoremap <leader>z :cclose<CR>
+nnoremap <leader>a :GoAlternate<CR>
 
 " Not sure about this
-nnoremap <buffer> <leader>rd :silent make <bar> redraw!<CR>
+nnoremap <buffer> <leader>c :silent make <bar> redraw!<CR>
 nnoremap <leader>rn :GoRename<CR>
 noremap ,g :GoRun ./%<cr>
 noremap ,b :GoBuild<cr>
@@ -38,4 +38,28 @@ let g:go_auto_sameids = 0
 
 " Run goimports along gofmt on each save
 let g:go_fmt_command = "goimports"
-nnoremap H <cmd> lua vim.lsp.buf.hover()<CR>
+
+let g:go_doc_keywordprg_enabled=0
+let g:go_diagnostics_enabled=0
+
+" This is not that robust
+" Only just happens to work with the current pattern
+" I am using in beginsounds
+function! GoCmd()
+  let cwd = expand("%:p:h")
+  let fname = split(cwd, '/')[-1]
+  return (cwd . '/' . fname)
+endfunction
+
+
+" map <leader>gh :call VimuxRunCommand("clear; go build cmd/server/main.go && ./main")<CR>
+" map <leader>gh :call VimuxRunCommand("clear; go build . && " . GoCmd())<CR>
+map <Leader>gj :VimuxCloseRunner<CR>
+map <leader>gh :call VimuxRunCommand("clear; go build . && ./beginsounds")<CR>
+map <leader>gn :call VimuxRunCommand("clear; gotest ./...")<CR>
+
+" nnoremap <leader>k :GoDiagnostics<CR>
+" nnoremap <leader>j :PrevDiagnostic<CR>
+" map <leader>gk :call VimuxRunCommand("clear; go build consumer.go && " . "./consumer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
+" map <leader>gh :call VimuxRunCommand("clear; go build producer.go && " . "./producer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
+

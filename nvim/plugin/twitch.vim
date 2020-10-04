@@ -37,13 +37,15 @@ function! SendToTwitch()
   let s:msg=getline('.')
   " Escape "'s or we won't be able to send lines with "
   let s:msg=substitute(s:msg, '"', '\\\"', '')
-  let s:regexForUrl='[a-z]*:\/\/[^ >,;)]*'
-  let s:uri=matchstr(s:msg, s:regexForUrl)
-  if len(s:uri)>0
-      let s:twitch_call=system('beginbot " ' .  s:uri. '"')
-  else
-      let s:twitch_call=system('beginbot " ' .  s:msg . '"')
-  endif
+  let s:twitch_call=system('beginbot " ' .  s:msg . '"')
+
+  " let s:regexForUrl='[a-z]*:\/\/[^ >,;)]*'
+  " let s:uri=matchstr(s:msg, s:regexForUrl)
+  " if len(s:uri)>0
+  "     let s:twitch_call=system('beginbot " ' .  s:uri. '"')
+  " else
+  "     let s:twitch_call=system('beginbot " ' .  s:msg . '"')
+  " endif
 endfunction
 
 function! GistAndPost(type)

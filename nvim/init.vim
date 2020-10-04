@@ -52,26 +52,6 @@ let g:UltiSnipsExpandTrigger = "<S-Tab>"
 
 autocmd BufEnter * lua require'completion'.on_attach()
 
-" ----
-
-" This is not that robust
-" Only just happens to work with the current pattern
-" I am using in beginsounds
-function! GoCmd()
-  let cwd = expand("%:p:h")
-  let fname = split(cwd, '/')[-1]
-  return (cwd . '/' . fname)
-endfunction
-
-" map <leader>gh :call VimuxRunCommand("clear; go build . && " . GoCmd())<CR>
-map <Leader>gj :VimuxCloseRunner<CR>
-
-let g:VimuxOrientation = "h"
-let g:VimuxHeight = "50"
-
-map <leader>gk :call VimuxRunCommand("clear; go build consumer.go && " . "./consumer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
-map <leader>gh :call VimuxRunCommand("clear; go build producer.go && " . "./producer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
-
 " setl filetype=terminal
 " :h terminal.lua
-lua require'terminal'.setup()
+" lua require'terminal'.setup()

@@ -50,6 +50,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
 
   " Neovim LSP Autocompletion, Diagnostic Stuff
   Plug 'neovim/nvim-lsp'
@@ -59,8 +60,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'voldikss/vim-floaterm'
 
   " Sitting on the Top of a Tree
-  Plug 'nvim-treesitter/completion-treesitter'
-  Plug 'nvim-treesitter/nvim-treesitter'
+  " Plug 'nvim-treesitter/completion-treesitter'
+  " Plug 'nvim-treesitter/nvim-treesitter'
 
   " Tele Pack
   Plug 'nvim-lua/plenary.nvim'

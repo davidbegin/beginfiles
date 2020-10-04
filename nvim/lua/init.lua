@@ -43,13 +43,14 @@ local on_attach_vim_plus_keymaps = function(client)
   mapper('n', 'g0',         '<cmd> lua vim.lsp.buf.document_symbol()<CR>')
   mapper('n', 'gD',         '<cmd> lua vim.lsp.buf.implementation()<CR>')
   mapper('n', 'gW',         '<cmd> lua vim.lsp.buf.workspace_symbol()<CR>')
-  mapper('n', 'gd',         '<cmd> lua vim.lsp.buf.definition()<CR>')
-  mapper('n', '<c-]>',       '<cmd> lua vim.lsp.buf.declaration()<CR>')
+  mapper('n', 'gd',         '<cmd> lua vim.lsp.buf.declaration()<CR>')
+  mapper('n', '<c-]>',       '<cmd> lua vim.lsp.buf.definition()<CR>')
 end
 
 -- nvim_lsp.pyls.setup{on_attach=on_attach_vim_plus_keymaps}
 nvim_lsp.pyls_ms.setup{on_attach=on_attach_vim_plus_keymaps}
 
+-- :LspInstall pyls_ms
 nvim_lsp.sumneko_lua.setup{
   on_attach=on_attach_vim_plus_keymaps,
 }
@@ -67,7 +68,7 @@ nvim_lsp.terraformls.setup{
 
 require'colorizer'.setup()
 
-require'nvim-treesitter.configs'.setup{}
+-- require'nvim-treesitter.configs'.setup{}
 
 -- We need to tell lua to always reload begin.tele
 -- since it updated with such lining speed

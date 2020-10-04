@@ -1,6 +1,8 @@
 TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 SOUNDFONT="/usr/share/soundfonts/FluidR3_GM.sf2"
 
+alias xclip="xclip -sel clip"
+
 # TMUX Related Aliases
 alias                                 \
   tn="tmux -u -f $TMUX_CONFIG new"    \
@@ -105,7 +107,7 @@ alias                                                                       \
 
 
 # vim: filetype=sh
-alias j="cd ~/journals/MY_LIFE && ls -a | lolcat"          \
+alias j="cd ~/journals/MY_LIFE && ranger"                  \
 ww="cd ~/journals/work && ls -a | lolcat"                  \
 cf="cd ~/.config && ls -a"                                 \
 mn="cd /mnt && ls -a"                                      \

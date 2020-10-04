@@ -50,7 +50,9 @@ export KEYTIMEOUT=1
 # export PS1="➜  "
 # export PS1="ϕϕϕ "
 # export PS1="$fg[cyan]ⓑ$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
-export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
+# export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
+# export PS1="> "
+export PS1="begin "
 
 # For Nim
 export PATH=$PATH:~/.nimble/bin
@@ -90,3 +92,7 @@ export CHAT_NODE_DEV="chat-server-dev"
 
 # Make Docker Go Vroom
 export DOCKER_BUILDKIT=1
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+export GOPRIVATE="github.com"

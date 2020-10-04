@@ -73,6 +73,10 @@ set laststatus=0
 " Lets us yank in vim and then paste to other programs
 set clipboard+=unnamedplus
 
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+augroup END set updatetime=800
 
 " This is the default apparently
 " But I have seen Emojis cut in half, when not set
@@ -86,6 +90,9 @@ set foldmethod=marker
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
+
+" hmmmm didn't do what I want
+set completeopt-=preview
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
@@ -121,4 +128,3 @@ endif
 " I don't think matters
 " As I have no swap files!!!
 set updatetime=100
-" set updatetime=800

@@ -13,12 +13,13 @@ highlight SpellBad gui=undercurl
 
 " We Need to Highlight Rare words
 " ....and maybe one day we will discover one other than vim
-highlight SpellRare guibg=#FF009F
+" highlight SpellRare guibg=#FF009F
 
 " enable to make the background transparent
-" highlight normal guibg=none ctermbg=none
-highlight Normal guibg=Black ctermbg=Black
+highlight normal guibg=none ctermbg=none
+" highlight Normal guibg=Black ctermbg=Black
 " highlight Normal guibg=#121212
+" highlight Normal guibg=#8F005E
 " highlight Normal guibg=#1e1c31
 
 " Enable to make SignColumn transparent

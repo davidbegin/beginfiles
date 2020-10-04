@@ -8,6 +8,8 @@
 " ###    ### ##########    ###   ###       ### ###     ### ###         ########
 
 
+
+
 map <leader>gb :call VimuxRunCommand("clear; go build .")<CR>
 
 " I've done it and have seen the light
@@ -55,15 +57,15 @@ imap <right> <nop>
 " inoremap ^L ^X^L
 
 
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+" nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+" nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+" nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+" nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+" nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+" nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+" nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+" nnoremap gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
 
@@ -88,6 +90,7 @@ nnoremap <silent><leader>fz <cmd>lua require('telescope.builtin').current_buffer
 
 " Not really using this yet, but might in the future
 nnoremap <silent><leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
+nnoremap <silent><leader>ls :lua require'telescope.builtin'.loclist{}<CR>
 
 " Useful in searching in our vim config as it gets more split up
 nnoremap <silent><leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
@@ -183,8 +186,8 @@ noremap <leader>pp :call PasteIt()<CR>
 tnoremap <C-[><C-[> <C-\><C-n>
 
 " https://github.com/nvim-lua/diagnostic-nvim
-nnoremap <leader>j :NextDiagnostic<CR>
-nnoremap <leader>k :PrevDiagnostic<CR>
+nnoremap <leader>k :NextDiagnostic<CR>
+nnoremap <leader>j :PrevDiagnostic<CR>
 nnoremap <leader>h :NextDiagnosticCycle<CR>
 nnoremap <leader>i :OpenDiagnostic<CR>
 

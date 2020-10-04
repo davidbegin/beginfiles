@@ -1,16 +1,95 @@
 
-Y88b      / 888      e    e                888   ,88~-_   888   | 888~-_   888b    |      e      888
- Y88b    /  888     d8b  d8b               888  d888   \  888   | 888   \  |Y88b   |     d8b     888
-  Y88b  /   888    d888bdY88b              888 88888    | 888   | 888    | | Y88b  |    /Y88b    888
-   Y888/    888   / Y88Y Y888b             888 88888    | 888   | 888   /  |  Y88b |   /  Y88b   888
-    Y8/     888  /   YY   Y888b        |   88P  Y888   /  Y88   | 888_-~   |   Y88b|  /____Y88b  888
-     Y      888 /          Y888b        \__8"    `88_-~    "8__/  888 ~-_  |    Y888 /      Y88b 888____
+\ \   / (_)_ __ ___       | | ___  _   _ _ __ _ __   __ _| |
+ \ \ / /| | '_ ` _ \   _  | |/ _ \| | | | '__| '_ \ / _` | |
+  \ V / | | | | | | | | |_| | (_) | |_| | |  | | | | (_| | |
+   \_/  |_|_| |_| |_|  \___/ \___/ \__,_|_|  |_| |_|\__,_|_|
 
+
+## CHECKOUT
+
+- Hunter
+
+## The Vim Help Style
+
+- All the details
+- .....then an example
+
+
+## Friday
+
+https://github.com/romainl/vim-qf
+
+## Potential Problems
+
+- I turned off universal LSP remappings,
+  if it ain't attached in lua.init.....it ain't gonna work
+
+## Vim Day 10-2
+
+- Dirvish - Learn how to use it more
+- Quickfix list, Location List, Argslist
+- Make our surround skills are improving
+
+## Vim Feelings
+
+code_bleu: vim or nvim...that is the question. I get that nvim has all the cool
+stuff, but wouldn't you trap yourself in a corner if you have to ssh into 100's
+of servers and more than likely they wont have nvim.
+
+Going from your customized vim, to server vi/vim is the same as going from
+neovim to vanilla vi/vim
 
 ## What is this for?
 
 To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
+
+## TIL
+
+- PRemix-$ rename Session | Tmux
+
+## Completion Woes
+
+- Different Key combos for triggering completion
+- Different Keys for moving through results
+
+- CTRL-X CTRL-S
+
+## Vim Go
+
+Why aren't we seeing errors in our main.go, when
+we have errors in our pkg?
+
+- When we have failures in our pkg, it ignores failures in our
+  main.go....why????
+
+- Cant override the hover defintion
+
+- Vim-Go: autocomplete
+  - autcomplete in comments not working
+
+- Go to Diagnostic CTRL-N not working
+
+- Figure out how to use Vimux
+  - https://github.com/benmills/vimux
+  - townzz: I use vimuxRunLastCommand, vimuxPromptCommand so I quickly run commands
+            like go build, go run main.go, etc... in a separate window for quick testing.
+
+
+Go Snippets
+fn -> fmt.Println()
+ff -> fmt.Printf()
+ln -> log.Println()
+lf -> log.Printf()
+
+g:go_doc_keywordprg_enabled=0
+
+yorked_: Don't think diagnostics are added to quickfix list
+How can I get diagnostic into my quickfixlist
+
+How do I navigate issue
+
+Can't use LSP in the Standard Library
 
 ## Warm Up
 
@@ -21,6 +100,14 @@ Listing what I am researching, annoyed with, working on, feeling unsure about et
 - Use H, M, L more
 - use cw more
 - CTRL-O and CTRL-I -> Hop forward and back
+
+## Teej Challenge
+
+teej_dv: make your ^x^l thing optionally complete other windows
+teej_dv: it's a good exercise
+erikdotdev: @teej_dv no fuzzy finder for spelling? You're slipping.
+teej_dv: we can probably make telescope finder for spell
+teej_dv: :)
 
 ## Help ins-completion
 
@@ -43,21 +130,47 @@ keywords in the current file				        |i_CTRL-X_CTRL-N|
 keywords in 'complete'				              |i_CTRL-N| |i_CTRL-P|
 Vim command-line					                  |i_CTRL-X_CTRL-V|
 
+## Local Leaders
+
+you could remap leader, in your vimrc, and have different
+keymaps that have different leader commands
+
+Be care of where you define your leader key,
+define it up top!!!!
+
+Different Leader, per language
+  - Then:
+
+I don't need to decide what localleader is....I could just comma
+....but then you got update
+
+Beginbot is Wrong
+> - File specifics mappings....but you don't want use leader.
+>   sooo its li
+
+- Leader VS Local Leader:
+   - Mappings in Plugins!!!! Teej
+    - nothgin diff for you personall...unless you are going to switch leaders.
+      helpful for leader transition
+
+if you release a plugin with key mappings using leader instead of localleader,
+means you are Vim Criminal, Viminal
+
+
+## Ponderings
+
+- What are keys namespaces for yourself?
+  - Example: p n> project wide
+
+stupac62: @beginbot thoughts: (vim keybinds) you shouldn't use leader for insert mode keybinds.
+
+What keys for Key Mapping:
+  - What do map under CTRL?
+  - What do you map under your leader?
 
 ## Jokes
 
   - CTRL-y and CTRL-e in insert mode, below or above respectively
-
-
-## Go-Vim
-
-- Go to Diagnostic CTRL-N not working
-- autcomplete in comments not working
-
-- Figure out how to use Vimux
-  - https://github.com/benmills/vimux
-  - townzz: I use vimuxRunLastCommand, vimuxPromptCommand so I quickly run commands
-            like go build, go run main.go, etc... in a separate window for quick testing.
 
 
 ## New Habits
@@ -71,6 +184,8 @@ Vim command-line					                  |i_CTRL-X_CTRL-V|
     - t
     - e
     - s
+
+- f after search ; to repeat
 
 ## Dotfile Navigating (This is with personal Global Marks)
 
@@ -110,6 +225,7 @@ Number Pad on 2nd Layer
 
 - vim-surround
   - Need to use this more effectively
+  - We added vim-repeat, which is real nice
 
 - Vim Signature
   - Toggling Marks
@@ -130,46 +246,232 @@ Number Pad on 2nd Layer
 
 - rockerboo: https://github.com/tjdevries/express_line.nvim
 
-- vf{%d = one of my most used commands
-  - Prime
+- vf%d = one of my most used commands
+- Prime
 - <c-d> <- dedent
 - <d-t> <- tag in
 
 - How do we move lines up and down
-  - ddkP
+- ddkP
 
 ## Mouseless Goals
 
 - I don't think I'm going to throw my mouse away
-  - But i'm going to keep it off my desk,
-    to see what other habits form
-    ....lynx, QuteBrowser
+- But i'm going to keep it off my desk,
+  to see what other habits form
+  ....lynx, QuteBrowser
 
 ## Tweaking
 
-- vim-go settings
-- completion settings everywhere
-- keymappings everywhere
+  - vim-go settings
+  - completion settings everywhere
+  - keymappings everywhere
 
 ## Working On
 
-- use cw more
-- Use the :help more
-- text-objects
-- Make the current cursor at the Top
+  - use cw more
+  - Use the :help more
+  - text-objects
+  - Make the current cursor at the Top
   - zt
+
+## Vim-Surround
+
+vf"hy
+
+vi"Hello There Very Cool Kany,e
+
+- cs -> change
+-> cs"'
+change double to single quotes
+- ds -> delete
+ds"
+"delete the double quotes"
+- ys -> add
+ysiw"
+ysiw(
+ys$[
+ys3w"
+ysf."
+( - Change inside the surroundy-thangs
+)
+- ci{ ci(
+- cit works for html
+- Copy between yi"
+- yssb -> wrap the whole line in parentheses
+"
+
+s -> sentence
+-> yssb
+p -> paragraph
+-> yspb
+t -> tag
+f -> function
+
+ysipB -> surround with paragraph with }
+
+---
+
+yssb
+yssB
+yssr
+yss"
+yss'
+
+(Surround me in Round Bois)
+{Surround me in Curly Bois}
+[Surround me in Square Brackets]
+"Surround me in Double Quotes"
+'Surround me in Single Quotes'
+
+( Surround me in Round Bois )
+{ Surround me in Curly Bois }
+[ Surround me in Square Brackets ]
+"Surround me in Double Quotes"
+'Surround me in Single Quotes'
+
+ys3wB
+f)w
+ys2wr
+
+yse"
+<leader>"
+
+{Curly Curly Curly} [Square Square] "Quotes" (Round Round Round)
+
+Curly Curly Curly Square Square Quotes Round Round Round
+
+Curly Curly Curly Square Square Quotes Round Round Round
+{Curly Curly Curly} [Square Square] "Quotes" (Round Round Round)
+
+(Curly Curly Curly) [Square Square]
+Curly Curly Curly Square Square
+Curly Curly Curly Square Square
+(Curly Curly Curly) [Square Square]
+(Curly Curly Curly) [Square Square]
+
+
+---
+
+yssb
+yssB
+yssr
+yss"
+
+dsb
+dsB
+dsr
+ds"
+
+vi"
+vib
+viB
+vir
+
+cir <- DOESN'T WORK
+
+ci"
+cib
+ciB
+
+veS"
+v3wSb
+
+In VIsual Mode: S
+
+ys3w"
+
+---
+
+[
+  (Hello How Are) You
+]
+
+(Hello How Are You)
+
+[Hello How Are You]
+
+{Hello How Are You}
+
+Hello (How) {Are} [You]
+
+---
+
+### Vim Surround Aliases
+
+- b -> )
+- B ->
+- r -> ]
+- a -> >
+
+- opening side of tag ([{ adds extra space for "tags"
+- closing side of tag })] no extra space for "tags"
+
+Now wrap the "entire" line in parentheses with yssb or yss).
+
+stupac62: @beginbot The targets b, B, r, and a
+are aliases for ), }, ], and > ', ", `,
+                                                *i_CTRL-G_s* *i_CTRL-G_S*
+Finally, there is an experimental insert mode mapping on <C-G>s and <C-S>.
+Beware that the latter won't work on terminals with flow control (if you
+accidentally freeze your terminal, use <C-Q> to unfreeze it).  The mapping
+inserts the specified surroundings and puts the cursor between them.  If,
+immediately after the mapping and before the replacement, a second <C-S> or
+carriage return is pressed, the prefix, cursor, and suffix will be placed on
+three separate lines.  <C-G>S (not <C-G>s) also exhibits this behavior.
+
+Hello Begin Time "Hello"
+
+Hello begin "cool" Hi this is nice ( Ok now )
+
+### Resources
+
+https://cheatography.com/mutanclan/cheat-sheets/vim-tpope-vim-surround/
+
+### Desires
+
+- Deleting triple quotes
+  - 3ds"
+"hello nice"
+"isidentical"
+
+## NO Auto Pairs, All Surround
+
+Ctrl-S "
+CTRL-s )
+CTRL-s }
+
+Hello this is inside of some  { Curly Bois } this is nice heres a quote: "NICe A
+Qutoe, this is cool"
+
+## Autopairs:
+
+- You are constantly turning it on and off
+
+- If you want to get good at competetive programmer, take advice from the
+  competetive programmers!!!!
+
+  ...competetive programming is not how 99% of programming is done.
+  ...so are you trying to competetive programmer?
+  or become a a programmer
+
+  What kind of puzzles do you like
+
+  .....you don't go to home depot, and say I wanna learn to hammer
+  you say I want to build X.
+  then we ca ngive some advice
 
 ## Annoyed with
 
 - Surround quotes life. Too many auto-quotes
-- fmt.Println()
-  -> getting an LSP error
-  -> Might be in relation to autopairs
+  - vim surround
+  - its based on motions, so flexible
+  - keymap for double quotes
+  - https://github.com/tpope/vim-surround
 - Making Markdown Links
-- fm is not working
-  - fm not working
+  - Move to Lua??
 - Goyo is breaking thangs on exit
-- Auto complete for vim things 
+- Auto complete for vim things
 - Terraform LSP
   - https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/z_langserver.vim
 - indentation
@@ -190,9 +492,27 @@ Number Pad on 2nd Layer
 :helpgrep ins-completion
   - then :copen
 :help copen
-
+:help setqflist()
+:help cnext
 
 ## Ideas
+
+Hello Holy Vim Lord, just bouncing an idea for a Vim Game based on todays confusion.
+
+Vim Scavenger Hunt
+
+Game where random things are placed in Vimland and you're told to fetch them.
+  - Marks
+  - Registers
+  - Quickfix
+  - Location List
+  - Other places!?!?!
+
+Then you can measure the keystrokes, and provide feedback, or tips.
+
+Also I want like Zelda soundeffects for finding treasure, weapons and what not.
+
+Think theres some meat there? or will it be too limited
 
 ## Improving Use of Help
 
@@ -218,3 +538,182 @@ Works like a charm!
 ```
 :r ls config/
 ```
+
+## TODO
+
+meatchops: bindkey '^e' edit-command-line in zsh to edit current command in vim, save and close to enter it
+
+## Debugging
+
+rockerboo: run nvim with nvim -V2 /tmp/nvim.log
+rockerboo: then you can see what files its sourceing
+teej: :scriptnamesu
+
+## Python
+
+
+Neovim Vim Nightly -> Builtin LSP
+- Add PyMS Microsoft's Python language server
+- hey completion and diagnostic, run, when you see the python language server
+  running
+
+## Neovim Advice
+
+- Don't lie to Neovim
+  - Specifically related to what your terminal can handle
+
+
+## Mysteries
+
+hello_im_nix: Do you know how to disable the neovim floating window?
+floaterm window
+https://github.com/voldikss/vim-floaterm
+:help floaterm-faq
+mccannch: @Hello_im_nix why don't you want fzf, rg into a float term? I think I am confused
+
+
+## Git
+
+- Lazy Git
+- Delta
+- Vim-Fugative
+
+## Highlight
+
+teej_dv: ":help vim.highlight.on_yank()"
+teej_dv: to see config options if you wanted begin, btw
+
+## Vim Folding
+
+- Vim Folding is nice when refactoring. To get an overview
+
+zR -> open all them folds
+zM -> close em all
+
+how to refold all sections based on fold method
+
+## Folder Structure
+
+~/.local/share/nvim/site - ~/.config is for "configs" and plugins are downloaded blobs. so i.e. ~/.local/share/nvim/site/autoload or say ~/.local/share/nvim/site/plugged
+
+:help stdpath
+
+## Confessions
+
+- It's almost Vim-Friday again, and I don't feel like I'm that
+  much better at Vim-Surround.
+
+## Tmux Journal
+
+How do you break out Window from Pane
+  tmux-prefix !
+
+## All The Lists
+
+- Quickfix list, Location List, Argslist
+
+### Help List
+
+- :help quickfix
+- :help quickfix.txt
+- :help getqflist()
+
+### Open Questions:
+
+- Do we need errors in the file?
+- What do errors look like?
+- What does make mean in a vim context
+- Whats the use difference for location list and quickfixlist
+ - quickfixlist is project wide
+  - location is window specific.
+    - you might use both, with location, to focus on a
+    more specialized area
+  - :vimgrep, :grep, :helpgrep, :make
+  - :lvimgrep, :lgrep, :lhelpgrep, :lmake
+
+> From inside Vim an easy way to run a command and handle the output is with the
+> |:make| command (see below).
+
+```
+If you have the error messages in a file you can start Vim with: >
+	vim -q filename
+```
+
+The 'errorformat' option should be set to match the error messages from your
+compiler (see |errorformat| below).
+
+A location list is a window-local quickfix list. You get one after commands
+like `:lvimgrep`, `:lgrep`, `:lhelpgrep`, `:lmake`, etc., which create a
+location list instead of a quickfix list as the corresponding `:vimgrep`,
+`:grep`, `:helpgrep`, `:make` do.
+A location list is associated with a window and each window can have a
+separate location list.  A location list can be associated with only one
+window.  The location list is independent of the quickfix list.
+
+
+
+When a window with a location list is split, the new window gets a copy of the
+location list.  When there are no longer any references to a location list,
+the location list is destroyed.
+
+:mak[e][!] [arguments]	1. All relevant |QuickFixCmdPre| autocommands are
+			   executed.
+
+3. An errorfile name is made from 'makeef'.  If
+'makeef' doesn't contain "##", and a file with this
+name already exists, it is deleted.
+
+When "##" is included, it is replaced by a number to make the name
+unique.  This makes sure that the ":make" command doesn't overwrite an
+existing file.
+
+----
+
+stupac62: @soulshined if you like math then you like ligatures. IMO
+theprimeagen: so i like the idea of p as my first key for anything "project" wide (you can do a). That way I can do pw for grep for word under cursor. pW for WORD under cursor. ps for project search. etc etc
+theprimeagen: I love mnemonic
+dzintars_dev: !ligatures
+teej_dv: newmonics are nice
+
+## Desire
+
+- How do I get  the quickfixlist to stay populated when closing the Buffer
+- How do I populate my Quickfixlist, without jumping to an error?
+  - Potential running make opening new buffers (hook it up to sound
+    to punish myself)
+
+- How do I run other make targets and have them populate the
+  quickfixlist
+
+  set makeprg=make\ web
+
+## Viewer Questions
+
+code_bleu: I have changed my <esc> to "kj", but can do "kj" when in "insert (Paste)" mode. Can i get the "kj" to work there too?
+
+## Watch out for
+
+https://github.com/mfussenegger/nvim-dap
+
+---
+
+- What if we have multiple targets to build
+- How can I use other make targets, for the quickfixlist
+
+---
+
+Should I be working against one Make target (go exectutable),
+and then switching the makeprg, or should I have alias
+for select diff make targets
+
+make
+make web
+make debug
+make test
+
+3 Programs:
+  - Main the Chatbot
+  - WebApp
+  - Debug App for Testing
+
+
