@@ -70,7 +70,9 @@ imap <right> <nop>
 " nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
 
 " We will continue to check this out
-nnoremap <leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ width=1}))<cr>
+nnoremap <leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ results_width=0.8}))<cr>
+" nnoremap <Leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ winblend = 10 }))<cr>
+
 
 " Telescope
 nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
@@ -78,6 +80,8 @@ nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 " nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
 nnoremap <silent><leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 nnoremap <silent><leader>tp <cmd>lua require'telescope.builtin'.git_files{}<CR>
+
+" require('telescope.themes').get_dropdown({})
 
 " We learned writing this, but no sure if it's useful
 " nnoremap <silent><leader>cf <cmd>lua require('begin.tele').cfwd()<CR>
@@ -209,14 +213,6 @@ nnoremap <leader>nj :!nojam<cr>
 " Not sure if I really need settings for toggling the sign column
 " nnoremap <silent><leader>scy :set scl=yes<CR>
 " nnoremap <silent><leader>scn :set scl=no<CR>
-
-" We might to only include this on certain file types
-" vim-test
-" nmap <silent> t<C-n> :TestNearest<CR>
-" nmap <silent> t<C-f> :TestFile<CR>
-" nmap <silent> t<C-s> :TestSuite<CR>
-" nmap <silent> t<C-l> :TestLast<CR>
-" nmap <silent> t<C-g> :TestVisit<CR>
 
 " This was having issues with vim-go
 " and seems to work without this enabled here

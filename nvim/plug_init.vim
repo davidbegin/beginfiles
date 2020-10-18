@@ -1,3 +1,4 @@
+"
 "  _ __ | |_   _  __ _(_)_ __  ___
 " | '_ \| | | | |/ _` | | '_ \/ __|
 " | |_) | | |_| | (_| | | | | \__ \
@@ -34,6 +35,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Tmux and Vim Together at Last!
   Plug 'hupfdule/vimux'
+  Plug 'benmills/vimux-golang'
 
   " Calm the ADHD
   Plug 'junegunn/goyo.vim'
@@ -51,6 +53,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-markdown'
 
   " Neovim LSP Autocompletion, Diagnostic Stuff
   Plug 'neovim/nvim-lsp'

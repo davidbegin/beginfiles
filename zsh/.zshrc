@@ -66,7 +66,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # For Go
 export PATH="$PATH:$HOME/go/bin"
 export PATH=$PATH:/usr/local/go/bin
-#
+export PATH=$PATH:/usr/local/go/bin
+
+# For Ruby
+export PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
@@ -75,20 +79,6 @@ export LUA_PATH="/home/begin/code/playground/lua/share/lua/5.1/?.lua"
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
 export NVIMP="~/.config/nvim"
-
-# This should be moved somewhere else
-export DISCO_PROD="disco-server-staging"
-export DISCO_STAGE="disco-server-candidate"
-export DISCO_DEV="disco-server-dev"
-
-export CHAT_MASTER_PROD="chat-server-go-staging-master"
-export CHAT_NODE_PROD="chat-server-go-staging"
-export CHAT_MASTER_STAGE="chat-server-candidate-master"
-export CHAT_NODE_STAGE="chat-server-go-candidate"
-
-# We don't currently have a Dev Master Chat Service
-export CHAT_MASTER_DEV="chat-server-dev"
-export CHAT_NODE_DEV="chat-server-dev"
 
 # Make Docker Go Vroom
 export DOCKER_BUILDKIT=1

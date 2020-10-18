@@ -54,12 +54,22 @@ endfunction
 
 " map <leader>gh :call VimuxRunCommand("clear; go build cmd/server/main.go && ./main")<CR>
 " map <leader>gh :call VimuxRunCommand("clear; go build . && " . GoCmd())<CR>
+" map <leader>gh :call VimuxRunCommand("clear; go build . && ./beginsounds")<CR>
+map <leader>gh :call VimuxRunCommand("clear; go build . && ./main")<CR>
 map <Leader>gj :VimuxCloseRunner<CR>
-map <leader>gh :call VimuxRunCommand("clear; go build . && ./beginsounds")<CR>
-map <leader>gn :call VimuxRunCommand("clear; gotest ./...")<CR>
+map <leader>gn :GolangTestFocused<CR>
+map <leader>gm :call VimuxRunCommand("clear; gotest ./...")<CR>
+map <leader>gk :call VimuxRunLastCommand()<CR>
+
 
 " nnoremap <leader>k :GoDiagnostics<CR>
 " nnoremap <leader>j :PrevDiagnostic<CR>
 " map <leader>gk :call VimuxRunCommand("clear; go build consumer.go && " . "./consumer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
 " map <leader>gh :call VimuxRunCommand("clear; go build producer.go && " . "./producer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
 
+" vim-test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>

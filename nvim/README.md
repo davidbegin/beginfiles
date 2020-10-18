@@ -4,16 +4,234 @@
   \ V / | | | | | | | | |_| | (_) | |_| | |  | | | | (_| | |
    \_/  |_|_| |_| |_|  \___/ \___/ \__,_|_|  |_| |_|\__,_|_|
 
+# Dirvish - Learn how to use it more
+
+Top Dirvish Features:
+
+- Editing Files:
+  - x to add files to arglist
+  - :Shdo! to edit those files
+  - Z! execute the script on those files
+
+- Highlight section :
+  - '<,'>
+  - Shdo -> operate on the range
+  - {} represents to the file
+  - '<,'>Shdo mv {} {}.bk
+
+- Creating Directories and Files in Current Dirvish Buffer (not current working directory)
+  - !mkdir %cool
+  - :e %cool.txt
+
+- Renaming Files
+  - yy
+    :!rm Alt-V
+
+- :g/sql/d -> remove all files from dirivish buffer, that match
+- :g!/sql/d -> remove all files from dirivish buffer, that DON'T match
+
+Append to quickfix (:'<,'>caddb), iterate with :cdo.
+
+- -> Take me to my directory
+
+#### Dirvish I don't understand
+
+- Sort with :sort, filter with :global. Hit R to reload.
+- Append to quickfix (:'<,'>caddb), iterate with :cdo.
+- Script with :Shdo[!].
+
+```
+:set ft=dirvish on any buffer to enable Dirvish features:
+git ls-files | vim +'setf dirvish' -
+```
+sanshone: +setf is :setf from a shell
+
+:!mkdir %foo
+
+this making a directory in my current buffer working dir???
+Why do I need a % here??
+
+So commands and plugins that work with @% and @# do the Right Thing.
+
+
+:help Shdo
+
+:[range]Shdo[!] {cmd}                               *:Shdo* *dirvish-:Shdo*
+    Generates a shell script with {cmd} applied to [range] and the respective
+    filepath inserted wherever {} appears in {cmd}. The window-local directory
+    is initialized to the current Dirvish directory. If bang ! is given the
+    |arglist| is used instead of [range].
+
+    For example, to rename a list of visual-selected files: >
+        :'<,'>Shdo mv {} {}-copy.txt
+
+<    Run the script with |Z!| or ":!%".
+
+
+See `:help arglist`
+
+See the arg list
+:args
+or :ar
+
+```
+a               Opens file in a new, vertical window.
+p               Previews file at cursor.
+```
+
+#### Do Questions
+
+- Who uses the arglist and for what
+- How do people use their buffer list?
+- When to use global versus local arglist
+
+### Too Many Dos
+
+Also see |:windo|, |:tabdo|, |:bufdo|, |:cdo|, |:ldo|,
+|:cfdo| and |:lfdo|.
+
+!jdi
+
+### I don't understand
+
+Use @# to get the Dirvish buffer from a :Shdo buffer:
+:Shdo
+mkdir <C-R>#.bk
+Z!
+
+## Increasing the respect of Vim
+
+- Neoclassical Visual Editor Improved
+
+drdoomenberg: Neo Classical Visual Editor on a Tablet based Input System?
+stupac games: Join twitch chats, ask for advice, and then half through tell
+them: BTW: I'm on Neo Classical Visual Editor on a Tablet based Input System?
+
+## Vim Day Ponderings
+
+- The Art of Remapping:
+  - The Dangers of Remapping in insert mode
+    - jk, or the reverse kj
+    - Will this pattern occur naturally
+    - What happens if does occur naturally
+    - Whats yo timeout
+
+0_nerd: I just did `imap ;; <C-S>b` FeelsGoodMan
+0_nerd: My timeout is really short.
+
+Will ;; appear in my regular work.
+Where does ;; exist in the world
+
+;; in bash, could be a problem for this remapping.
+
+## Who ends up on Layer 0
+
+- How do you handle you paired friends on Layer-0
+  - Programmers are obsessed with: {} () []
+
+## New Habits
+
+- how could we surround, a list of lines in ().
+each line is surrounded in its own a ()
+
+- No-Auto Pairs, pairing nirvana
+  - Ctrl-S B -> {}
+    -> B is from Vim-Surround (A T-Pope Joint)
+
+CTRL-S "
+  -> built-in Autopairs
+CTRL-S B -> {}
+"CTRL-S b -> ()"
+CTRL-S r -> []
+
+  -> built-in Neovim or Vim????
+
+  []
+  ""
+  ''
+  ()
+  ()
+  ()
+  ()
+
+OR
+
+CTRL-Gs B -> {}
+CTRL-Gs b -> ()
+CTRL-Gs B -> {}
+
+```
+Finally, there is an experimental insert mode mapping on <C-G>s and <C-S>.
+Beware that the latter won't work on terminals with flow control (if you
+accidentally freeze your terminal, use <C-Q> to unfreeze it).  The mapping
+inserts the specified surroundings and puts the cursor between them.  If,
+immediately after the mapping and before the replacement, a second <C-S> or
+carriage return is pressed, the prefix, cursor, and suffix will be placed on
+three separate lines.  <C-G>S (not <C-G>s) also exhibits this behavior.
+```
+
+()
+()
+()
+
+In visual mode, a simple "S" with an argument wraps the selection.  This is
+referred to as the *vS* mapping, although ordinarily there will be
+additional keystrokes between the v and S.  In linewise visual mode, the
+surroundings are placed on separate lines and indented.  In blockwise visual
+mode, each line is surrounded.
+
+A "gS" in visual mode, known as *vgS* , behaves similarly.  In linewise visual
+mode, the automatic indenting is suppressed.  In blockwise visual mode, this
+enables surrounding past the end of the line with 'virtualedit' set (there
+seems to be no way in Vim Script to differentiate between a jagged end of line
+selection and a virtual block selected past the end of the line, so two maps
+were needed).
+
+### Desires
+
+- Deleting triple quotes
+  - 3ds"
+"hello nice"
+"isidentical"
+
+- Autospell correct mode
+  - When I leave insert mode, auto-correct spelling on the line
+
+
+## Foolish Begin
+
+- How do we handle renaming, moving around files better
+  - Used to use Nerdtree
+  - Using dirvish now (not that well)
+  - Like using ranger for moving stuff around
+
+## Backwards
+
+Ctrl-i -> forward
+Ctrl-o -> backward
+Ctrl-^ -> flip between two files
+'' -> last jump
+
+## Today's Workflow
+
+- Vimux Setup:
+  - <leader>gn -> Run neareset Test
+  - <leader>gj -> Close Vimux
+  - <leader>gh
+  - <leader>gm
+
+## Spelling
+
+]s -> Next MisSpelling
 
 ## CHECKOUT
 
 - Hunter
 
-## The Vim Help Style
+  ## The Vim Help Style
 
 - All the details
 - .....then an example
-
 
 ## Friday
 
@@ -26,7 +244,6 @@ https://github.com/romainl/vim-qf
 
 ## Vim Day 10-2
 
-- Dirvish - Learn how to use it more
 - Quickfix list, Location List, Argslist
 - Make our surround skills are improving
 
@@ -59,7 +276,6 @@ Listing what I am researching, annoyed with, working on, feeling unsure about et
 
 Why aren't we seeing errors in our main.go, when
 we have errors in our pkg?
-
 - When we have failures in our pkg, it ignores failures in our
   main.go....why????
 
@@ -428,13 +644,6 @@ Hello begin "cool" Hi this is nice ( Ok now )
 
 https://cheatography.com/mutanclan/cheat-sheets/vim-tpope-vim-surround/
 
-### Desires
-
-- Deleting triple quotes
-  - 3ds"
-"hello nice"
-"isidentical"
-
 ## NO Auto Pairs, All Surround
 
 Ctrl-S "
@@ -716,4 +925,6 @@ make test
   - WebApp
   - Debug App for Testing
 
+## Things that Scare Me
 
+- https://github.com/nikvdp/neomux
