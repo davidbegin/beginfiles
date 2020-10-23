@@ -48,7 +48,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Navigating Directories
   Plug 'justinmk/vim-dirvish'
 
-  " Hail Tpope
+  " Hail TPope
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'

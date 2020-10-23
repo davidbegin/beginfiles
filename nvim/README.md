@@ -4,7 +4,60 @@
   \ V / | | | | | | | | |_| | (_) | |_| | |  | | | | (_| | |
    \_/  |_|_| |_| |_|  \___/ \___/ \__,_|_|  |_| |_|\__,_|_|
 
-# Dirvish - Learn how to use it more
+## Weekly habits
+
+- CTRL-S vim-surround shortcuts
+  - b -> )
+  - B -> }
+  - r -> ]
+  - a -> >
+  - " -> ""
+  - CTRL-Gs B -> {}
+  - CTRL-Gs b -> ()
+  - CTRL-Gs B -> {}
+  - CTRL-Gs ' -> ''
+  - CTRL-Gs " -> ""
+- Better Dervish
+  - a -> open in new split
+  - %
+  - Shdo
+    - x to mark a file
+    - :Shdo! to operate on the files
+    - Z! to execute the command
+- $ -> end   (Layer-1(0-Indexed)+s
+- ^ -> front (Layer-1+x) (Simplified)
+  - c$ -> change this lin""
+  - d^ -> delete to the front
+- zt
+]s (vs) -> Next MisSpelling (Layer-1+v)
+[s (cs) -> Next MisSpelling (Layer-1+v)
+- Weekly Vim Global Marks
+  - W -> Weekly Notes
+  - G -> Go Notes
+  - D -> DB Notes
+
+## Habit Changing
+
+- Make it impossible
+  - disable you arrow keys
+- Make it annoying
+  - put a sleep
+
+## 5 Years Ago Begin
+
+I sat down in a quiet room, and thought to myself, what do I do the most in Vim.
+Saving!
+.......how can I make this the easiest???
+at the time, on my mac keyboard, my ring finger rests on k, above, `,,`
+so I made my comma
+
+....Past Begin this made this up, make your own things up!
+
+## What I am Missing
+
+- What are home and end for??
+
+# Dirvish - learn how to use it more
 
 Top Dirvish Features:
 
@@ -53,7 +106,6 @@ Why do I need a % here??
 
 So commands and plugins that work with @% and @# do the Right Thing.
 
-
 :help Shdo
 
 :[range]Shdo[!] {cmd}                               *:Shdo* *dirvish-:Shdo*
@@ -78,6 +130,12 @@ or :ar
 a               Opens file in a new, vertical window.
 p               Previews file at cursor.
 ```
+
+## Emotions
+
+- https://github.com/romkatv/powerlevel10k
+- What is this all doing for us, what do we want to remove?
+- What do we want to customize
 
 #### Do Questions
 
@@ -616,7 +674,7 @@ Hello (How) {Are} [You]
 ### Vim Surround Aliases
 
 - b -> )
-- B ->
+- B -> }
 - r -> ]
 - a -> >
 
@@ -780,6 +838,21 @@ https://github.com/voldikss/vim-floaterm
 :help floaterm-faq
 mccannch: @Hello_im_nix why don't you want fzf, rg into a float term? I think I am confused
 
+theprimeagen: gF will jump to file and line offset (src/file.go:420 -> gF on filepath)
+theprimeagen: That is why I want the terminal
+theprimeagen: Try thisjo in vim (in your project). Type a relative path to a file (according to the current file or project root) AND a line offset. ../../path/to/file.go:<lineoffset> (drop the < > (file.go:69))
+
+Try these commands on this path
+gf
+gF
+CTRL-w f
+CTRL-w F
+```
+.config/dotfiles/nvim/plug_init.vim:30
+```
+
+
+theprimeagen: Then put your cursor on it and type gF
 
 ## Git
 
@@ -928,3 +1001,22 @@ make test
 ## Things that Scare Me
 
 - https://github.com/nikvdp/neomux
+
+## Delete After or Before the Line (or weave)
+
+Hello | How Are You Doing Right Now
+Hello How Are | You Doing Right Now
+Hello How Are You Doing | Right Now
+Hello How | Are You Doing Right Now
+Hello How Are You Doing Right | Now
+Hello How Are You | Doing Right Now
+Hello How | Are You Doing Right Now
+
+Hello | How Are You Doing Right Now
+Hello How Are , You Doing Right Now
+Hello How Are You Doing . Right Now
+Hello How - Are You Doing Right Now
+Hello How Are You Doing Right / Now
+Hello How Are You = Doing Right Now
+Hello How " Are You Doing Right Now
+
