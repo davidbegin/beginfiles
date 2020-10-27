@@ -17,6 +17,8 @@ nnoremap <leader>a :GoAlternate<CR>
 
 " Not sure about this
 nnoremap <buffer> <leader>c :silent make <bar> redraw!<CR>
+nnoremap <buffer> <leader>t :silent make <bar> redraw!<CR>
+
 nnoremap <leader>rn :GoRename<CR>
 noremap ,g :GoRun ./%<cr>
 noremap ,b :GoBuild<cr>

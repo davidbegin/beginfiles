@@ -33,6 +33,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" Prime real estate
+"
+" vim-projectionist for navigating to Alternate files
+nnoremap <leader>a :A<CR>
+nnoremap <leader>v :AV<CR>
+
 " Disable Arrow keys in Escape mode
 map <up> <nop>
 map <down> <nop>

@@ -54,6 +54,14 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-markdown'
+  Plug 'tpope/vim-projectionist'
+  Plug 'tpope/vim-dispatch'
+  Plug 'tpope/vim-dadbod'
+
+
+  " Vanilla Vim
+  " Plug 'wonka/vanilla-bean'
+  " Plug 'eddys/french-vanilla'
 
   " Neovim LSP Autocompletion, Diagnostic Stuff
   Plug 'neovim/nvim-lsp'
@@ -72,7 +80,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lua/telescope.nvim'
 
   " Colors and Whatnot
-  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'norcalli/nvim-colorizer.lua' " This brings me the most joy
   Plug 'norcalli/nvim-terminal.lua'
   Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
   Plug 'jaredgorski/spacecamp'

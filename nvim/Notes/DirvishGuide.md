@@ -1,5 +1,12 @@
 # Dirvish
 
+## Dirvish Design Questions
+
+- Why use the argument-list??
+
+---
+
+
 Top Dirvish Features:
 
 - Editing Files:
@@ -78,4 +85,9 @@ Use @# to get the Dirvish buffer from a :Shdo buffer:
 :Shdo
 mkdir <C-R>#.bk
 Z!
+
+
+  - s -> vertical split above
+  - t -> TaB???
+  - e -> Edit???
 
