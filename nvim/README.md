@@ -9,30 +9,27 @@
 To help organize and focus my current vim efforts.
 Listing what I am researching, annoyed with, working on, feeling unsure about etc.
 
-## Weekly Habits
+## Habits We Are Trying to Build
 
 - Use H, M, L more
+- zt / zb
 
-- use cw more
+- use c more
+  - cw
+  - C
 
 - CTRL-O and CTRL-I -> Hop forward and back
 
-- f after search ; to repeat
-- F after search ; to repeat
+- f/F -> ; to repeat
 
-- You can use _ to jump the beginning
 - $ -> end   Layer-1(s)
 - ^ -> front Layer-1(x)
-  - c$ -> change this lin""
-    - C  ->
-  - d^ -> delete to the front
-
-- zt / zb
+- _ -> front Layer-1(-)
 
 ]s (vs) -> Next MisSpelling (Layer-1+v)
 [s (cs) -> Next MisSpelling (Layer-1+v)
 
-### Indent
+### Indenting
 
 Normal/Visual Mode:
 - >
@@ -42,11 +39,12 @@ Insert Mode:
 - <c-t> <- indent
 - <c-d> <- dedent
 
+This still feels like I'm not powerful/natural enough
+
 ### Vim Commentary
 
-gcap
-gcip
-gcc
+gcap/gcip -> comment out outer/inner paragraph
+gcc       -> comment out line
 
 ### Surround
 
@@ -60,6 +58,7 @@ gcc
     - CTRL-Gs B -> {}
 
 ### Dirvish
+
   - - current directory
   - a or v -> open in new split
   - %
@@ -84,12 +83,6 @@ gcc
   - 2cabo
     -> go to error above
 
-## Testing in Vim
-
-Vim-Test (I use it for python)
-Vim-Go   (nearest go-test)
-Vimux for the Tmux splitting
-
 ## BEGIN Project
 
 - Telescope menu of Global Marks
@@ -101,6 +94,16 @@ Vimux for the Tmux splitting
 ## Plugins to checkout
 
 - https://github.com/tpope/vim-tbone
+- https://github.com/tpope/vim-dispatch
+- https://github.com/tpope/vim-tbone
+- https://github.com/tpope/vim-abolish
+- https://github.com/tpope/vim-speeddating
+- https://github.com/tpope/vim-projectionist
+- https://github.com/tpope/vim-dadbod
+  - For Postgresql
+- https://github.com/tpope/vim-fugitive
+  - Versus lazygit
+
 
 ## Vim Insults / Vimsults
 
