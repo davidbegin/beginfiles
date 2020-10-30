@@ -11,26 +11,28 @@ Listing what I am researching, annoyed with, working on, feeling unsure about et
 
 ## Weekly Habits
 
+- Use H, M, L more
+
+- use cw more
+
+- CTRL-O and CTRL-I -> Hop forward and back
+
 - f after search ; to repeat
 - F after search ; to repeat
 
-- more c in general
-
+- You can use _ to jump the beginning
 - $ -> end   Layer-1(s)
 - ^ -> front Layer-1(x)
   - c$ -> change this lin""
     - C  ->
   - d^ -> delete to the front
-- You can use _ to jump the beginning
 
-Difference in ^ and _
-
-- zt
+- zt / zb
 
 ]s (vs) -> Next MisSpelling (Layer-1+v)
 [s (cs) -> Next MisSpelling (Layer-1+v)
 
-## Indent Problems
+### Indent
 
 Normal/Visual Mode:
 - >
@@ -40,7 +42,13 @@ Insert Mode:
 - <c-t> <- indent
 - <c-d> <- dedent
 
-## New Plugins
+### Vim Commentary
+
+gcap
+gcip
+gcc
+
+### Surround
 
 - CTRL-S vim-surround shortcuts
   - b -> )
@@ -51,8 +59,8 @@ Insert Mode:
   - Insert Mode:
     - CTRL-Gs B -> {}
 
-- Better Dirvish
-  - -
+### Dirvish
+  - - current directory
   - a or v -> open in new split
   - %
   - Shdo
@@ -62,45 +70,13 @@ Insert Mode:
   - I am ignorant of all the ways of creating files, just in vim.
   - When do you need to !mv and when can you just move
 
-hurricanehrndz: If you use netwr (:Explore or :Sexplore) you can move with R,
-perhaps you just haven't done enough sexploring
-
-## Projectionist
-
-tpope-projectionist
-
-From a globbing perspective, "*" is actually a stand in for "**/*".  For
-advanced cases, you can include both globs explicitly: "test/**/test_*.rb".
-When expanding with {}, the ** and * portions are joined with a slash.  If
-necessary, the dirname and basename expansions can be used to split the value
-back apart.
-
-.projections.json
-Go Example:
-```
-{
-  "pkg/*.go": {
-    "alternate": "pkg/{dirname}/{basename}_test.go",
-    "type": "source"
-  },
-  "pkg/*_test.go": {
-    "alternate": "pkg/{dirname}/{basename}.go",
-    "type": "test"
-  }
-}
-```
-
-## QuickFixlist
+### QuickFixlist
 
 <leader>t -> make and store errors in QuickFixlist
 <leader>qf -> Telescope for QuickFixlist errors
-
-:cp
-:cn
-
-
+:cp -> navigate to prev error
+:cn -> navigate to next error
 :cl -> list all errors
-
 :cbe
   - 2cbe
     -> go to error below
@@ -108,81 +84,44 @@ Go Example:
   - 2cabo
     -> go to error above
 
+## Testing in Vim
 
-How to hop to next quickfix error
+Vim-Test (I use it for python)
+Vim-Go   (nearest go-test)
+Vimux for the Tmux splitting
 
-## Shdo Workflow
+## BEGIN Project
 
-- mark some files
-- record a macro
-- run the script
+- Telescope menu of Global Marks
 
-- Editing the macro (let)
+## Desires
 
-:let @a="CTRL-a"
+## Annoyed with
 
-Quick rename of a file
-yy !mv CTRL-v Ctrl-v (edit the name an press enter)
+## Plugins to checkout
 
-Is there a way, to not have to say the filename twice?
-  - not using mv
+- https://github.com/tpope/vim-tbone
 
-## List of Lists
+## Vim Insults / Vimsults
 
-- quickfix
-- location
-- arglist
-  3. The argument list				*argument-list* *arglist*
+- Shutup bwipe
 
+## General Vim Philosophy
 
-vi -> arglist
-vim -> buffer
+- I avoid adding lots of things on save
+  ....since I save soooo much
 
-|:arglocal|.
-
-
-### I Don't use this
-You can use the argument list with the following commands, and with the
-expression functions |argc()| and |argv()|.  These all work on the argument
-list of the current window.
-
----
-bebenzer: https://www.thesprucepets.com/how-long-do-parrots-and-other-pet-birds-live-1238433 some can live up to 60 years, that's amazing
-
-- Weekly Vim Global Marks
-  - W -> Weekly Notes
-  - G -> Go Notes
-  - D -> DB Notes
-
-## Dotfile Navigating (This is with personal Global Marks)
-
-- D -> Database Notes
-- W -> Weekly Notes
-- G -> Go Notes
-- J -> Vim Journal
-- V -> init.vim
-- C -> colors.vim
-- O -> completion.vim
-- L -> Lua
-- P -> Plugins
-
-## Tmux Journal
+## Tmux (NOT VIM!)
 
 - prefix-$ rename Session
 - prefix-!
-  - How do you break out Window from Pane
+  - Break out Window from Pane
 
-## Warm Up
+## Explore
 
-- Setup Morning Notes
-- Read a Helpfile
-- lazygit
-  - lg
-- Use H, M, L more
-- use cw more
-- CTRL-O and CTRL-I -> Hop forward and back
-
-## Whattttt
+```
+theprimeagen: fun! TrimWhitespace() let l:save = winsaveview() keeppatterns %s/\s\+$//e call winrestview(l:save) endfun
+```
 
 theprimeagen: Then put your cursor on it and type gF
 ~/.config/dotfiles/nvim/plug_init.vim:30
@@ -191,24 +130,3 @@ Try these commands on this path:
   - gF
   - CTRL-w f -> open in a split
   - CTRL-w F -> open in split on exact line
-
-## BEGIN Project
-
-- Telescope menu of Global Marks
-
-## Friday
-
-https://github.com/romainl/vim-qf
-
-## Desires
-
-## Annoyed with
-
-## TODO
-
-- https://github.com/tpope/vim-tbone
-
-
-## Vim Insults / Vimsults
-
-- Shutup bwipe

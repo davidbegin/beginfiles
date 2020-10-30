@@ -58,11 +58,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-dispatch'
   Plug 'tpope/vim-dadbod'
 
-
-  " Vanilla Vim
-  " Plug 'wonka/vanilla-bean'
-  " Plug 'eddys/french-vanilla'
-
   " Neovim LSP Autocompletion, Diagnostic Stuff
   Plug 'neovim/nvim-lsp'
   Plug 'nvim-lua/completion-nvim'
@@ -86,7 +81,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jaredgorski/spacecamp'
   Plug 'whatyouhide/vim-gotham'
   Plug 'gilgigilgil/anderson.vim'
-
 
   " Terraform
   Plug 'hashivim/vim-terraform'

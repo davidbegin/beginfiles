@@ -10,6 +10,8 @@ iab wikipedia Wikipedia
 iab beginbux BeginBux™
 iab beginworld BeginWorld™
 iab startup sTaRtUp
+iab Philosphy Philosophy
+iab fucn func
 
 iabbrev @@    https://davidbegin.com
 iabbrev ccopy Copyright 2020 David Begin, all rights reserved.

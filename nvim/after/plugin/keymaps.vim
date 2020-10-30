@@ -11,6 +11,7 @@
 
 
 map <leader>gb :call VimuxRunCommand("clear; go build .")<CR>
+" map <leader>bl :!black % -l 120<CR>
 
 " I've done it and have seen the light
 " To be honest, I have enjoyed my life

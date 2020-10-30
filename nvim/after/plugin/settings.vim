@@ -128,3 +128,12 @@ endif
 " I don't think matters
 " As I have no swap files!!!
 set updatetime=100
+
+" Indent past the formatlistpat, not underneath it.
+" teej_dv: in your markdown buffer, can you do `echo &formatoptions`
+set formatoptions+=n
+
+" oh you're jcroql
+" I'm more a ''
+
+set textwidth=30

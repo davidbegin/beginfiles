@@ -91,3 +91,19 @@ Z!
   - t -> TaB???
   - e -> Edit???
 
+### Dirivsh Shdo Workflow
+
+- mark some files
+- record a macro
+- run the script
+
+- Editing the macro (let)
+
+:let @a="CTRL-a"
+
+Quick rename of a file
+yy !mv CTRL-v Ctrl-v (edit the name an press enter)
+
+Is there a way, to not have to say the filename twice?
+  - not using mv
+
