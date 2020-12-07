@@ -59,7 +59,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-dadbod'
 
   " Neovim LSP Autocompletion, Diagnostic Stuff
-  Plug 'neovim/nvim-lsp'
+  " Plug 'neovim/nvim-lsp'
+  Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-lua/diagnostic-nvim'
   Plug 'steelsojka/completion-buffers'

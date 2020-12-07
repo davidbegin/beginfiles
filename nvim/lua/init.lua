@@ -21,7 +21,7 @@ local mapper = function(mode, key, result)
   vim.api.nvim_buf_set_keymap(0, mode, key, result, {noremap = true, silent = true})
 end
 
-local nvim_lsp = require'nvim_lsp'
+local nvim_lsp = require'lspconfig'
 
 local on_attach_simple = function(client)
   require'completion'.on_attach(client)
