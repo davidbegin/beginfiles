@@ -82,7 +82,7 @@ augroup END set updatetime=800
 " But I have seen Emojis cut in half, when not set
 set emoji
 
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/usr/bin/python'
 set foldmethod=marker
 
 " These settings are from the following Repo:

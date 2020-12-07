@@ -5,6 +5,14 @@
 "  Y888  ,d  Y888 888P  888  ,d  Y888 888P  888 b,   b Y8D
 "   "88,d88   "88 88"   888,d88   "88 88"   888 88b, 8edP
 
+highlight LspDiagnosticsDefaultError guibg=#D7001B
+highlight LspDiagnosticsSignError guibg=none
+highlight LspDiagnosticsUnderlineWarn guibg=#D77600
+
+" LspDiagnosticsVirtualTextError
+" LspDiagnosticsVirtualTextWarning
+" LspDiagnosticsVirtualTextInformation
+" LspDiagnosticsVirtualTextHint
 
 " I like my spelling mistakes to be highlighted more subtle
 " with a underline.....called undercurl for some reason here
@@ -16,7 +24,9 @@ highlight SpellBad gui=undercurl
 " highlight SpellRare guibg=#FF009F
 
 " enable to make the background transparent
-highlight normal guibg=none ctermbg=none
+" highlight normal guibg=none ctermbg=none
+highlight normal guibg=none
+" ctermbg=none
 " highlight Normal guibg=Black ctermbg=Black
 " highlight Normal guibg=#121212
 " highlight Normal guibg=#8F005E

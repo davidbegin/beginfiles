@@ -17,7 +17,29 @@ nnoremap <leader>a :GoAlternate<CR>
 
 " Not sure about this
 nnoremap <buffer> <leader>c :silent make <bar> redraw!<CR>
-nnoremap <buffer> <leader>t :silent make <bar> redraw!<CR>
+nnoremap <buffer> <leader>u :silent make <bar> redraw!<CR>
+nnoremap <buffer> <leader>t :Make!<CR>
+nnoremap <buffer> <leader>y :Dispatch make test<CR>
+
+nnoremap <buffer> <leader>po :DB postgres://localhost:5432/beginsounds4<CR>
+nnoremap <buffer> <leader>pi :DB postgres://localhost:5432/test_beginsounds3<CR>
+
+nnoremap <buffer> <leader>bp :DlvToggleBreakpoint<CR>
+nnoremap <buffer> <leader>bt :DlvToggleTracepoint<CR>
+" nnoremap <buffer> <leader>tp :DlvToggleTracepoint<CR>
+
+nnoremap <buffer> <leader>cl :DlvClearAll<CR>
+
+nnoremap <buffer> <leader>db :DlvDebug<CR>
+nnoremap <buffer> <leader>dt :DlvTest<CR>
+
+" Inside of delve CLI, press escape and we use regular Vim style again
+tnoremap <Esc> <C-\><C-n>
+
+" :DB g:prod = postgres://user:pass@db.example.com/production_database
+let g:testdb="postgres://localhost:5432/test_beginsounds3"
+let g:bsdb= "postgres://localhost:5432/beginsounds2"
+
 
 nnoremap <leader>rn :GoRename<CR>
 noremap ,g :GoRun ./%<cr>
@@ -57,17 +79,19 @@ endfunction
 " map <leader>gh :call VimuxRunCommand("clear; go build cmd/server/main.go && ./main")<CR>
 " map <leader>gh :call VimuxRunCommand("clear; go build . && " . GoCmd())<CR>
 " map <leader>gh :call VimuxRunCommand("clear; go build . && ./beginsounds")<CR>
-map <leader>gh :call VimuxRunCommand("clear; go build . && ./main")<CR>
+"
+map <leader>gy :call VimuxRunCommand("clear; cd playground; go build . && ./playground")<CR>
+map <leader>gh :call VimuxRunCommand("clear; go build . && ./beginsounds")<CR>
 map <Leader>gj :VimuxCloseRunner<CR>
+
+" We have forked and are using gotest instead of go test
+" https://github.com/benmills/vimux-golang
 map <leader>gn :GolangTestFocused<CR>
-map <leader>gm :call VimuxRunCommand("clear; gotest ./...")<CR>
+map <leader>gm :GolangTestCurrentPackage<CR>
+
+" map <leader>gn :TestNearest<CR>
+" map <leader>gm :call VimuxRunCommand("clear; gotest ./...")<CR>
 map <leader>gk :call VimuxRunLastCommand()<CR>
-
-
-" nnoremap <leader>k :GoDiagnostics<CR>
-" nnoremap <leader>j :PrevDiagnostic<CR>
-" map <leader>gk :call VimuxRunCommand("clear; go build consumer.go && " . "./consumer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
-" map <leader>gh :call VimuxRunCommand("clear; go build producer.go && " . "./producer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
 
 " vim-test
 nmap <silent> t<C-n> :TestNearest<CR>
@@ -75,3 +99,8 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+" nnoremap <leader>k :GoDiagnostics<CR>
+" nnoremap <leader>j :PrevDiagnostic<CR>
+" map <leader>gk :call VimuxRunCommand("clear; go build consumer.go && " . "./consumer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>
+" map <leader>gh :call VimuxRunCommand("clear; go build producer.go && " . "./producer -f $HOME/.confluent/librdkafka.config -t demo-topic-1")<CR>

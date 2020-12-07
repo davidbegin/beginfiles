@@ -1,4 +1,3 @@
-
 "       :::    ::: :::::::::: :::   :::  :::   :::       :::     :::::::::   ::::::::
 "      :+:   :+:  :+:        :+:   :+: :+:+: :+:+:    :+: :+:   :+:    :+: :+:    :+:
 "     +:+  +:+   +:+         +:+ +:+ +:+ +:+:+ +:+  +:+   +:+  +:+    +:+ +:+
@@ -8,9 +7,7 @@
 " ###    ### ##########    ###   ###       ### ###     ### ###         ########
 
 
-
-
-map <leader>gb :call VimuxRunCommand("clear; go build .")<CR>
+" map <leader>gb :call VimuxRunCommand("clear; go build .")<CR>
 " map <leader>bl :!black % -l 120<CR>
 
 " I've done it and have seen the light
@@ -33,6 +30,10 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+
+" Split to a Vertical split easily
+" nnoremap <leader>pv :wincmd v<bar> :e . <bar> :vertical resize 30<CR>
+nnoremap <leader>pv :wincmd v<bar> :e . <bar><CR>
 
 " Prime real estate
 "
@@ -65,7 +66,8 @@ imap <right> <nop>
 
 
 " nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-" nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> H     <cmd>lua vim.lsp.buf.hover()<CR>
 " nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
 " nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 " nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
@@ -75,6 +77,7 @@ imap <right> <nop>
 " nnoremap gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 " nnoremap <silent>gd    <cmd>lua vim.lsp.buf.definition()<CR>
+
 
 " We will continue to check this out
 nnoremap <leader>f :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ results_width=0.8}))<cr>
@@ -87,6 +90,7 @@ nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 " nnoremap <silent><C-p> <cmd>lua require'telescope.builtin'.git_files{}<CR>
 nnoremap <silent><leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 nnoremap <silent><leader>tp <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <silent><leader>tm <cmd>lua require'telescope.builtin'.marks{}<CR>
 
 " require('telescope.themes').get_dropdown({})
 
@@ -122,16 +126,21 @@ nnoremap <silent><leader>rr :FloatermNew --height=0.9 --width=0.9 ranger<CR>
 nnoremap <silent><leader>C :VCoolor<CR>
 
 " Vim-Signature Toggle for showing Marks
-nnoremap <silent><leader>tm :SignatureToggle<CR>
+" nnoremap <silent><leader>tm :SignatureToggle<CR>
 
 " vim-trailing-whitespace
 noremap <silent><leader>ff :FixWhitespace<cr>
+
+" Toggle Folding
+" TODO: Make this better
+noremap <silent><leader>fo :set fdm=indent<CR>
+noremap <silent><leader>fi zR; :set fdm=manual<CR>
 
 " To Focus on the Current Section of the Code
 noremap <silent><leader>gg :Goyo<cr>
 
 " Quick flipping of colorschemes to a Random one
-noremap <silent><leader>jl :!wal --theme random_dark &<cr>
+" noremap <silent><leader>jl :!wal --theme random_dark &<cr>
 
 " Use Tabularize to line up things
 noremap <silent><leader>tt  :Tabularize/
@@ -177,7 +186,7 @@ noremap fm <C-w>=
 nnoremap <silent><leader>ev :vs $MYVIMRC<CR>
 
 " Quick reformatting of json
-noremap <silent><leader>jq :%!python -m json.tool<cr>
+" noremap <silent><leader>jq :%!python -m json.tool<cr>
 
 " Quick reloading .vimrc
 noremap <silent><leader>rc :source ~/.config/nvim/init.vim<cr>
@@ -196,11 +205,14 @@ noremap <leader>pp :call PasteIt()<CR>
 " https://github.com/neovim/neovim/issues/7648
 tnoremap <C-[><C-[> <C-\><C-n>
 
-" https://github.com/nvim-lua/diagnostic-nvim
-nnoremap <leader>k :NextDiagnostic<CR>
-nnoremap <leader>j :PrevDiagnostic<CR>
-nnoremap <leader>h :NextDiagnosticCycle<CR>
-nnoremap <leader>i :OpenDiagnostic<CR>
+nnoremap <leader>k <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <leader>j <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>l <cmd>lua vim.lsp.diagnostic.clear()<CR>
+" nnoremap <leader>w <cmd>lua vim.lsp.workspace_symbol.All()<CR>
+nnoremap <leader>ws <cmd>lua require'telescope'.lsp_workspace_symbols()<CR>
+
+" lukegorilla: workspace_symbol.All() should be right
+" rockerboo: lua require'telescope.builtin'.lsp_workspace_symbols()
 
 " Custom Twitch Commands
 nnoremap <leader>te :call TwitchCommands()<cr>

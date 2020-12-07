@@ -14,14 +14,18 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
+  Plug '~/code/marks.nvim'
   " Snippets
   Plug 'SirVer/ultisnips'
 
   " Go
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'sebdah/vim-delve'
 
   " Startup Profiling
   Plug 'dstein64/vim-startuptime'
+
+  Plug 'rhysd/git-messenger.vim'
 
   " Misc
   Plug 'KabbAmine/vCoolor.vim'
@@ -31,11 +35,10 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'frazrepo/vim-rainbow'
   Plug 'godlygeek/tabular'
   Plug 'janko/vim-test'
-  Plug 'kshenoy/vim-signature'
 
   " Tmux and Vim Together at Last!
   Plug 'hupfdule/vimux'
-  Plug 'benmills/vimux-golang'
+  " Plug 'benmills/vimux-golang'
 
   " Calm the ADHD
   Plug 'junegunn/goyo.vim'
@@ -59,11 +62,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-dadbod'
 
   " Neovim LSP Autocompletion, Diagnostic Stuff
-  Plug 'neovim/nvim-lsp'
+  Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
-  Plug 'nvim-lua/diagnostic-nvim'
   Plug 'steelsojka/completion-buffers'
   Plug 'voldikss/vim-floaterm'
+  Plug 'dense-analysis/ale'
+
 
   " Sitting on the Top of a Tree
   " Plug 'nvim-treesitter/completion-treesitter'
@@ -90,4 +94,6 @@ call plug#begin('~/.config/nvim/plugged')
   " For Generating My Begin Tag
   Plug 'johannesthyssen/vim-signit'
 
+  Plug 'kshenoy/vim-signature'
+  Plug 'kshenoy/vim-signature'
 call plug#end()
