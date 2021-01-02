@@ -92,6 +92,7 @@ require('begin.tele').setup()
 -- Why do I need this?
 require('plugin.completion')
 require('plugin.full_line_teej')
+require('plugin.quickfixlist')
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

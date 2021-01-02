@@ -21,7 +21,6 @@ call plug#begin('~/.config/nvim/plugged')
   " Go
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
   Plug 'sebdah/vim-delve'
-
   " Startup Profiling
   Plug 'dstein64/vim-startuptime'
 
@@ -51,7 +50,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Navigating Directories
   Plug 'justinmk/vim-dirvish'
 
-  " Hail TPope
+  " All Hail TPope
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'

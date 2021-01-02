@@ -18,6 +18,9 @@ nnoremap <leader>a :GoAlternate<CR>
 " Not sure about this
 nnoremap <buffer> <leader>c :silent make <bar> redraw!<CR>
 nnoremap <buffer> <leader>u :silent make <bar> redraw!<CR>
+
+" I don't know if theres a good way to call
+" :cg after this Make! call
 nnoremap <buffer> <leader>t :Make!<CR>
 nnoremap <buffer> <leader>y :Dispatch make test<CR>
 
@@ -27,11 +30,10 @@ nnoremap <buffer> <leader>pi :DB postgres://localhost:5432/test_beginsounds3<CR>
 nnoremap <buffer> <leader>bp :DlvToggleBreakpoint<CR>
 nnoremap <buffer> <leader>bt :DlvToggleTracepoint<CR>
 " nnoremap <buffer> <leader>tp :DlvToggleTracepoint<CR>
-
 nnoremap <buffer> <leader>cl :DlvClearAll<CR>
-
 nnoremap <buffer> <leader>db :DlvDebug<CR>
 nnoremap <buffer> <leader>dt :DlvTest<CR>
+
 
 " Inside of delve CLI, press escape and we use regular Vim style again
 tnoremap <Esc> <C-\><C-n>
@@ -82,6 +84,7 @@ endfunction
 "
 map <leader>gy :call VimuxRunCommand("clear; cd playground; go build . && ./playground")<CR>
 map <leader>gh :call VimuxRunCommand("clear; go build . && ./beginsounds")<CR>
+map <leader>gl :call VimuxRunCommand("clear; go run . ")<CR>
 map <Leader>gj :VimuxCloseRunner<CR>
 
 " We have forked and are using gotest instead of go test

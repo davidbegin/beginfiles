@@ -33,7 +33,7 @@ nnoremap <C-L> <C-W><C-L>
 
 " Split to a Vertical split easily
 " nnoremap <leader>pv :wincmd v<bar> :e . <bar> :vertical resize 30<CR>
-nnoremap <leader>pv :wincmd v<bar> :e . <bar><CR>
+nnoremap <leader>pv :wincmd v<bar> :e %:h <bar><CR>
 
 " Prime real estate
 "
@@ -91,6 +91,10 @@ nnoremap <silent>gr    <cmd>lua require'telescope.builtin'.lsp_references{}<CR>
 nnoremap <silent><leader>tg <cmd>lua require'telescope.builtin'.live_grep{}<CR>
 nnoremap <silent><leader>tp <cmd>lua require'telescope.builtin'.git_files{}<CR>
 nnoremap <silent><leader>tm <cmd>lua require'telescope.builtin'.marks{}<CR>
+" Not really using this yet, but might in the future
+" nnoremap <silent><leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
+nnoremap <silent><leader>q :lua MakeAndPopulateQFList()<CR>
+nnoremap <silent><leader>ls :lua require'telescope.builtin'.loclist{}<CR>
 
 " require('telescope.themes').get_dropdown({})
 
@@ -103,9 +107,6 @@ nnoremap <silent><leader>ch <cmd>lua require('telescope.builtin').command_histor
 " This works sporadically
 nnoremap <silent><leader>fz <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find{}<CR>
 
-" Not really using this yet, but might in the future
-nnoremap <silent><leader>qf :lua require'telescope.builtin'.quickfix{}<CR>
-nnoremap <silent><leader>ls :lua require'telescope.builtin'.loclist{}<CR>
 
 " Useful in searching in our vim config as it gets more split up
 nnoremap <silent><leader>vv <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/dotfiles/nvim" }<CR>
@@ -204,6 +205,22 @@ noremap <leader>pp :call PasteIt()<CR>
 " What Should I have the secondary escape as?
 " https://github.com/neovim/neovim/issues/7648
 tnoremap <C-[><C-[> <C-\><C-n>
+
+" These are all for Debugging
+tnoremap <Esc> <C-\><C-n>
+
+" tnoremap <A-h> <C-\><C-N><C-w>h
+" tnoremap <A-j> <C-\><C-N><C-w>j
+" tnoremap <A-k> <C-\><C-N><C-w>k
+" tnoremap <A-l> <C-\><C-N><C-w>l
+" inoremap <A-h> <C-\><C-N><C-w>h
+" inoremap <A-j> <C-\><C-N><C-w>j
+" inoremap <A-k> <C-\><C-N><C-w>k
+" inoremap <A-l> <C-\><C-N><C-w>l
+" nnoremap <A-h> <C-w>h
+" nnoremap <A-j> <C-w>j
+" nnoremap <A-k> <C-w>k
+" nnoremap <A-l> <C-w>l
 
 nnoremap <leader>k <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <leader>j <cmd>lua vim.lsp.diagnostic.goto_next()<CR>

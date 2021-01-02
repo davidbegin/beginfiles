@@ -4,6 +4,83 @@
   \ V / | | | | | | | | |_| | (_) | |_| | |  | | | | (_| | |
    \_/  |_|_| |_| |_|  \___/ \___/ \__,_|_|  |_| |_|\__,_|_|
 
+
+## The worst Begin is doing
+
+- Changing my font-size to diagnostics
+
+:copen
+<leader>qf -> opens up quickfixlist with telescope
+
+## Vim Day
+
+- https://vimawesome.com/plugin/unimpaired-vim
+- Repeat of Go debugging
+
+What does this mean??
+
+```
+cpoptions=aABceFs_
+```
+
+
+
+
+
+
+
+
+
+## Cpoptions Game?
+
+Game 1: name you Cpoptions?
+
+Game 2: identify what all of them do?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I want to meet someone who doesn't use B in cpopotions
+  -> to be able to get CTRl-V like behavior from \
+
+- Quellus: hot take: I've never used B but that's due to a lack of proper education
+
+Do I want to use f?
+		- f	When included, a ":read" command with a file name
+			argument will set the file name for the current buffer,
+			if the current buffer doesn't have a file name yet.
+
+3.0???? What the heck??? What do I want??k
+  -s	Set buffer options when entering the buffer for the
+    first time.  This is like it is in Vim version 3.0.
+    And it is the default.  If not present the options are
+    set when the buffer is created.
+
+IS THIS WHAT I WANT???
+  _	When using |cw| on a word, do not include the
+    whitespace following the word in the motion.
+
+
 ## What is this for?
 
 To help organize and focus my current vim efforts.
@@ -25,7 +102,7 @@ then asbjorn told me about CTRL-w v
 - delve
   Set breakpoint  <leader>bp
   Run DlvDebug    <leader>db
-  Run DlvTest     <leader>bt
+  Run DlvTest     <leader>dt
 
 - Moving around:
   {} -> to scan up and down
@@ -141,6 +218,13 @@ nnoremap <buffer> <leader>y :Dispatch make test<CR>
 ## Desires
 
 ## Annoyed with
+
+- Redoing
+  - Sometimes I accidently deleted text and
+    it's not in my undo
+    CTRL-R -> already at newest change
+
+:help undo-redo
 
 ## Plugins to checkout
 

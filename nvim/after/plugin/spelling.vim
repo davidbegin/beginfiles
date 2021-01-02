@@ -50,18 +50,9 @@ iab ablums albums
 iab mispselled misspelled
 iab unsubscribe unsubscribe
 iab waht what
-
-
-
-
-
-
-
-
-
-
-
-
+iab Waht What
+iab nrom norm
+iab Nrom Norm
 
 
 

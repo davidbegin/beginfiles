@@ -24,7 +24,7 @@ vim.g.completion_chain_complete_list = {
       {mode = '<c-n>'}
     },
     terraform = {
-      {complete_items = {"buffers"}},
+      {complete_items = {"lsp", "buffers"}},
       {mode = "file"},
       {mode = '<c-p>'},
       {mode = '<c-n>'}

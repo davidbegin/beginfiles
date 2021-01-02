@@ -59,8 +59,6 @@ export KEYTIMEOUT=1
 # export PS1="ϕϕϕ "
 # export PS1="$fg[cyan]ⓑ$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
 # export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
-# export PS1="> "
-export PS1="begin "
 
 
 # For Nim
@@ -108,4 +106,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # mplayer -af volume=10 "/home/begin/stream/Stream/Samples/56k.opus"
 
 # alias go=grc go
+
+# export PS1="> "
+export PS1="begin "
 export PS1="; "
+
+export AWS_SDK_LOAD_CONFIG=1
