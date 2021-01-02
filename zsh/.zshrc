@@ -59,8 +59,7 @@ export KEYTIMEOUT=1
 # export PS1="ϕϕϕ "
 # export PS1="$fg[cyan]ⓑ$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
 # export PS1="$fg[cyan]b$fg[red]e$fg[yellow]g$fg[green]i$fg[magenta]n$reset_color%}%b "
-# export PS1="> "
-export PS1="begin "
+
 
 # For Nim
 export PATH=$PATH:~/.nimble/bin
@@ -88,6 +87,9 @@ export LUA_PATH="/home/begin/code/playground/lua/share/lua/5.1/?.lua"
 
 export NVIMP="~/.config/nvim"
 
+alias lsplog="tail -f ~/.local/share/nvim/lsp.log"
+
+
 # Make Docker Go Vroom
 export DOCKER_BUILDKIT=1
 
@@ -98,3 +100,15 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+[[ ! -f ~/.config/.linode ]] || source ~/.config/.linode
+# mplayer -af volume=10 "/home/begin/stream/Stream/Samples/ps1.opus" &
+# mplayer -af volume=10 "/home/begin/stream/Stream/Samples/56k.opus"
+
+# alias go=grc go
+
+# export PS1="> "
+export PS1="begin "
+export PS1="; "
+
+export AWS_SDK_LOAD_CONFIG=1
