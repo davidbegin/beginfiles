@@ -14,6 +14,9 @@ set termguicolors                  " Enable GUI colors for the terminal to get t
 " This must be loaded after we set termguicolors
 lua require('init')
 
+" lua require('plenary.reload').reload_module("marks")
+" lua require('marks')
+
 " colorscheme spacecamp
 
 colorscheme challenger_deep

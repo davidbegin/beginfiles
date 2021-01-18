@@ -2,21 +2,26 @@
 " ====== Begin Can't Type ======
 " ==============================
 
+
 iab teh the
 iab eth the
 iab helo hello
 iab wordl world
 iab wikipedia Wikipedia
 iab beginbux BeginBux™
+iab recieve receive
 iab beginworld BeginWorld™
 iab startup sTaRtUp
 iab Philosphy Philosophy
+iab Philopshy Philosophy
 iab fucn func
 iab frients friends
 iab ince nice
 iab mgiht might
 iab peice piece
+iab linx GNU/Linux
 iab linux GNU/Linux
+iab arch btw I use arch
 iab programmign programming
 iab programmign programming
 iab glassses glasses
@@ -44,19 +49,10 @@ iab ignorning ignoring
 iab ablums albums
 iab mispselled misspelled
 iab unsubscribe unsubscribe
-
-
-
-
-
-
-
-
-
-
-
-
-
+iab waht what
+iab Waht What
+iab nrom norm
+iab Nrom Norm
 
 
 
