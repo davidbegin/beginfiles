@@ -5,6 +5,11 @@
    \_/  |_|_| |_| |_|  \___/ \___/ \__,_|_|  |_| |_|\__,_|_|
 
 
+## Potential Day
+
+- Snippets
+- Removing Vim-go, Customizing
+
 ## The worst Begin is doing
 
 - Changing my font-size to diagnostics

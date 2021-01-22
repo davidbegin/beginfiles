@@ -113,6 +113,7 @@ cf="cd ~/.config && ls -a"                                 \
 mn="cd /mnt && ls -a"                                      \
 ws="cd ~/.config/workstations && ls -a"                    \
 vv="$EDITOR ~/.config/nvim/init.vim"                       \
+pp="$EDITOR ~/.config/scraps.txt"                          \
 sc="$EDITOR ~/.config/shortcutrc"                          \
 bw="cd ~/beginworld; echo 'Welcome to BeginWorld™'"        \
 bs="cd ~/code/beginsounds; echo 'Welcome to BeginSounds™'" \

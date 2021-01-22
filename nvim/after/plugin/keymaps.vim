@@ -256,3 +256,11 @@ nnoremap <leader>nj :!nojam<cr>
 " Use <Tab> and <S-Tab> to navigate through popup menu
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Prime Specials
+
+" theprimeagen: bprev = buffer previous and bnext = buffer next. That way, instead of doing alternate file for swapping back and forth, you can go back two files by doing 2x bprev
+" theprimeagen: buffers are ordered based on the last time they were accessed
+" theprimeagen: ^-- which makes it money money
+nnoremap <C-k> :bnext<CR>
+nnoremap <C-j> :bprev<CR>
